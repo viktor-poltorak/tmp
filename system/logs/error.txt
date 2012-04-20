@@ -1,0 +1,245 @@
+2012-02-20 9:25:48 - PHP Warning:  include(./_search.tpl): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/header.tpl on line 75
+2012-02-20 9:25:48 - PHP Warning:  include(): Failed opening './_search.tpl' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/header.tpl on line 75
+2012-02-21 7:43:31 - PHP Notice:  Undefined variable: breadcrumbs in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/footer.tpl on line 2
+2012-02-21 7:43:31 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/footer.tpl on line 2
+2012-02-21 7:45:36 - PHP Notice:  Undefined variable: breadcrumbs in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/footer.tpl on line 2
+2012-02-21 7:45:36 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/footer.tpl on line 2
+2012-02-21 8:03:09 - PHP Notice:  Undefined variable: breadcrumbs in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 2
+2012-02-21 8:03:09 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 2
+2012-02-21 8:11:03 - PHP Notice:  Undefined variable: data in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 20
+2012-02-21 8:11:35 - PHP Notice:  Undefined variable: data in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 20
+2012-02-21 8:21:29 - PHP Notice:  Undefined index: limit in /media/PROJECTS/www/sm/data/catalog/controller/module/news.php on line 18
+2012-02-21 8:58:08 - PHP Warning:  unlink(/media/PROJECTS/www/sm/data/system/cache/cache.category.2.0.1329813438): No such file or directory in /media/PROJECTS/www/sm/data/system/library/cache.php on line 14
+2012-02-21 8:58:09 - PHP Warning:  unlink(/media/PROJECTS/www/sm/data/system/cache/cache.product.2.0.8.76806e1ad83410011bb4a01c777502e9.1329813498): No such file or directory in /media/PROJECTS/www/sm/data/system/library/cache.php on line 14
+2012-02-21 8:58:17 - PHP Notice:  Undefined index: limit in /media/PROJECTS/www/sm/data/catalog/controller/module/news.php on line 18
+2012-02-21 8:59:06 - PHP Notice:  Undefined index: limit in /media/PROJECTS/www/sm/data/catalog/controller/module/news.php on line 18
+2012-02-21 9:00:04 - PHP Notice:  Undefined index: limit in /media/PROJECTS/www/sm/data/catalog/controller/module/news.php on line 18
+2012-02-21 9:06:06 - PHP Notice:  Undefined index: numchars in /media/PROJECTS/www/sm/data/catalog/controller/module/news.php on line 23
+2012-02-21 9:09:24 - PHP Notice:  Undefined variable: news_in_main in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 24
+2012-02-21 9:09:31 - PHP Notice:  Undefined variable: news_on_main in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 24
+2012-02-21 9:09:55 - PHP Notice:  Undefined variable: news_on_main in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 24
+2012-02-21 9:10:37 - PHP Notice:  Undefined variable: results in /media/PROJECTS/www/sm/data/catalog/controller/common/home.php on line 19
+2012-02-21 10:58:16 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': ' ' . 'ORDER BY c.sort_order, LCASE(cd.name)' at line 1<br />Error No: 1064<br />SELECT * FROM _category c LEFT JOIN _category_description cd ON (c.category_id = cd.category_id) LEFT JOIN _category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '63' AND cd.language_id = '2' AND c2s.store_id = '0'  ' . ! ? 'AND c.status = '1' : ' ' . 'ORDER BY c.sort_order, LCASE(cd.name) in /media/PROJECTS/www/sm/data/system/database/mysql.php on line 49
+2012-02-21 10:58:17 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': ' ' . 'ORDER BY c.sort_order, LCASE(cd.name)' at line 1<br />Error No: 1064<br />SELECT * FROM _category c LEFT JOIN _category_description cd ON (c.category_id = cd.category_id) LEFT JOIN _category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '63' AND cd.language_id = '2' AND c2s.store_id = '0'  ' . ! ? 'AND c.status = '1' : ' ' . 'ORDER BY c.sort_order, LCASE(cd.name) in /media/PROJECTS/www/sm/data/system/database/mysql.php on line 49
+2012-02-21 10:58:33 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': ' ' . 'ORDER BY c.sort_order, LCASE(cd.name)' at line 1<br />Error No: 1064<br />SELECT * FROM _category c LEFT JOIN _category_description cd ON (c.category_id = cd.category_id) LEFT JOIN _category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '63' AND cd.language_id = '2' AND c2s.store_id = '0'  ' . ! ? ' AND c.status = '1' : ' ' . 'ORDER BY c.sort_order, LCASE(cd.name) in /media/PROJECTS/www/sm/data/system/database/mysql.php on line 49
+2012-02-21 11:02:19 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 ORDER BY c.sort_order, LCASE(cd.name)' at line 1<br />Error No: 1064<br />SELECT * FROM _category c LEFT JOIN _category_description cd ON (c.category_id = cd.category_id) LEFT JOIN _category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '63' AND cd.language_id = '2' AND c2s.store_id = '0'  1 ORDER BY c.sort_order, LCASE(cd.name) in /media/PROJECTS/www/sm/data/system/database/mysql.php on line 49
+2012-02-21 11:02:21 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 ORDER BY c.sort_order, LCASE(cd.name)' at line 1<br />Error No: 1064<br />SELECT * FROM _category c LEFT JOIN _category_description cd ON (c.category_id = cd.category_id) LEFT JOIN _category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '63' AND cd.language_id = '2' AND c2s.store_id = '0'  1 ORDER BY c.sort_order, LCASE(cd.name) in /media/PROJECTS/www/sm/data/system/database/mysql.php on line 49
+2012-02-21 12:04:01 - PHP Notice:  Undefined variable: contact in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 18
+2012-02-21 12:04:01 - PHP Notice:  Undefined variable: text_contact in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 18
+2012-02-21 12:05:05 - PHP Notice:  Undefined variable: contact in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 18
+2012-02-21 12:05:05 - PHP Notice:  Undefined variable: text_contact in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 18
+2012-02-21 12:06:30 - PHP Notice:  Undefined variable: offers in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/header.tpl on line 106
+2012-02-21 12:08:23 - PHP Notice:  Undefined variable: offers in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/header.tpl on line 106
+2012-02-21 12:08:39 - PHP Notice:  Undefined variable: offers in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/header.tpl on line 106
+2012-02-21 13:17:05 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, null given in /media/PROJECTS/www/sm/data/system/library/image.php on line 87
+2012-02-21 13:17:05 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in /media/PROJECTS/www/sm/data/system/library/image.php on line 88
+2012-02-21 13:17:16 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, null given in /media/PROJECTS/www/sm/data/system/library/image.php on line 87
+2012-02-21 13:17:16 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, null given in /media/PROJECTS/www/sm/data/system/library/image.php on line 88
+2012-02-21 15:37:05 - PHP Notice:  Undefined variable: h_categories in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 15
+2012-02-21 15:37:05 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 15
+2012-02-21 15:38:43 - PHP Notice:  Undefined variable: h_categories in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 15
+2012-02-21 15:38:43 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 15
+2012-02-21 15:41:15 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 8
+2012-02-21 15:41:15 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 8
+2012-02-21 15:41:15 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 8
+2012-02-21 15:41:15 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 8
+2012-02-21 15:43:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:43:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:43:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:43:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:44:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:44:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:44:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 15:44:09 - PHP Notice:  Undefined index: image in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/module/category.tpl on line 6
+2012-02-21 17:28:56 - PHP Notice:  Undefined variable: entry_skype in /media/PROJECTS/www/sm/data/admin/view/template/setting/setting.tpl on line 64
+2012-02-21 17:28:56 - PHP Notice:  Undefined variable: config_skype in /media/PROJECTS/www/sm/data/admin/view/template/setting/setting.tpl on line 65
+2012-02-21 17:29:46 - PHP Notice:  Undefined variable: config_skype in /media/PROJECTS/www/sm/data/admin/view/template/setting/setting.tpl on line 65
+2012-02-21 17:50:57 - PHP Warning:  include(../common/_left.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:50:57 - PHP Warning:  include(): Failed opening '../common/_left.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:51:16 - PHP Warning:  include(common/_left.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:51:16 - PHP Warning:  include(): Failed opening 'common/_left.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:53:11 - PHP Warning:  include(template/common/_left.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:53:11 - PHP Warning:  include(): Failed opening 'template/common/_left.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:53:42 - PHP Warning:  include(template/common/_left.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 17:53:42 - PHP Warning:  include(): Failed opening 'template/common/_left.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 18:24:08 - PHP Notice:  Undefined variable: h_categories in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/information/information.tpl on line 17
+2012-02-21 18:24:08 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/information/information.tpl on line 17
+2012-02-21 18:26:31 - PHP Warning:  include(/media/PROJECTS/www/smsubmenu.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-21 18:26:31 - PHP Warning:  include(): Failed opening '/media/PROJECTS/www/smsubmenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-21 18:28:49 - PHP Warning:  include(/media/PROJECTS/www/sm/submenu.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:28:49 - PHP Warning:  include(): Failed opening '/media/PROJECTS/www/sm/submenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:29:29 - PHP Warning:  include(/media/PROJECTS/www/sm/submenu.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:29:29 - PHP Warning:  include(): Failed opening '/media/PROJECTS/www/sm/submenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/media/PROJECTS/www/sm') in /media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:32:10 - PHP Warning:  include(/media/PROJECTS/www/sm/submenu.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:32:10 - PHP Warning:  include(): Failed opening '/media/PROJECTS/www/sm/submenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/media/PROJECTS/www/sm') in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:35:00 - PHP Warning:  include(/media/PROJECTS/www/sm/submenu.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:35:00 - PHP Warning:  include(): Failed opening '/media/PROJECTS/www/sm/submenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/media/PROJECTS/www/sm:/media/PROJECTS/www/sm/catalog/view/theme/default/template/account:/media/PROJECTS/www/sm/catalog/view/theme/default/template/product:/media/PROJECTS/www/sm/catalog/view/theme/default/template/common:/media/PROJECTS/www/sm/catalog/view/theme/default/template/information:/media/PROJECTS/www/sm/catalog/view/theme/default/template/module') in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:35:23 - PHP Warning:  include(submenu.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:35:23 - PHP Warning:  include(): Failed opening 'submenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/media/PROJECTS/www/sm:/media/PROJECTS/www/sm/catalog/view/theme/default/template/account:/media/PROJECTS/www/sm/catalog/view/theme/default/template/product:/media/PROJECTS/www/sm/catalog/view/theme/default/template/common:/media/PROJECTS/www/sm/catalog/view/theme/default/template/information:/media/PROJECTS/www/sm/catalog/view/theme/default/template/module') in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/home.tpl on line 31
+2012-02-21 18:36:07 - PHP Notice:  Undefined variable: h_categories in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 45
+2012-02-21 18:36:07 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 45
+2012-02-21 18:40:18 - PHP Notice:  Undefined variable: categories in /media/PROJECTS/www/sm/catalog/view/theme/default/template/module/slideshow.tpl on line 5
+2012-02-21 18:40:18 - PHP Warning:  Invalid argument supplied for foreach() in /media/PROJECTS/www/sm/catalog/view/theme/default/template/module/slideshow.tpl on line 5
+2012-02-21 18:41:51 - PHP Warning:  include(/media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/_left.php): failed to open stream: No such file or directory in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 18:41:51 - PHP Warning:  include(): Failed opening '/media/PROJECTS/www/sm/data/catalog/view/theme/default/template/common/_left.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/media/PROJECTS/www/sm:/media/PROJECTS/www/sm/catalog/view/theme/default/template/account:/media/PROJECTS/www/sm/catalog/view/theme/default/template/product:/media/PROJECTS/www/sm/catalog/view/theme/default/template/common:/media/PROJECTS/www/sm/catalog/view/theme/default/template/information:/media/PROJECTS/www/sm/catalog/view/theme/default/template/module') in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 133
+2012-02-21 18:43:15 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:15 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:15 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:15 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:15 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:33 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:33 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:33 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:33 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 18:43:33 - PHP Notice:  Undefined index: href in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/category.tpl on line 40
+2012-02-21 19:13:55 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:13:55 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:13:55 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:13:55 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:11 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 9
+2012-02-21 19:14:11 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:11 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:11 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:11 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:46 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:46 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:46 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:14:46 - PHP Notice:  Undefined variable: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 14
+2012-02-21 19:26:32 - PHP Notice:  Undefined index: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 46
+2012-02-21 19:26:32 - PHP Notice:  Undefined index: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 46
+2012-02-21 19:26:32 - PHP Notice:  Undefined index: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 46
+2012-02-21 19:26:32 - PHP Notice:  Undefined index: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 46
+2012-02-21 19:26:32 - PHP Notice:  Undefined index: category_id in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 46
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:50 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:41:55 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:19 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:25 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_submenu.php on line 47
+2012-02-22 7:43:59 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:59 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:59 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:43:59 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:44:05 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:44:05 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:44:05 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:44:05 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:46:07 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:46:07 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:46:07 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 7:46:07 - PHP Notice:  Undefined index: path in /media/PROJECTS/www/sm/catalog/view/theme/default/template/common/_left_categories.php on line 13
+2012-02-22 9:28:41 - PHP Notice:  Undefined index: pd in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/product.tpl on line 16
+2012-02-22 9:28:53 - PHP Notice:  Undefined index: product_description in /media/PROJECTS/www/sm/catalog/view/theme/default/template/product/product.tpl on line 16
+2012-02-22 9:51:35 - PHP Notice:  Undefined index: attribute_group_id in /media/PROJECTS/www/sm/admin/model/catalog/attribute.php on line 4
+2012-02-22 12:21:25 - PHP Notice:  Undefined variable: data in /media/PROJECTS/www/sm/catalog/controller/product/product.php on line 98
+2012-02-22 12:24:13 - PHP Notice:  Error: Table 'smsu.product_to_download' doesn't exist<br />Error No: 1146<br />SELECT d.*, dd.*, p.* FROM _download d, product_to_download p LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:26:02 - PHP Notice:  Error: Unknown column 'd.download_id' in 'on clause'<br />Error No: 1054<br />SELECT d.*, dd.*, p.* FROM _download d, _product_to_download p LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:26:46 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.' at line 1<br />Error No: 1064<br />SELECT d.*, dd.*, p.* FROM _download d, LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:27:30 - PHP Notice:  Error: Table 'smsu.product_to_download' doesn't exist<br />Error No: 1146<br />SELECT d.*, dd.*, p.* FROM _download d, product_to_download p 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:27:47 - PHP Notice:  Error: Table 'smsu._sproduct_to_download' doesn't exist<br />Error No: 1146<br />SELECT d.*, dd.*, p.* FROM _download d, _sproduct_to_download p 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:27:52 - PHP Notice:  Error: Unknown column 'd.download_id' in 'on clause'<br />Error No: 1054<br />SELECT d.*, dd.*, p.* FROM _download d, _product_to_download p 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:28:03 - PHP Notice:  Error: Unknown table 'p'<br />Error No: 1051<br />SELECT d.*, dd.*, p.* FROM _download d 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:28:13 - PHP Notice:  Error: Unknown column 'p.product_id' in 'where clause'<br />Error No: 1054<br />SELECT * FROM _download d 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:28:15 - PHP Notice:  Error: Unknown column 'p.product_id' in 'where clause'<br />Error No: 1054<br />SELECT * FROM _download d 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:28:26 - PHP Notice:  Error: Unknown column 'd.download_id' in 'on clause'<br />Error No: 1054<br />SELECT * FROM _download d, _product_to_download p 
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:28:34 - PHP Notice:  Error: Unknown column 'p.product_id' in 'where clause'<br />Error No: 1054<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2' AND p.product_id = '53' ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 12:28:53 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''2 ORDER BY dd.name ASC' at line 2<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) WHERE dd.language_id = '2 ORDER BY dd.name ASC in /media/PROJECTS/www/sm/system/database/mysql.php on line 49
+2012-02-22 13:47:14 - PHP Warning:  include(/h/smsu/htdocssubmenu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:47:14 - PHP Warning:  include(/h/smsu/htdocssubmenu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:47:14 - PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '/h/smsu/htdocssubmenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/h/smsu/htdocs:/h/smsu/htdocs/catalog/view/theme/default/template/account:/h/smsu/htdocs/catalog/view/theme/default/template/product:/h/smsu/htdocs/catalog/view/theme/default/template/common:/h/smsu/htdocs/catalog/view/theme/default/template/information:/h/smsu/htdocs/catalog/view/theme/default/template/module') in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:49:28 - PHP Warning:  include(/h/smsu/htdocssubmenu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:49:28 - PHP Warning:  include(/h/smsu/htdocssubmenu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:49:28 - PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '/h/smsu/htdocssubmenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/h/smsu/htdocs:/h/smsu/htdocs/catalog/view/theme/default/template/account:/h/smsu/htdocs/catalog/view/theme/default/template/product:/h/smsu/htdocs/catalog/view/theme/default/template/common:/h/smsu/htdocs/catalog/view/theme/default/template/information:/h/smsu/htdocs/catalog/view/theme/default/template/module') in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:49:38 - PHP Warning:  include(/h/smsu/htdocssubmenu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:49:38 - PHP Warning:  include(/h/smsu/htdocssubmenu.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 13:49:38 - PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '/h/smsu/htdocssubmenu.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear:/h/smsu/htdocs:/h/smsu/htdocs/catalog/view/theme/default/template/account:/h/smsu/htdocs/catalog/view/theme/default/template/product:/h/smsu/htdocs/catalog/view/theme/default/template/common:/h/smsu/htdocs/catalog/view/theme/default/template/information:/h/smsu/htdocs/catalog/view/theme/default/template/module') in /h/smsu/htdocs/catalog/view/theme/default/template/information/information.tpl on line 14
+2012-02-22 14:17:40 - PHP Notice:  session_start() [<a href='function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /h/smsu/htdocs/system/library/session.php on line 11
+2012-02-22 14:17:40 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/system/library/captcha.php on line 40
+2012-02-23 0:49:35 - PHP Notice:  session_start() [<a href='function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /h/smsu/htdocs/system/library/session.php on line 11
+2012-02-23 0:49:35 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/index.php on line 183
+2012-02-23 0:49:35 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/system/library/currency.php on line 45
+2012-02-24 6:27:30 - PHP Notice:  session_start() [<a href='function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /h/smsu/htdocs/system/library/session.php on line 11
+2012-02-24 10:34:17 - PHP Notice:  session_start() [<a href='function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /h/smsu/htdocs/system/library/session.php on line 11
+2012-02-24 10:34:17 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /h/smsu/htdocs/admin/index.php:79) in /h/smsu/htdocs/system/engine/controller.php on line 28
+2012-02-24 10:34:17 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /h/smsu/htdocs/admin/index.php:79) in /h/smsu/htdocs/system/engine/controller.php on line 29
+2012-02-24 10:37:15 - PHP Notice:  session_start() [<a href='function.session-start'>function.session-start</a>]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /h/smsu/htdocs/system/library/session.php on line 11
+2012-02-24 11:32:13 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 11:34:15 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 11:34:17 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 11:45:13 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 11:45:16 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 11:53:15 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 11:53:18 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-02-24 12:05:41 - PHP Notice:  Undefined variable: sql in /h/smsu/htdocs/catalog/model/catalog/product.php on line 182
+2012-02-24 12:06:09 - PHP Notice:  Undefined variable: sql in /h/smsu/htdocs/catalog/model/catalog/product.php on line 182
+2012-02-24 12:06:20 - PHP Notice:  Undefined variable: sql in /h/smsu/htdocs/catalog/model/catalog/product.php on line 182
+2012-02-24 13:14:38 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY dd.name ASC' at line 4<br />Error No: 1064<br />SELECT * FROM _download d
+		LEFT JOIN _download_description dd ON (d.download_id = dd.download_id) 
+		LEFT JOIN _product_to_download p2d ON ( p2d.download_id = d.download_id ) 
+		WHERE dd.language_id = '2' AND p2d.product_id= ORDER BY dd.name ASC in /h/smsu/htdocs/system/database/mysql.php on line 49
+2012-04-11 6:54:21 - PHP Warning:  unlink(/h/smsu/htdocs/system/cache/cache.currency.1334120346) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /h/smsu/htdocs/system/library/cache.php on line 14
+2012-04-11 6:54:21 - PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/system/library/session.php on line 12
+2012-04-11 6:54:21 - PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/system/library/session.php on line 12
+2012-04-11 10:01:57 - PHP Warning:  unlink(/h/smsu/htdocs/system/cache/cache.currency.1334135111) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /h/smsu/htdocs/system/library/cache.php on line 14
+2012-04-11 10:01:58 - PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/system/library/session.php on line 12
+2012-04-11 10:01:58 - PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /h/smsu/htdocs/index.php:108) in /h/smsu/htdocs/system/library/session.php on line 12
