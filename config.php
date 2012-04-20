@@ -20,11 +20,20 @@ define('DIR_CACHE', $_SERVER['DOCUMENT_ROOT'] . '/system/cache/');
 define('DIR_DOWNLOAD', $_SERVER['DOCUMENT_ROOT'] . '/download/');
 define('DIR_LOGS', $_SERVER['DOCUMENT_ROOT'] . '/system/logs/');
 
-// DB
+// DB Live
+/*
 define('DB_DRIVER', 'mysql');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'smsu');
 define('DB_PASSWORD', 'q1fKWwxiF4aP');
 define('DB_DATABASE', 'smsu');
 define('DB_PREFIX', '_');
-?>
+*/
+
+//DB Viktor
+define('DB_DRIVER', 'mysql');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'pass');
+define('DB_DATABASE', 'smsu');
+define('DB_PREFIX', '_');

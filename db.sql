@@ -3,10 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 
--- Generation Time: Apr 20, 2012 at 07:05 PM
+-- Generation Time: Apr 20, 2012 at 07:17 PM
 -- Server version: 5.1.61
 -- PHP Version: 5.3.3-7+squeeze8
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -16,18 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- Database: `smsu`
---
-CREATE DATABASE `smsu` DEFAULT CHARACTER SET cp1251 COLLATE cp1251_general_ci;
-USE `smsu`;
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `_address`
 --
 
+DROP TABLE IF EXISTS `_address`;
 CREATE TABLE IF NOT EXISTS `_address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -50,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `_address` (
 -- Table structure for table `_affiliate`
 --
 
+DROP TABLE IF EXISTS `_affiliate`;
 CREATE TABLE IF NOT EXISTS `_affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -90,6 +87,7 @@ CREATE TABLE IF NOT EXISTS `_affiliate` (
 -- Table structure for table `_affiliate_transaction`
 --
 
+DROP TABLE IF EXISTS `_affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `_affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -106,6 +104,7 @@ CREATE TABLE IF NOT EXISTS `_affiliate_transaction` (
 -- Table structure for table `_attribute`
 --
 
+DROP TABLE IF EXISTS `_attribute`;
 CREATE TABLE IF NOT EXISTS `_attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -126,6 +125,7 @@ INSERT INTO `_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VA
 -- Table structure for table `_attribute_description`
 --
 
+DROP TABLE IF EXISTS `_attribute_description`;
 CREATE TABLE IF NOT EXISTS `_attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -147,6 +147,7 @@ INSERT INTO `_attribute_description` (`attribute_id`, `language_id`, `name`) VAL
 -- Table structure for table `_attribute_group`
 --
 
+DROP TABLE IF EXISTS `_attribute_group`;
 CREATE TABLE IF NOT EXISTS `_attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -166,6 +167,7 @@ INSERT INTO `_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- Table structure for table `_attribute_group_description`
 --
 
+DROP TABLE IF EXISTS `_attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `_attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -187,6 +189,7 @@ INSERT INTO `_attribute_group_description` (`attribute_group_id`, `language_id`,
 -- Table structure for table `_banner`
 --
 
+DROP TABLE IF EXISTS `_banner`;
 CREATE TABLE IF NOT EXISTS `_banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -209,6 +212,7 @@ INSERT INTO `_banner` (`banner_id`, `name`, `status`) VALUES
 -- Table structure for table `_banner_image`
 --
 
+DROP TABLE IF EXISTS `_banner_image`;
 CREATE TABLE IF NOT EXISTS `_banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
@@ -237,6 +241,7 @@ INSERT INTO `_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VA
 -- Table structure for table `_banner_image_description`
 --
 
+DROP TABLE IF EXISTS `_banner_image_description`;
 CREATE TABLE IF NOT EXISTS `_banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -273,6 +278,7 @@ INSERT INTO `_banner_image_description` (`banner_image_id`, `language_id`, `bann
 -- Table structure for table `_category`
 --
 
+DROP TABLE IF EXISTS `_category`;
 CREATE TABLE IF NOT EXISTS `_category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -308,6 +314,7 @@ INSERT INTO `_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `
 -- Table structure for table `_category_description`
 --
 
+DROP TABLE IF EXISTS `_category_description`;
 CREATE TABLE IF NOT EXISTS `_category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -328,18 +335,22 @@ INSERT INTO `_category_description` (`category_id`, `language_id`, `name`, `desc
 (68, 1, 'Другое', '&lt;p&gt;\r\n	Другое&lt;/p&gt;\r\n', 'Другое', 'Другое'),
 (68, 2, 'Другое', '&lt;p&gt;\r\n	Другое&lt;/p&gt;\r\n', 'Другое', 'Другое'),
 (64, 1, 'Автомобилестроение', '&lt;p&gt;\r\n	Автомобилестроение&lt;/p&gt;\r\n', 'Автомобилестроение', 'Автомобилестроение'),
-(62, 1, 'Би/Три металлы и специальные стали', '&lt;p&gt;\r\n	Би/Три металлы и специальные стали&lt;/p&gt;\r\n', 'Би/Три металлы и специальные стали', 'Би/Три металлы и специальные стали'),
+(62, 1, 'Би/Три металлы и специальные стали', '&lt;p&gt;\r\n	Би/Три металлы и специальные стали&lt;/p&gt;\r\n', 'Би/Три металлы и специальные стали', 'Би/Три металлы и специальные стали');
+INSERT INTO `_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 (62, 2, 'Би/Три металлы и специальные стали', '&lt;p&gt;\r\n	Би/Три металлы и специальные стали&lt;/p&gt;\r\n', 'Би/Три металлы и специальные стали', 'Би/Три металлы и специальные стали'),
 (63, 2, 'Горизонтальное меню', '&lt;p&gt;\r\n	Горизонтальное меню&lt;/p&gt;\r\n', 'Горизонтальное меню', 'Горизонтальное меню'),
-(63, 1, 'Горизонтальное меню', '&lt;p&gt;\r\n	Горизонтальное меню&lt;/p&gt;\r\n', 'Горизонтальное меню', 'Горизонтальное меню'),
+(63, 1, 'Горизонтальное меню', '&lt;p&gt;\r\n	Горизонтальное меню&lt;/p&gt;\r\n', 'Горизонтальное меню', 'Горизонтальное меню');
+INSERT INTO `_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 (59, 2, 'Цинк и цинковые сплавы', '&lt;p&gt;\r\n	Цинк и цинковые сплавы&lt;/p&gt;\r\n', 'Цинк и цинковые сплавы', 'Цинк и цинковые сплавы'),
 (65, 1, 'Сварка', '&lt;p&gt;\r\n	Сварка&lt;/p&gt;\r\n', 'Сварка', 'Сварка'),
 (67, 2, 'Строительство', '&lt;p&gt;\r\n	Строительство&lt;/p&gt;\r\n', 'Строительство', 'Строительство'),
 (66, 2, 'Электротехника', '&lt;p&gt;\r\n	Электротехника&lt;/p&gt;\r\n', 'Электротехника', 'Электротехника'),
-(64, 2, 'Автомобилестроение', '&lt;p&gt;\r\n	Автомобилестроение&lt;/p&gt;\r\n', 'Автомобилестроение', 'Автомобилестроение'),
+(64, 2, 'Автомобилестроение', '&lt;p&gt;\r\n	Автомобилестроение&lt;/p&gt;\r\n', 'Автомобилестроение', 'Автомобилестроение');
+INSERT INTO `_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 (61, 1, 'Плоский прокат из медных сплавов', '&lt;p&gt;\r\n	Плоский прокат из медных сплавов&lt;/p&gt;\r\n', 'Плоский прокат из медных сплавов', 'Плоский прокат из медных сплавов'),
 (60, 2, 'Бронзовые сплавы', '&lt;p&gt;\r\n	Бронзовые сплавы&lt;/p&gt;\r\n', 'Бронзовые сплавы', 'Бронзовые сплавы'),
-(60, 1, 'Бронзовые сплавы', '&lt;p&gt;\r\n	Бронзовые сплавы&lt;/p&gt;\r\n', 'Бронзовые сплавы', 'Бронзовые сплавы'),
+(60, 1, 'Бронзовые сплавы', '&lt;p&gt;\r\n	Бронзовые сплавы&lt;/p&gt;\r\n', 'Бронзовые сплавы', 'Бронзовые сплавы');
+INSERT INTO `_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 (61, 2, 'Плоский прокат из медных сплавов', '&lt;p&gt;\r\n	Плоский прокат из медных сплавов&lt;/p&gt;\r\n', 'Плоский прокат из медных сплавов', 'Плоский прокат из медных сплавов'),
 (59, 1, 'Цинк и цинковые сплавы', '&lt;p&gt;\r\n	Цинк и цинковые сплавы&lt;/p&gt;\r\n', 'Цинк и цинковые сплавы', 'Цинк и цинковые сплавы'),
 (65, 2, 'Сварка', '&lt;p&gt;\r\n	Сварка&lt;/p&gt;\r\n', 'Сварка', 'Сварка'),
@@ -351,6 +362,7 @@ INSERT INTO `_category_description` (`category_id`, `language_id`, `name`, `desc
 -- Table structure for table `_category_to_layout`
 --
 
+DROP TABLE IF EXISTS `_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `_category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -364,6 +376,7 @@ CREATE TABLE IF NOT EXISTS `_category_to_layout` (
 -- Table structure for table `_category_to_store`
 --
 
+DROP TABLE IF EXISTS `_category_to_store`;
 CREATE TABLE IF NOT EXISTS `_category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -392,6 +405,7 @@ INSERT INTO `_category_to_store` (`category_id`, `store_id`) VALUES
 -- Table structure for table `_country`
 --
 
+DROP TABLE IF EXISTS `_country`;
 CREATE TABLE IF NOT EXISTS `_country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8_bin NOT NULL,
@@ -429,7 +443,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (19, 'Barbados', 'BB', 'BRB', '', 0, 1),
 (20, 'Belarus', 'BY', 'BLR', '', 0, 1),
 (21, 'Belgium', 'BE', 'BEL', '', 0, 1),
-(22, 'Belize', 'BZ', 'BLZ', '', 0, 1),
+(22, 'Belize', 'BZ', 'BLZ', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (23, 'Benin', 'BJ', 'BEN', '', 0, 1),
 (24, 'Bermuda', 'BM', 'BMU', '', 0, 1),
 (25, 'Bhutan', 'BT', 'BTN', '', 0, 1),
@@ -449,7 +464,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (39, 'Cape Verde', 'CV', 'CPV', '', 0, 1),
 (40, 'Cayman Islands', 'KY', 'CYM', '', 0, 1),
 (41, 'Central African Republic', 'CF', 'CAF', '', 0, 1),
-(42, 'Chad', 'TD', 'TCD', '', 0, 1),
+(42, 'Chad', 'TD', 'TCD', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (43, 'Chile', 'CL', 'CHL', '', 0, 1),
 (44, 'China', 'CN', 'CHN', '', 0, 1),
 (45, 'Christmas Island', 'CX', 'CXR', '', 0, 1),
@@ -470,7 +486,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (60, 'Dominican Republic', 'DO', 'DOM', '', 0, 1),
 (61, 'East Timor', 'TP', 'TMP', '', 0, 1),
 (62, 'Ecuador', 'EC', 'ECU', '', 0, 1),
-(63, 'Egypt', 'EG', 'EGY', '', 0, 1),
+(63, 'Egypt', 'EG', 'EGY', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (64, 'El Salvador', 'SV', 'SLV', '', 0, 1),
 (65, 'Equatorial Guinea', 'GQ', 'GNQ', '', 0, 1),
 (66, 'Eritrea', 'ER', 'ERI', '', 0, 1),
@@ -488,7 +505,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (78, 'Gabon', 'GA', 'GAB', '', 0, 1),
 (79, 'Gambia', 'GM', 'GMB', '', 0, 1),
 (80, 'Georgia', 'GE', 'GEO', '', 0, 1),
-(81, 'Germany', 'DE', 'DEU', '{company}\r\n{firstname} {lastname}\r\n{address_1}\r\n{address_2}\r\n{postcode} {city}\r\n{country}', 0, 1),
+(81, 'Germany', 'DE', 'DEU', '{company}\r\n{firstname} {lastname}\r\n{address_1}\r\n{address_2}\r\n{postcode} {city}\r\n{country}', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (82, 'Ghana', 'GH', 'GHA', '', 0, 1),
 (83, 'Gibraltar', 'GI', 'GIB', '', 0, 1),
 (84, 'Greece', 'GR', 'GRC', '', 0, 1),
@@ -509,7 +527,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (99, 'India', 'IN', 'IND', '', 0, 1),
 (100, 'Indonesia', 'ID', 'IDN', '', 0, 1),
 (101, 'Iran (Islamic Republic of)', 'IR', 'IRN', '', 0, 1),
-(102, 'Iraq', 'IQ', 'IRQ', '', 0, 1),
+(102, 'Iraq', 'IQ', 'IRQ', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (103, 'Ireland', 'IE', 'IRL', '', 0, 1),
 (104, 'Israel', 'IL', 'ISR', '', 0, 1),
 (105, 'Italy', 'IT', 'ITA', '', 0, 1),
@@ -529,7 +548,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (119, 'Lesotho', 'LS', 'LSO', '', 0, 1),
 (120, 'Liberia', 'LR', 'LBR', '', 0, 1),
 (121, 'Libyan Arab Jamahiriya', 'LY', 'LBY', '', 0, 1),
-(122, 'Liechtenstein', 'LI', 'LIE', '', 0, 1),
+(122, 'Liechtenstein', 'LI', 'LIE', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (123, 'Lithuania', 'LT', 'LTU', '', 0, 1),
 (124, 'Luxembourg', 'LU', 'LUX', '', 0, 1),
 (125, 'Macau', 'MO', 'MAC', '', 0, 1),
@@ -549,7 +569,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (139, 'Micronesia, Federated States of', 'FM', 'FSM', '', 0, 1),
 (140, 'Moldova, Republic of', 'MD', 'MDA', '', 0, 1),
 (141, 'Monaco', 'MC', 'MCO', '', 0, 1),
-(142, 'Mongolia', 'MN', 'MNG', '', 0, 1),
+(142, 'Mongolia', 'MN', 'MNG', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (143, 'Montserrat', 'MS', 'MSR', '', 0, 1),
 (144, 'Morocco', 'MA', 'MAR', '', 0, 1),
 (145, 'Mozambique', 'MZ', 'MOZ', '', 0, 1),
@@ -570,7 +591,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (160, 'Norway', 'NO', 'NOR', '', 0, 1),
 (161, 'Oman', 'OM', 'OMN', '', 0, 1),
 (162, 'Pakistan', 'PK', 'PAK', '', 0, 1),
-(163, 'Palau', 'PW', 'PLW', '', 0, 1),
+(163, 'Palau', 'PW', 'PLW', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (164, 'Panama', 'PA', 'PAN', '', 0, 1),
 (165, 'Papua New Guinea', 'PG', 'PNG', '', 0, 1),
 (166, 'Paraguay', 'PY', 'PRY', '', 0, 1),
@@ -590,7 +612,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (180, 'Saint Vincent and the Grenadines', 'VC', 'VCT', '', 0, 1),
 (181, 'Samoa', 'WS', 'WSM', '', 0, 1),
 (182, 'San Marino', 'SM', 'SMR', '', 0, 1),
-(183, 'Sao Tome and Principe', 'ST', 'STP', '', 0, 1),
+(183, 'Sao Tome and Principe', 'ST', 'STP', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (184, 'Saudi Arabia', 'SA', 'SAU', '', 0, 1),
 (185, 'Senegal', 'SN', 'SEN', '', 0, 1),
 (186, 'Seychelles', 'SC', 'SYC', '', 0, 1),
@@ -607,7 +630,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (197, 'St. Helena', 'SH', 'SHN', '', 0, 1),
 (198, 'St. Pierre and Miquelon', 'PM', 'SPM', '', 0, 1),
 (199, 'Sudan', 'SD', 'SDN', '', 0, 1),
-(200, 'Suriname', 'SR', 'SUR', '', 0, 1),
+(200, 'Suriname', 'SR', 'SUR', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (201, 'Svalbard and Jan Mayen Islands', 'SJ', 'SJM', '', 0, 1),
 (202, 'Swaziland', 'SZ', 'SWZ', '', 0, 1),
 (203, 'Sweden', 'SE', 'SWE', '', 0, 1),
@@ -626,7 +650,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (216, 'Turkmenistan', 'TM', 'TKM', '', 0, 1),
 (217, 'Turks and Caicos Islands', 'TC', 'TCA', '', 0, 1),
 (218, 'Tuvalu', 'TV', 'TUV', '', 0, 1),
-(219, 'Uganda', 'UG', 'UGA', '', 0, 1),
+(219, 'Uganda', 'UG', 'UGA', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (220, 'Ukraine', 'UA', 'UKR', '', 0, 1),
 (221, 'United Arab Emirates', 'AE', 'ARE', '', 0, 1),
 (222, 'United Kingdom', 'GB', 'GBR', '', 1, 1),
@@ -642,7 +667,8 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 (232, 'Virgin Islands (U.S.)', 'VI', 'VIR', '', 0, 1),
 (233, 'Wallis and Futuna Islands', 'WF', 'WLF', '', 0, 1),
 (234, 'Western Sahara', 'EH', 'ESH', '', 0, 1),
-(235, 'Yemen', 'YE', 'YEM', '', 0, 1),
+(235, 'Yemen', 'YE', 'YEM', '', 0, 1);
+INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (236, 'Yugoslavia', 'YU', 'YUG', '', 0, 1),
 (237, 'Democratic Republic of Congo', 'CD', 'COD', '', 0, 1),
 (238, 'Zambia', 'ZM', 'ZMB', '', 0, 1),
@@ -654,6 +680,7 @@ INSERT INTO `_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addre
 -- Table structure for table `_coupon`
 --
 
+DROP TABLE IF EXISTS `_coupon`;
 CREATE TABLE IF NOT EXISTS `_coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8_bin NOT NULL,
@@ -687,6 +714,7 @@ INSERT INTO `_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`
 -- Table structure for table `_coupon_history`
 --
 
+DROP TABLE IF EXISTS `_coupon_history`;
 CREATE TABLE IF NOT EXISTS `_coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -703,6 +731,7 @@ CREATE TABLE IF NOT EXISTS `_coupon_history` (
 -- Table structure for table `_coupon_product`
 --
 
+DROP TABLE IF EXISTS `_coupon_product`;
 CREATE TABLE IF NOT EXISTS `_coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -716,6 +745,7 @@ CREATE TABLE IF NOT EXISTS `_coupon_product` (
 -- Table structure for table `_currency`
 --
 
+DROP TABLE IF EXISTS `_currency`;
 CREATE TABLE IF NOT EXISTS `_currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -744,6 +774,7 @@ INSERT INTO `_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_
 -- Table structure for table `_customer`
 --
 
+DROP TABLE IF EXISTS `_customer`;
 CREATE TABLE IF NOT EXISTS `_customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -772,6 +803,7 @@ CREATE TABLE IF NOT EXISTS `_customer` (
 -- Table structure for table `_customer_group`
 --
 
+DROP TABLE IF EXISTS `_customer_group`;
 CREATE TABLE IF NOT EXISTS `_customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) COLLATE utf8_bin NOT NULL,
@@ -792,6 +824,7 @@ INSERT INTO `_customer_group` (`customer_group_id`, `name`) VALUES
 -- Table structure for table `_customer_ip`
 --
 
+DROP TABLE IF EXISTS `_customer_ip`;
 CREATE TABLE IF NOT EXISTS `_customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -807,6 +840,7 @@ CREATE TABLE IF NOT EXISTS `_customer_ip` (
 -- Table structure for table `_customer_reward`
 --
 
+DROP TABLE IF EXISTS `_customer_reward`;
 CREATE TABLE IF NOT EXISTS `_customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -823,6 +857,7 @@ CREATE TABLE IF NOT EXISTS `_customer_reward` (
 -- Table structure for table `_customer_transaction`
 --
 
+DROP TABLE IF EXISTS `_customer_transaction`;
 CREATE TABLE IF NOT EXISTS `_customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -839,6 +874,7 @@ CREATE TABLE IF NOT EXISTS `_customer_transaction` (
 -- Table structure for table `_download`
 --
 
+DROP TABLE IF EXISTS `_download`;
 CREATE TABLE IF NOT EXISTS `_download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -862,6 +898,7 @@ INSERT INTO `_download` (`download_id`, `filename`, `mask`, `remaining`, `date_a
 -- Table structure for table `_download_description`
 --
 
+DROP TABLE IF EXISTS `_download_description`;
 CREATE TABLE IF NOT EXISTS `_download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -885,6 +922,7 @@ INSERT INTO `_download_description` (`download_id`, `language_id`, `name`) VALUE
 -- Table structure for table `_extension`
 --
 
+DROP TABLE IF EXISTS `_extension`;
 CREATE TABLE IF NOT EXISTS `_extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) COLLATE utf8_bin NOT NULL,
@@ -922,6 +960,7 @@ INSERT INTO `_extension` (`extension_id`, `type`, `code`) VALUES
 -- Table structure for table `_geo_zone`
 --
 
+DROP TABLE IF EXISTS `_geo_zone`;
 CREATE TABLE IF NOT EXISTS `_geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -945,6 +984,7 @@ INSERT INTO `_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, 
 -- Table structure for table `_information`
 --
 
+DROP TABLE IF EXISTS `_information`;
 CREATE TABLE IF NOT EXISTS `_information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL DEFAULT '0',
@@ -968,6 +1008,7 @@ INSERT INTO `_information` (`information_id`, `sort_order`, `status`) VALUES
 -- Table structure for table `_information_description`
 --
 
+DROP TABLE IF EXISTS `_information_description`;
 CREATE TABLE IF NOT EXISTS `_information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -987,7 +1028,8 @@ INSERT INTO `_information_description` (`information_id`, `language_id`, `title`
 (4, 1, 'О компании', '&lt;p&gt;\r\n	О компании&lt;/p&gt;\r\n'),
 (5, 1, 'Услуги', '&lt;p&gt;\r\n	Услуги&lt;/p&gt;\r\n'),
 (3, 2, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n'),
-(6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n'),
+(6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n');
+INSERT INTO `_information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
 (4, 2, 'О компании', '            	«Специальные Материалы» осуществляет промышленный маркетинг, предлагая Европейские полуфабрикаты из меди и медных сплавов, а также дополняющие продукты (цинк, материалы для контактной сварки, алюминий, би-/триметаллы и специальные стали), в первую очередь по прямым контрактам с заводами-изготовителями. <p>География нашей деятельности - СНГ (Россия, Украина, Беларусь) и страны Балтии. Уникальность нашего предложения \r\nв том, что материалы изготавливаются строго по спецификации заказчиков. Некоторые позиции поставляемой продукции \r\nотгружаются со склада в России (Московская область, г. Пушкино).\r\n</p>');
 
 -- --------------------------------------------------------
@@ -996,6 +1038,7 @@ INSERT INTO `_information_description` (`information_id`, `language_id`, `title`
 -- Table structure for table `_information_to_layout`
 --
 
+DROP TABLE IF EXISTS `_information_to_layout`;
 CREATE TABLE IF NOT EXISTS `_information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1009,6 +1052,7 @@ CREATE TABLE IF NOT EXISTS `_information_to_layout` (
 -- Table structure for table `_information_to_store`
 --
 
+DROP TABLE IF EXISTS `_information_to_store`;
 CREATE TABLE IF NOT EXISTS `_information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1031,6 +1075,7 @@ INSERT INTO `_information_to_store` (`information_id`, `store_id`) VALUES
 -- Table structure for table `_language`
 --
 
+DROP TABLE IF EXISTS `_language`;
 CREATE TABLE IF NOT EXISTS `_language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -1059,6 +1104,7 @@ INSERT INTO `_language` (`language_id`, `name`, `code`, `locale`, `image`, `dire
 -- Table structure for table `_layout`
 --
 
+DROP TABLE IF EXISTS `_layout`;
 CREATE TABLE IF NOT EXISTS `_layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -1088,6 +1134,7 @@ INSERT INTO `_layout` (`layout_id`, `name`) VALUES
 -- Table structure for table `_layout_route`
 --
 
+DROP TABLE IF EXISTS `_layout_route`;
 CREATE TABLE IF NOT EXISTS `_layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1118,6 +1165,7 @@ INSERT INTO `_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`
 -- Table structure for table `_length_class`
 --
 
+DROP TABLE IF EXISTS `_length_class`;
 CREATE TABLE IF NOT EXISTS `_length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1139,6 +1187,7 @@ INSERT INTO `_length_class` (`length_class_id`, `value`) VALUES
 -- Table structure for table `_length_class_description`
 --
 
+DROP TABLE IF EXISTS `_length_class_description`;
 CREATE TABLE IF NOT EXISTS `_length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1165,6 +1214,7 @@ INSERT INTO `_length_class_description` (`length_class_id`, `language_id`, `titl
 -- Table structure for table `_manufacturer`
 --
 
+DROP TABLE IF EXISTS `_manufacturer`;
 CREATE TABLE IF NOT EXISTS `_manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -1179,6 +1229,7 @@ CREATE TABLE IF NOT EXISTS `_manufacturer` (
 -- Table structure for table `_manufacturer_to_store`
 --
 
+DROP TABLE IF EXISTS `_manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `_manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1191,6 +1242,7 @@ CREATE TABLE IF NOT EXISTS `_manufacturer_to_store` (
 -- Table structure for table `_news`
 --
 
+DROP TABLE IF EXISTS `_news`;
 CREATE TABLE IF NOT EXISTS `_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `status` int(1) NOT NULL DEFAULT '0',
@@ -1216,6 +1268,7 @@ INSERT INTO `_news` (`news_id`, `status`, `image`, `image_size`, `date_added`) V
 -- Table structure for table `_news_description`
 --
 
+DROP TABLE IF EXISTS `_news_description`;
 CREATE TABLE IF NOT EXISTS `_news_description` (
   `news_id` int(11) NOT NULL DEFAULT '0',
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -1230,8 +1283,10 @@ CREATE TABLE IF NOT EXISTS `_news_description` (
 --
 
 INSERT INTO `_news_description` (`news_id`, `language_id`, `title`, `meta_description`, `description`) VALUES
-(1, 1, 'ПАСЕ 25 января приняла резолюцию', 'ПАСЕ 25 января приняла резолюцию', '&lt;p&gt;\r\n	&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;/p&gt;\r\n'),
-(1, 2, 'ПАСЕ 25 января приняла резолюцию', 'ПАСЕ 25 января приняла резолюцию', '&lt;p&gt;\r\n	&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;/p&gt;\r\n'),
+(1, 1, 'ПАСЕ 25 января приняла резолюцию', 'ПАСЕ 25 января приняла резолюцию', '&lt;p&gt;\r\n	&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;/p&gt;\r\n');
+INSERT INTO `_news_description` (`news_id`, `language_id`, `title`, `meta_description`, `description`) VALUES
+(1, 2, 'ПАСЕ 25 января приняла резолюцию', 'ПАСЕ 25 января приняла резолюцию', '&lt;p&gt;\r\n	&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; &quot;&gt;ПАСЕ 25 января приняла резолюцию&lt;/span&gt;&lt;/p&gt;\r\n');
+INSERT INTO `_news_description` (`news_id`, `language_id`, `title`, `meta_description`, `description`) VALUES
 (2, 1, 'efogi efhgpoh ph 89h 89h9 ', '8h08h 908h 90h ', '&lt;p&gt;\r\n	098h 908g 908g 7890g 7890g 0789g 780g&amp;nbsp;&lt;/p&gt;\r\n'),
 (2, 2, 'Новость о выполнении экономических показателей', 'efogi efhgpoh ph 89h 89h9 ', '&lt;p&gt;\r\n	efogi efhgpoh ph 89h 89h9&amp;nbsp;&lt;/p&gt;\r\n'),
 (3, 2, 'efogi efhgpoh ph 89h 89h9 ', 'efogi efhgpoh ph 89h 89h9 ', '&lt;p&gt;\r\n	efogi efhgpoh ph 89h 89h9&amp;nbsp;&lt;/p&gt;\r\n'),
@@ -1245,6 +1300,7 @@ INSERT INTO `_news_description` (`news_id`, `language_id`, `title`, `meta_descri
 -- Table structure for table `_news_to_store`
 --
 
+DROP TABLE IF EXISTS `_news_to_store`;
 CREATE TABLE IF NOT EXISTS `_news_to_store` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1267,6 +1323,7 @@ INSERT INTO `_news_to_store` (`news_id`, `store_id`) VALUES
 -- Table structure for table `_option`
 --
 
+DROP TABLE IF EXISTS `_option`;
 CREATE TABLE IF NOT EXISTS `_option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) COLLATE utf8_bin NOT NULL,
@@ -1280,6 +1337,7 @@ CREATE TABLE IF NOT EXISTS `_option` (
 -- Table structure for table `_option_description`
 --
 
+DROP TABLE IF EXISTS `_option_description`;
 CREATE TABLE IF NOT EXISTS `_option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1293,6 +1351,7 @@ CREATE TABLE IF NOT EXISTS `_option_description` (
 -- Table structure for table `_option_value`
 --
 
+DROP TABLE IF EXISTS `_option_value`;
 CREATE TABLE IF NOT EXISTS `_option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1307,6 +1366,7 @@ CREATE TABLE IF NOT EXISTS `_option_value` (
 -- Table structure for table `_option_value_description`
 --
 
+DROP TABLE IF EXISTS `_option_value_description`;
 CREATE TABLE IF NOT EXISTS `_option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1321,6 +1381,7 @@ CREATE TABLE IF NOT EXISTS `_option_value_description` (
 -- Table structure for table `_order`
 --
 
+DROP TABLE IF EXISTS `_order`;
 CREATE TABLE IF NOT EXISTS `_order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -1383,6 +1444,7 @@ CREATE TABLE IF NOT EXISTS `_order` (
 -- Table structure for table `_order_download`
 --
 
+DROP TABLE IF EXISTS `_order_download`;
 CREATE TABLE IF NOT EXISTS `_order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1400,6 +1462,7 @@ CREATE TABLE IF NOT EXISTS `_order_download` (
 -- Table structure for table `_order_history`
 --
 
+DROP TABLE IF EXISTS `_order_history`;
 CREATE TABLE IF NOT EXISTS `_order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1416,6 +1479,7 @@ CREATE TABLE IF NOT EXISTS `_order_history` (
 -- Table structure for table `_order_option`
 --
 
+DROP TABLE IF EXISTS `_order_option`;
 CREATE TABLE IF NOT EXISTS `_order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1434,6 +1498,7 @@ CREATE TABLE IF NOT EXISTS `_order_option` (
 -- Table structure for table `_order_product`
 --
 
+DROP TABLE IF EXISTS `_order_product`;
 CREATE TABLE IF NOT EXISTS `_order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1453,6 +1518,7 @@ CREATE TABLE IF NOT EXISTS `_order_product` (
 -- Table structure for table `_order_status`
 --
 
+DROP TABLE IF EXISTS `_order_status`;
 CREATE TABLE IF NOT EXISTS `_order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1500,6 +1566,7 @@ INSERT INTO `_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `_order_total`
 --
 
+DROP TABLE IF EXISTS `_order_total`;
 CREATE TABLE IF NOT EXISTS `_order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1518,6 +1585,7 @@ CREATE TABLE IF NOT EXISTS `_order_total` (
 -- Table structure for table `_product`
 --
 
+DROP TABLE IF EXISTS `_product`;
 CREATE TABLE IF NOT EXISTS `_product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -1556,10 +1624,12 @@ CREATE TABLE IF NOT EXISTS `_product` (
 INSERT INTO `_product` (`product_id`, `model`, `sku`, `upc`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 (56, '1', '', '', '', 1, 5, 'data/1_1.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:04:17', '0000-00-00 00:00:00', 34),
 (57, '2', '', '', '', 1, 5, 'data/1_2.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:05:00', '2012-02-24 14:13:49', 39),
-(58, '3', '', '', '', 1, 5, 'data/1_3.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:05:32', '2012-02-24 14:14:11', 39),
+(58, '3', '', '', '', 1, 5, 'data/1_3.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:05:32', '2012-02-24 14:14:11', 39);
+INSERT INTO `_product` (`product_id`, `model`, `sku`, `upc`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 (59, '4', '', '', '', 1, 5, 'data/1_4.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:06:14', '2012-02-24 14:13:41', 31),
 (60, '5', '', '', '', 1, 5, 'data/1_5.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:11:13', '2012-02-24 14:14:03', 33),
-(61, '6', '', '', '', 1, 5, 'data/1_6.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:12:12', '2012-03-13 16:32:19', 49),
+(61, '6', '', '', '', 1, 5, 'data/1_6.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:12:12', '2012-03-13 16:32:19', 49);
+INSERT INTO `_product` (`product_id`, `model`, `sku`, `upc`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 (62, '7', '', '', '', 1, 5, 'data/1_7.jpg', 0, 1, '0.0000', 0, 0, '2012-02-23', '0.00', 1, '0.00', '0.00', '0.00', 1, 1, 1, 1, 1, '2012-02-24 14:13:04', '0000-00-00 00:00:00', 32);
 
 -- --------------------------------------------------------
@@ -1568,6 +1638,7 @@ INSERT INTO `_product` (`product_id`, `model`, `sku`, `upc`, `location`, `quanti
 -- Table structure for table `_product_attribute`
 --
 
+DROP TABLE IF EXISTS `_product_attribute`;
 CREATE TABLE IF NOT EXISTS `_product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -1582,6 +1653,7 @@ CREATE TABLE IF NOT EXISTS `_product_attribute` (
 -- Table structure for table `_product_description`
 --
 
+DROP TABLE IF EXISTS `_product_description`;
 CREATE TABLE IF NOT EXISTS `_product_description` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1601,13 +1673,15 @@ INSERT INTO `_product_description` (`product_id`, `language_id`, `name`, `descri
 (56, 2, 'Цинковая лента, листы и фольга', '', 'Цинковая лента, листы и фольга', 'Цинковая лента, листы и фольга'),
 (61, 1, 'Цинковая и цинк-алюминиевая проволока', '', 'Цинковая и цинк-алюминиевая проволока', 'Цинковая и цинк-алюминиевая проволока'),
 (60, 1, 'Цинковый оксид/белила', '', 'Цинковый оксид/белила', 'Цинковый оксид/белила'),
-(57, 2, 'Цинковые сплавы &quot;ZAMAK&quot;', '', 'Цинковые сплавы &quot;ZAMAK&quot;', 'Цинковые сплавы &quot;ZAMAK&quot;'),
+(57, 2, 'Цинковые сплавы &quot;ZAMAK&quot;', '', 'Цинковые сплавы &quot;ZAMAK&quot;', 'Цинковые сплавы &quot;ZAMAK&quot;');
+INSERT INTO `_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 (57, 1, 'Цинковые сплавы &quot;ZAMAK&quot;', '', 'Цинковые сплавы &quot;ZAMAK&quot;', 'Цинковые сплавы &quot;ZAMAK&quot;'),
 (58, 2, 'Цинковый порошок', '', 'Цинковый порошок', 'Цинковый порошок'),
 (58, 1, 'Цинковый порошок', '', 'Цинковый порошок', 'Цинковый порошок'),
 (59, 2, 'Цинковые аноды', '', 'Цинковые аноды', 'Цинковые аноды'),
 (59, 1, 'Цинковые аноды', '', 'Цинковые аноды', 'Цинковые аноды'),
-(60, 2, 'Цинковый оксид/белила', '', 'Цинковый оксид/белила', 'Цинковый оксид/белила'),
+(60, 2, 'Цинковый оксид/белила', '', 'Цинковый оксид/белила', 'Цинковый оксид/белила');
+INSERT INTO `_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 (56, 1, 'Цинковая лента, листы и фольга', '', 'Цинковая лента, листы и фольга', 'Цинковая лента, листы и фольга'),
 (61, 2, 'Цинковая и цинк-алюминиевая проволока', '', 'Цинковая и цинк-алюминиевая проволока', 'Цинковая и цинк-алюминиевая проволока'),
 (62, 1, 'Цинковые сульфаты и химикаты', '', 'Цинковые сульфаты и химикаты', 'Цинковые сульфаты и химикаты'),
@@ -1619,6 +1693,7 @@ INSERT INTO `_product_description` (`product_id`, `language_id`, `name`, `descri
 -- Table structure for table `_product_discount`
 --
 
+DROP TABLE IF EXISTS `_product_discount`;
 CREATE TABLE IF NOT EXISTS `_product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -1638,6 +1713,7 @@ CREATE TABLE IF NOT EXISTS `_product_discount` (
 -- Table structure for table `_product_image`
 --
 
+DROP TABLE IF EXISTS `_product_image`;
 CREATE TABLE IF NOT EXISTS `_product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -1652,6 +1728,7 @@ CREATE TABLE IF NOT EXISTS `_product_image` (
 -- Table structure for table `_product_option`
 --
 
+DROP TABLE IF EXISTS `_product_option`;
 CREATE TABLE IF NOT EXISTS `_product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -1667,6 +1744,7 @@ CREATE TABLE IF NOT EXISTS `_product_option` (
 -- Table structure for table `_product_option_value`
 --
 
+DROP TABLE IF EXISTS `_product_option_value`;
 CREATE TABLE IF NOT EXISTS `_product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -1690,6 +1768,7 @@ CREATE TABLE IF NOT EXISTS `_product_option_value` (
 -- Table structure for table `_product_related`
 --
 
+DROP TABLE IF EXISTS `_product_related`;
 CREATE TABLE IF NOT EXISTS `_product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -1702,6 +1781,7 @@ CREATE TABLE IF NOT EXISTS `_product_related` (
 -- Table structure for table `_product_reward`
 --
 
+DROP TABLE IF EXISTS `_product_reward`;
 CREATE TABLE IF NOT EXISTS `_product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -1736,6 +1816,7 @@ INSERT INTO `_product_reward` (`product_reward_id`, `product_id`, `customer_grou
 -- Table structure for table `_product_special`
 --
 
+DROP TABLE IF EXISTS `_product_special`;
 CREATE TABLE IF NOT EXISTS `_product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -1754,6 +1835,7 @@ CREATE TABLE IF NOT EXISTS `_product_special` (
 -- Table structure for table `_product_tag`
 --
 
+DROP TABLE IF EXISTS `_product_tag`;
 CREATE TABLE IF NOT EXISTS `_product_tag` (
   `product_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -1771,6 +1853,7 @@ CREATE TABLE IF NOT EXISTS `_product_tag` (
 -- Table structure for table `_product_to_category`
 --
 
+DROP TABLE IF EXISTS `_product_to_category`;
 CREATE TABLE IF NOT EXISTS `_product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -1797,6 +1880,7 @@ INSERT INTO `_product_to_category` (`product_id`, `category_id`) VALUES
 -- Table structure for table `_product_to_download`
 --
 
+DROP TABLE IF EXISTS `_product_to_download`;
 CREATE TABLE IF NOT EXISTS `_product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -1809,6 +1893,7 @@ CREATE TABLE IF NOT EXISTS `_product_to_download` (
 -- Table structure for table `_product_to_layout`
 --
 
+DROP TABLE IF EXISTS `_product_to_layout`;
 CREATE TABLE IF NOT EXISTS `_product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1822,6 +1907,7 @@ CREATE TABLE IF NOT EXISTS `_product_to_layout` (
 -- Table structure for table `_product_to_store`
 --
 
+DROP TABLE IF EXISTS `_product_to_store`;
 CREATE TABLE IF NOT EXISTS `_product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -1847,6 +1933,7 @@ INSERT INTO `_product_to_store` (`product_id`, `store_id`) VALUES
 -- Table structure for table `_return`
 --
 
+DROP TABLE IF EXISTS `_return`;
 CREATE TABLE IF NOT EXISTS `_return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1869,6 +1956,7 @@ CREATE TABLE IF NOT EXISTS `_return` (
 -- Table structure for table `_return_action`
 --
 
+DROP TABLE IF EXISTS `_return_action`;
 CREATE TABLE IF NOT EXISTS `_return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -1894,6 +1982,7 @@ INSERT INTO `_return_action` (`return_action_id`, `language_id`, `name`) VALUES
 -- Table structure for table `_return_history`
 --
 
+DROP TABLE IF EXISTS `_return_history`;
 CREATE TABLE IF NOT EXISTS `_return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -1910,6 +1999,7 @@ CREATE TABLE IF NOT EXISTS `_return_history` (
 -- Table structure for table `_return_product`
 --
 
+DROP TABLE IF EXISTS `_return_product`;
 CREATE TABLE IF NOT EXISTS `_return_product` (
   `return_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -1930,6 +2020,7 @@ CREATE TABLE IF NOT EXISTS `_return_product` (
 -- Table structure for table `_return_reason`
 --
 
+DROP TABLE IF EXISTS `_return_reason`;
 CREATE TABLE IF NOT EXISTS `_return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -1959,6 +2050,7 @@ INSERT INTO `_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 -- Table structure for table `_return_status`
 --
 
+DROP TABLE IF EXISTS `_return_status`;
 CREATE TABLE IF NOT EXISTS `_return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -1984,6 +2076,7 @@ INSERT INTO `_return_status` (`return_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `_review`
 --
 
+DROP TABLE IF EXISTS `_review`;
 CREATE TABLE IF NOT EXISTS `_review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2004,6 +2097,7 @@ CREATE TABLE IF NOT EXISTS `_review` (
 -- Table structure for table `_setting`
 --
 
+DROP TABLE IF EXISTS `_setting`;
 CREATE TABLE IF NOT EXISTS `_setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2035,7 +2129,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (25638, 0, 'config', 'config_image_related_height', '150', 0),
 (25637, 0, 'config', 'config_image_related_width', '150', 0),
 (13801, 0, 'coupon', 'coupon_sort_order', '4', 0),
-(13800, 0, 'coupon', 'coupon_status', '1', 0),
+(13800, 0, 'coupon', 'coupon_status', '1', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (25636, 0, 'config', 'config_image_additional_height', '230', 0),
 (25635, 0, 'config', 'config_image_additional_width', '230', 0),
 (24372, 0, 'carousel', 'carousel_module', 'a:1:{i:0;a:9:{s:9:"banner_id";s:1:"7";s:5:"limit";s:1:"5";s:6:"scroll";s:1:"3";s:5:"width";s:2:"80";s:6:"height";s:2:"80";s:9:"layout_id";s:1:"1";s:8:"position";s:14:"content_bottom";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"-1";}}', 1),
@@ -2044,7 +2139,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (24386, 0, 'news', 'news_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"3";s:9:"layout_id";s:1:"6";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:8:"headline";s:1:"1";s:8:"numchars";s:3:"200";s:10:"sort_order";s:0:"";}}', 1),
 (9444, 0, 'credit', 'credit_sort_order', '7', 0),
 (9443, 0, 'credit', 'credit_status', '1', 0),
-(25634, 0, 'config', 'config_image_product_height', '150', 0),
+(25634, 0, 'config', 'config_image_product_height', '150', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (25633, 0, 'config', 'config_image_product_width', '150', 0),
 (25632, 0, 'config', 'config_image_popup_height', '728', 0),
 (25631, 0, 'config', 'config_image_popup_width', '1024', 0),
@@ -2055,7 +2151,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (19927, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 (25628, 0, 'config', 'config_image_category_height', '100', 0),
 (25627, 0, 'config', 'config_image_category_width', '150', 0),
-(25626, 0, 'config', 'config_icon', 'data/cart.png', 0),
+(25626, 0, 'config', 'config_icon', 'data/cart.png', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (25625, 0, 'config', 'config_logo', 'data/logo.png', 0),
 (25624, 0, 'config', 'config_cart_weight', '1', 0),
 (25623, 0, 'config', 'config_upload_allowed', 'jpg, JPG, jpeg, gif, png, txt', 0),
@@ -2071,7 +2168,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (25613, 0, 'config', 'config_commission', '5', 0),
 (25612, 0, 'config', 'config_affiliate_id', '4', 0),
 (25611, 0, 'config', 'config_checkout_id', '5', 0),
-(25610, 0, 'config', 'config_account_id', '3', 0),
+(25610, 0, 'config', 'config_account_id', '3', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (25609, 0, 'config', 'config_guest_checkout', '1', 0),
 (25608, 0, 'config', 'config_customer_approval', '0', 0),
 (25607, 0, 'config', 'config_customer_price', '0', 0),
@@ -2087,7 +2185,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (24382, 0, 'news', 'news_thumb_width', '100', 0),
 (24381, 0, 'news', 'news_headline_chars', '200', 0),
 (25599, 0, 'config', 'config_weight_class_id', '1', 0),
-(25598, 0, 'config', 'config_length_class_id', '1', 0),
+(25598, 0, 'config', 'config_length_class_id', '1', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (24387, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"535";s:6:"height";s:3:"375";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 (20030, 0, 'banner', 'banner_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
 (25597, 0, 'config', 'config_currency_auto', '1', 0),
@@ -2097,7 +2196,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (25593, 0, 'config', 'config_zone_id', '3563', 0),
 (25592, 0, 'config', 'config_country_id', '222', 0),
 (25591, 0, 'config', 'config_layout_id', '4', 0),
-(25590, 0, 'config', 'config_template', 'default', 0),
+(25590, 0, 'config', 'config_template', 'default', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (25589, 0, 'config', 'config_meta_description', 'Special Materials', 0),
 (25588, 0, 'config', 'config_title', 'Special Materials', 0),
 (25587, 0, 'config', 'config_skype', 'special-materials', 0),
@@ -2112,7 +2212,8 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 (25644, 0, 'config', 'config_image_cart_height', '150', 0),
 (25645, 0, 'config', 'config_mail_protocol', 'mail', 0),
 (25646, 0, 'config', 'config_mail_parameter', '', 0),
-(25647, 0, 'config', 'config_smtp_host', '', 0),
+(25647, 0, 'config', 'config_smtp_host', '', 0);
+INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 (25648, 0, 'config', 'config_smtp_username', '', 0),
 (25649, 0, 'config', 'config_smtp_password', '', 0),
 (25650, 0, 'config', 'config_smtp_port', '25', 0),
@@ -2136,6 +2237,7 @@ INSERT INTO `_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seri
 -- Table structure for table `_stock_status`
 --
 
+DROP TABLE IF EXISTS `_stock_status`;
 CREATE TABLE IF NOT EXISTS `_stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2163,6 +2265,7 @@ INSERT INTO `_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `_store`
 --
 
+DROP TABLE IF EXISTS `_store`;
 CREATE TABLE IF NOT EXISTS `_store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -2177,6 +2280,7 @@ CREATE TABLE IF NOT EXISTS `_store` (
 -- Table structure for table `_tax_class`
 --
 
+DROP TABLE IF EXISTS `_tax_class`;
 CREATE TABLE IF NOT EXISTS `_tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2200,6 +2304,7 @@ INSERT INTO `_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, 
 -- Table structure for table `_tax_rate`
 --
 
+DROP TABLE IF EXISTS `_tax_rate`;
 CREATE TABLE IF NOT EXISTS `_tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -2225,6 +2330,7 @@ INSERT INTO `_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `
 -- Table structure for table `_tax_rate_to_customer_group`
 --
 
+DROP TABLE IF EXISTS `_tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `_tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -2247,6 +2353,7 @@ INSERT INTO `_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) V
 -- Table structure for table `_tax_rule`
 --
 
+DROP TABLE IF EXISTS `_tax_rule`;
 CREATE TABLE IF NOT EXISTS `_tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -2272,6 +2379,7 @@ INSERT INTO `_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, 
 -- Table structure for table `_url_alias`
 --
 
+DROP TABLE IF EXISTS `_url_alias`;
 CREATE TABLE IF NOT EXISTS `_url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -2295,6 +2403,7 @@ INSERT INTO `_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 -- Table structure for table `_user`
 --
 
+DROP TABLE IF EXISTS `_user`;
 CREATE TABLE IF NOT EXISTS `_user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -2323,6 +2432,7 @@ INSERT INTO `_user` (`user_id`, `user_group_id`, `username`, `password`, `firstn
 -- Table structure for table `_user_group`
 --
 
+DROP TABLE IF EXISTS `_user_group`;
 CREATE TABLE IF NOT EXISTS `_user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -2335,7 +2445,8 @@ CREATE TABLE IF NOT EXISTS `_user_group` (
 --
 
 INSERT INTO `_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Top Administrator', 'a:2:{s:6:"access";a:120:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:16:"payment/alertpay";i:48;s:24:"payment/authorizenet_aim";i:49;s:21:"payment/bank_transfer";i:50;s:14:"payment/cheque";i:51;s:11:"payment/cod";i:52;s:21:"payment/free_checkout";i:53;s:14:"payment/liqpay";i:54;s:20:"payment/moneybookers";i:55;s:14:"payment/nochex";i:56;s:15:"payment/paymate";i:57;s:16:"payment/paypoint";i:58;s:26:"payment/perpetual_payments";i:59;s:14:"payment/pp_pro";i:60;s:17:"payment/pp_pro_uk";i:61;s:19:"payment/pp_standard";i:62;s:15:"payment/sagepay";i:63;s:22:"payment/sagepay_direct";i:64;s:18:"payment/sagepay_us";i:65;s:19:"payment/twocheckout";i:66;s:28:"payment/web_payment_software";i:67;s:16:"payment/worldpay";i:68;s:27:"report/affiliate_commission";i:69;s:22:"report/customer_credit";i:70;s:21:"report/customer_order";i:71;s:22:"report/customer_reward";i:72;s:24:"report/product_purchased";i:73;s:21:"report/product_viewed";i:74;s:18:"report/sale_coupon";i:75;s:17:"report/sale_order";i:76;s:18:"report/sale_return";i:77;s:20:"report/sale_shipping";i:78;s:15:"report/sale_tax";i:79;s:14:"sale/affiliate";i:80;s:12:"sale/contact";i:81;s:11:"sale/coupon";i:82;s:13:"sale/customer";i:83;s:19:"sale/customer_group";i:84;s:10:"sale/order";i:85;s:11:"sale/return";i:86;s:12:"sale/voucher";i:87;s:18:"sale/voucher_theme";i:88;s:15:"setting/setting";i:89;s:13:"setting/store";i:90;s:17:"shipping/citylink";i:91;s:13:"shipping/flat";i:92;s:13:"shipping/free";i:93;s:13:"shipping/item";i:94;s:23:"shipping/parcelforce_48";i:95;s:15:"shipping/pickup";i:96;s:19:"shipping/royal_mail";i:97;s:12:"shipping/ups";i:98;s:13:"shipping/usps";i:99;s:15:"shipping/weight";i:100;s:11:"tool/backup";i:101;s:14:"tool/error_log";i:102;s:12:"total/coupon";i:103;s:12:"total/credit";i:104;s:14:"total/handling";i:105;s:19:"total/low_order_fee";i:106;s:12:"total/reward";i:107;s:14:"total/shipping";i:108;s:15:"total/sub_total";i:109;s:9:"total/tax";i:110;s:11:"total/total";i:111;s:13:"total/voucher";i:112;s:9:"user/user";i:113;s:20:"user/user_permission";i:114;s:15:"shipping/pickup";i:115;s:15:"module/featured";i:116;s:18:"module/google_talk";i:117;s:13:"module/latest";i:118;s:14:"module/special";i:119;s:11:"module/news";}s:6:"modify";a:120:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:16:"payment/alertpay";i:48;s:24:"payment/authorizenet_aim";i:49;s:21:"payment/bank_transfer";i:50;s:14:"payment/cheque";i:51;s:11:"payment/cod";i:52;s:21:"payment/free_checkout";i:53;s:14:"payment/liqpay";i:54;s:20:"payment/moneybookers";i:55;s:14:"payment/nochex";i:56;s:15:"payment/paymate";i:57;s:16:"payment/paypoint";i:58;s:26:"payment/perpetual_payments";i:59;s:14:"payment/pp_pro";i:60;s:17:"payment/pp_pro_uk";i:61;s:19:"payment/pp_standard";i:62;s:15:"payment/sagepay";i:63;s:22:"payment/sagepay_direct";i:64;s:18:"payment/sagepay_us";i:65;s:19:"payment/twocheckout";i:66;s:28:"payment/web_payment_software";i:67;s:16:"payment/worldpay";i:68;s:27:"report/affiliate_commission";i:69;s:22:"report/customer_credit";i:70;s:21:"report/customer_order";i:71;s:22:"report/customer_reward";i:72;s:24:"report/product_purchased";i:73;s:21:"report/product_viewed";i:74;s:18:"report/sale_coupon";i:75;s:17:"report/sale_order";i:76;s:18:"report/sale_return";i:77;s:20:"report/sale_shipping";i:78;s:15:"report/sale_tax";i:79;s:14:"sale/affiliate";i:80;s:12:"sale/contact";i:81;s:11:"sale/coupon";i:82;s:13:"sale/customer";i:83;s:19:"sale/customer_group";i:84;s:10:"sale/order";i:85;s:11:"sale/return";i:86;s:12:"sale/voucher";i:87;s:18:"sale/voucher_theme";i:88;s:15:"setting/setting";i:89;s:13:"setting/store";i:90;s:17:"shipping/citylink";i:91;s:13:"shipping/flat";i:92;s:13:"shipping/free";i:93;s:13:"shipping/item";i:94;s:23:"shipping/parcelforce_48";i:95;s:15:"shipping/pickup";i:96;s:19:"shipping/royal_mail";i:97;s:12:"shipping/ups";i:98;s:13:"shipping/usps";i:99;s:15:"shipping/weight";i:100;s:11:"tool/backup";i:101;s:14:"tool/error_log";i:102;s:12:"total/coupon";i:103;s:12:"total/credit";i:104;s:14:"total/handling";i:105;s:19:"total/low_order_fee";i:106;s:12:"total/reward";i:107;s:14:"total/shipping";i:108;s:15:"total/sub_total";i:109;s:9:"total/tax";i:110;s:11:"total/total";i:111;s:13:"total/voucher";i:112;s:9:"user/user";i:113;s:20:"user/user_permission";i:114;s:15:"shipping/pickup";i:115;s:15:"module/featured";i:116;s:18:"module/google_talk";i:117;s:13:"module/latest";i:118;s:14:"module/special";i:119;s:11:"module/news";}}'),
+(1, 'Top Administrator', 'a:2:{s:6:"access";a:120:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:16:"payment/alertpay";i:48;s:24:"payment/authorizenet_aim";i:49;s:21:"payment/bank_transfer";i:50;s:14:"payment/cheque";i:51;s:11:"payment/cod";i:52;s:21:"payment/free_checkout";i:53;s:14:"payment/liqpay";i:54;s:20:"payment/moneybookers";i:55;s:14:"payment/nochex";i:56;s:15:"payment/paymate";i:57;s:16:"payment/paypoint";i:58;s:26:"payment/perpetual_payments";i:59;s:14:"payment/pp_pro";i:60;s:17:"payment/pp_pro_uk";i:61;s:19:"payment/pp_standard";i:62;s:15:"payment/sagepay";i:63;s:22:"payment/sagepay_direct";i:64;s:18:"payment/sagepay_us";i:65;s:19:"payment/twocheckout";i:66;s:28:"payment/web_payment_software";i:67;s:16:"payment/worldpay";i:68;s:27:"report/affiliate_commission";i:69;s:22:"report/customer_credit";i:70;s:21:"report/customer_order";i:71;s:22:"report/customer_reward";i:72;s:24:"report/product_purchased";i:73;s:21:"report/product_viewed";i:74;s:18:"report/sale_coupon";i:75;s:17:"report/sale_order";i:76;s:18:"report/sale_return";i:77;s:20:"report/sale_shipping";i:78;s:15:"report/sale_tax";i:79;s:14:"sale/affiliate";i:80;s:12:"sale/contact";i:81;s:11:"sale/coupon";i:82;s:13:"sale/customer";i:83;s:19:"sale/customer_group";i:84;s:10:"sale/order";i:85;s:11:"sale/return";i:86;s:12:"sale/voucher";i:87;s:18:"sale/voucher_theme";i:88;s:15:"setting/setting";i:89;s:13:"setting/store";i:90;s:17:"shipping/citylink";i:91;s:13:"shipping/flat";i:92;s:13:"shipping/free";i:93;s:13:"shipping/item";i:94;s:23:"shipping/parcelforce_48";i:95;s:15:"shipping/pickup";i:96;s:19:"shipping/royal_mail";i:97;s:12:"shipping/ups";i:98;s:13:"shipping/usps";i:99;s:15:"shipping/weight";i:100;s:11:"tool/backup";i:101;s:14:"tool/error_log";i:102;s:12:"total/coupon";i:103;s:12:"total/credit";i:104;s:14:"total/handling";i:105;s:19:"total/low_order_fee";i:106;s:12:"total/reward";i:107;s:14:"total/shipping";i:108;s:15:"total/sub_total";i:109;s:9:"total/tax";i:110;s:11:"total/total";i:111;s:13:"total/voucher";i:112;s:9:"user/user";i:113;s:20:"user/user_permission";i:114;s:15:"shipping/pickup";i:115;s:15:"module/featured";i:116;s:18:"module/google_talk";i:117;s:13:"module/latest";i:118;s:14:"module/special";i:119;s:11:"module/news";}s:6:"modify";a:120:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:16:"payment/alertpay";i:48;s:24:"payment/authorizenet_aim";i:49;s:21:"payment/bank_transfer";i:50;s:14:"payment/cheque";i:51;s:11:"payment/cod";i:52;s:21:"payment/free_checkout";i:53;s:14:"payment/liqpay";i:54;s:20:"payment/moneybookers";i:55;s:14:"payment/nochex";i:56;s:15:"payment/paymate";i:57;s:16:"payment/paypoint";i:58;s:26:"payment/perpetual_payments";i:59;s:14:"payment/pp_pro";i:60;s:17:"payment/pp_pro_uk";i:61;s:19:"payment/pp_standard";i:62;s:15:"payment/sagepay";i:63;s:22:"payment/sagepay_direct";i:64;s:18:"payment/sagepay_us";i:65;s:19:"payment/twocheckout";i:66;s:28:"payment/web_payment_software";i:67;s:16:"payment/worldpay";i:68;s:27:"report/affiliate_commission";i:69;s:22:"report/customer_credit";i:70;s:21:"report/customer_order";i:71;s:22:"report/customer_reward";i:72;s:24:"report/product_purchased";i:73;s:21:"report/product_viewed";i:74;s:18:"report/sale_coupon";i:75;s:17:"report/sale_order";i:76;s:18:"report/sale_return";i:77;s:20:"report/sale_shipping";i:78;s:15:"report/sale_tax";i:79;s:14:"sale/affiliate";i:80;s:12:"sale/contact";i:81;s:11:"sale/coupon";i:82;s:13:"sale/customer";i:83;s:19:"sale/customer_group";i:84;s:10:"sale/order";i:85;s:11:"sale/return";i:86;s:12:"sale/voucher";i:87;s:18:"sale/voucher_theme";i:88;s:15:"setting/setting";i:89;s:13:"setting/store";i:90;s:17:"shipping/citylink";i:91;s:13:"shipping/flat";i:92;s:13:"shipping/free";i:93;s:13:"shipping/item";i:94;s:23:"shipping/parcelforce_48";i:95;s:15:"shipping/pickup";i:96;s:19:"shipping/royal_mail";i:97;s:12:"shipping/ups";i:98;s:13:"shipping/usps";i:99;s:15:"shipping/weight";i:100;s:11:"tool/backup";i:101;s:14:"tool/error_log";i:102;s:12:"total/coupon";i:103;s:12:"total/credit";i:104;s:14:"total/handling";i:105;s:19:"total/low_order_fee";i:106;s:12:"total/reward";i:107;s:14:"total/shipping";i:108;s:15:"total/sub_total";i:109;s:9:"total/tax";i:110;s:11:"total/total";i:111;s:13:"total/voucher";i:112;s:9:"user/user";i:113;s:20:"user/user_permission";i:114;s:15:"shipping/pickup";i:115;s:15:"module/featured";i:116;s:18:"module/google_talk";i:117;s:13:"module/latest";i:118;s:14:"module/special";i:119;s:11:"module/news";}}');
+INSERT INTO `_user_group` (`user_group_id`, `name`, `permission`) VALUES
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -2344,6 +2455,7 @@ INSERT INTO `_user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- Table structure for table `_voucher`
 --
 
+DROP TABLE IF EXISTS `_voucher`;
 CREATE TABLE IF NOT EXISTS `_voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2366,6 +2478,7 @@ CREATE TABLE IF NOT EXISTS `_voucher` (
 -- Table structure for table `_voucher_history`
 --
 
+DROP TABLE IF EXISTS `_voucher_history`;
 CREATE TABLE IF NOT EXISTS `_voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -2381,6 +2494,7 @@ CREATE TABLE IF NOT EXISTS `_voucher_history` (
 -- Table structure for table `_voucher_theme`
 --
 
+DROP TABLE IF EXISTS `_voucher_theme`;
 CREATE TABLE IF NOT EXISTS `_voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -2402,6 +2516,7 @@ INSERT INTO `_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- Table structure for table `_voucher_theme_description`
 --
 
+DROP TABLE IF EXISTS `_voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `_voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2427,6 +2542,7 @@ INSERT INTO `_voucher_theme_description` (`voucher_theme_id`, `language_id`, `na
 -- Table structure for table `_weight_class`
 --
 
+DROP TABLE IF EXISTS `_weight_class`;
 CREATE TABLE IF NOT EXISTS `_weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -2449,6 +2565,7 @@ INSERT INTO `_weight_class` (`weight_class_id`, `value`) VALUES
 -- Table structure for table `_weight_class_description`
 --
 
+DROP TABLE IF EXISTS `_weight_class_description`;
 CREATE TABLE IF NOT EXISTS `_weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2477,6 +2594,7 @@ INSERT INTO `_weight_class_description` (`weight_class_id`, `language_id`, `titl
 -- Table structure for table `_zone`
 --
 
+DROP TABLE IF EXISTS `_zone`;
 CREATE TABLE IF NOT EXISTS `_zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -2523,7 +2641,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (30, 1, 'TAK', 'Takhar', 1),
 (31, 1, 'WAR', 'Wardak', 1),
 (32, 1, 'ZAB', 'Zabol', 1),
-(33, 2, 'BR', 'Berat', 1),
+(33, 2, 'BR', 'Berat', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (34, 2, 'BU', 'Bulqize', 1),
 (35, 2, 'DL', 'Delvine', 1),
 (36, 2, 'DV', 'Devoll', 1),
@@ -2557,7 +2676,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (64, 2, 'SR', 'Sarande', 1),
 (65, 2, 'TE', 'Tepelene', 1),
 (66, 2, 'TP', 'Tropoje', 1),
-(67, 2, 'TR', 'Tirane', 1),
+(67, 2, 'TR', 'Tirane', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (68, 2, 'VL', 'Vlore', 1),
 (69, 3, 'ADR', 'Adrar', 1),
 (70, 3, 'ADE', 'Ain Defla', 1),
@@ -2589,7 +2709,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (96, 3, 'MIL', 'Mila', 1),
 (97, 3, 'MOS', 'Mostaganem', 1),
 (98, 3, 'MSI', 'M''Sila', 1),
-(99, 3, 'NAA', 'Naama', 1),
+(99, 3, 'NAA', 'Naama', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (100, 3, 'ORA', 'Oran', 1),
 (101, 3, 'OUA', 'Ouargla', 1),
 (102, 3, 'OEB', 'Oum el-Bouaghi', 1),
@@ -2619,7 +2740,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (126, 5, 'LMA', 'La Massana', 1),
 (127, 5, 'ORD', 'Ordino', 1),
 (128, 5, 'SJL', 'Sant Julia de Loria', 1),
-(129, 6, 'BGO', 'Bengo', 1),
+(129, 6, 'BGO', 'Bengo', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (130, 6, 'BGU', 'Benguela', 1),
 (131, 6, 'BIE', 'Bie', 1),
 (132, 6, 'CAB', 'Cabinda', 1),
@@ -2648,7 +2770,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (155, 10, 'AN', 'Antartida e Islas del Atlantico', 1),
 (156, 10, 'BA', 'Buenos Aires', 1),
 (157, 10, 'CA', 'Catamarca', 1),
-(158, 10, 'CH', 'Chaco', 1),
+(158, 10, 'CH', 'Chaco', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (159, 10, 'CU', 'Chubut', 1),
 (160, 10, 'CO', 'Cordoba', 1),
 (161, 10, 'CR', 'Corrientes', 1),
@@ -2677,7 +2800,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (184, 11, 'KOT', 'Kotayk''', 1),
 (185, 11, 'LOR', 'Lorri', 1),
 (186, 11, 'SHI', 'Shirak', 1),
-(187, 11, 'SYU', 'Syunik''', 1),
+(187, 11, 'SYU', 'Syunik''', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (188, 11, 'TAV', 'Tavush', 1),
 (189, 11, 'VAY', 'Vayots'' Dzor', 1),
 (190, 11, 'YER', 'Yerevan', 1),
@@ -2704,7 +2828,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (211, 15, 'AGM', 'Agdam', 1),
 (212, 15, 'AGS', 'Agdas', 1),
 (213, 15, 'AGA', 'Agstafa', 1),
-(214, 15, 'AGU', 'Agsu', 1),
+(214, 15, 'AGU', 'Agsu', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (215, 15, 'AST', 'Astara', 1),
 (216, 15, 'BA', 'Baki', 1),
 (217, 15, 'BAB', 'BabAk', 1),
@@ -2734,7 +2859,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (241, 15, 'MAS', 'Masalli', 1),
 (242, 15, 'MI', 'Mingacevir', 1),
 (243, 15, 'NA', 'Naftalan', 1),
-(244, 15, 'NEF', 'Neftcala', 1),
+(244, 15, 'NEF', 'Neftcala', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (245, 15, 'OGU', 'Oguz', 1),
 (246, 15, 'ORD', 'Ordubad', 1),
 (247, 15, 'QAB', 'Qabala', 1),
@@ -2766,7 +2892,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (273, 15, 'XAC', 'Xacmaz', 1),
 (274, 15, 'XAN', 'Xanlar', 1),
 (275, 15, 'XIZ', 'Xizi', 1),
-(276, 15, 'XCI', 'Xocali', 1),
+(276, 15, 'XCI', 'Xocali', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (277, 15, 'XVD', 'Xocavand', 1),
 (278, 15, 'YAR', 'Yardimli', 1),
 (279, 15, 'YEV', 'Yevlax', 1),
@@ -2793,7 +2920,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (300, 16, 'LNG', 'Long Island', 1),
 (301, 16, 'MAN', 'Mangrove Cay', 1),
 (302, 16, 'MAY', 'Mayaguana', 1),
-(303, 16, 'MOO', 'Moore''s Island', 1),
+(303, 16, 'MOO', 'Moore''s Island', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (304, 16, 'NAB', 'North Abaco', 1),
 (305, 16, 'NAN', 'North Andros', 1),
 (306, 16, 'NEL', 'North Eleuthera', 1),
@@ -2820,7 +2948,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (327, 19, 'AND', 'Saint Andrew', 1),
 (328, 19, 'GEO', 'Saint George', 1),
 (329, 19, 'JAM', 'Saint James', 1),
-(330, 19, 'JOH', 'Saint John', 1),
+(330, 19, 'JOH', 'Saint John', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (331, 19, 'JOS', 'Saint Joseph', 1),
 (332, 19, 'LUC', 'Saint Lucy', 1),
 (333, 19, 'MIC', 'Saint Michael', 1),
@@ -2846,7 +2975,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (353, 21, 'VWV', 'West-Vlaanderen', 1),
 (354, 22, 'BZ', 'Belize', 1),
 (355, 22, 'CY', 'Cayo', 1),
-(356, 22, 'CR', 'Corozal', 1),
+(356, 22, 'CR', 'Corozal', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (357, 22, 'OW', 'Orange Walk', 1),
 (358, 22, 'SC', 'Stann Creek', 1),
 (359, 22, 'TO', 'Toledo', 1),
@@ -2876,7 +3006,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (383, 25, 'BUM', 'Bumthang', 1),
 (384, 25, 'CHU', 'Chukha', 1),
 (385, 25, 'DAG', 'Dagana', 1),
-(386, 25, 'GAS', 'Gasa', 1),
+(386, 25, 'GAS', 'Gasa', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (387, 25, 'HAA', 'Haa', 1),
 (388, 25, 'LHU', 'Lhuntse', 1),
 (389, 25, 'MON', 'Mongar', 1),
@@ -2904,7 +3035,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (411, 26, 'TAR', 'Tarija', 1),
 (412, 27, 'BRO', 'Brcko district', 1),
 (413, 27, 'FUS', 'Unsko-Sanski Kanton', 1),
-(414, 27, 'FPO', 'Posavski Kanton', 1),
+(414, 27, 'FPO', 'Posavski Kanton', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (415, 27, 'FTU', 'Tuzlanski Kanton', 1),
 (416, 27, 'FZE', 'Zenicko-Dobojski Kanton', 1),
 (417, 27, 'FBP', 'Bosanskopodrinjski Kanton', 1),
@@ -2929,7 +3061,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (436, 28, 'NE', 'North East', 1),
 (437, 28, 'NW', 'North West', 1),
 (438, 28, 'SE', 'South East', 1),
-(439, 28, 'SO', 'Southern', 1),
+(439, 28, 'SO', 'Southern', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (440, 30, 'AC', 'Acre', 1),
 (441, 30, 'AL', 'Alagoas', 1),
 (442, 30, 'AP', 'Amapa', 1),
@@ -2958,7 +3091,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (465, 30, 'SE', 'Sergipe', 1),
 (466, 30, 'TO', 'Tocantins', 1),
 (467, 31, 'PB', 'Peros Banhos', 1),
-(468, 31, 'SI', 'Salomon Islands', 1),
+(468, 31, 'SI', 'Salomon Islands', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (469, 31, 'NI', 'Nelsons Island', 1),
 (470, 31, 'TB', 'Three Brothers', 1),
 (471, 31, 'EA', 'Eagle Islands', 1),
@@ -2989,7 +3123,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (496, 33, '', 'Smolyan', 1),
 (497, 33, '', 'Sofia', 1),
 (498, 33, '', 'Sofia - town', 1),
-(499, 33, '', 'Stara Zagora', 1),
+(499, 33, '', 'Stara Zagora', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (500, 33, '', 'Targovishte', 1),
 (501, 33, '', 'Varna', 1),
 (502, 33, '', 'Veliko Tarnovo', 1),
@@ -3020,7 +3155,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (527, 34, 'LER', 'Leraba', 1),
 (528, 34, 'LOR', 'Loroum', 1),
 (529, 34, 'MOU', 'Mouhoun', 1),
-(530, 34, 'NAH', 'Nahouri', 1),
+(530, 34, 'NAH', 'Nahouri', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (531, 34, 'NAM', 'Namentenga', 1),
 (532, 34, 'NAY', 'Nayala', 1),
 (533, 34, 'NOU', 'Noumbiel', 1),
@@ -3051,7 +3187,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (558, 35, 'KY', 'Kayanza', 1),
 (559, 35, 'KI', 'Kirundo', 1),
 (560, 35, 'MA', 'Makamba', 1),
-(561, 35, 'MU', 'Muramvya', 1),
+(561, 35, 'MU', 'Muramvya', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (562, 35, 'MY', 'Muyinga', 1),
 (563, 35, 'MW', 'Mwaro', 1),
 (564, 35, 'NG', 'Ngozi', 1),
@@ -3079,7 +3216,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (586, 36, 'PG', 'Prey Veng', 1),
 (587, 36, 'RK', 'Ratanak Kiri', 1),
 (588, 36, 'SI', 'Siemreap', 1),
-(589, 36, 'ST', 'Stung Treng', 1),
+(589, 36, 'ST', 'Stung Treng', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (590, 36, 'SR', 'Svay Rieng', 1),
 (591, 36, 'TK', 'Takeo', 1),
 (592, 37, 'ADA', 'Adamawa (Adamaoua)', 1),
@@ -3104,7 +3242,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (611, 38, 'PE', 'Prince Edward Island', 1),
 (612, 38, 'QC', 'Qu&eacute;bec', 1),
 (613, 38, 'SK', 'Saskatchewan', 1),
-(614, 38, 'YT', 'Yukon Territory', 1),
+(614, 38, 'YT', 'Yukon Territory', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (615, 39, 'BV', 'Boa Vista', 1),
 (616, 39, 'BR', 'Brava', 1),
 (617, 39, 'CS', 'Calheta de Sao Miguel', 1),
@@ -3133,7 +3272,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (640, 41, 'BBA', 'Bamingui-Bangoran', 1),
 (641, 41, 'BKO', 'Basse-Kotto', 1),
 (642, 41, 'HKO', 'Haute-Kotto', 1),
-(643, 41, 'HMB', 'Haut-Mbomou', 1),
+(643, 41, 'HMB', 'Haut-Mbomou', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (644, 41, 'KEM', 'Kemo', 1),
 (645, 41, 'LOB', 'Lobaye', 1),
 (646, 41, 'MKD', 'Mambere-KadeÔ', 1),
@@ -3161,7 +3301,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (668, 42, 'OU', 'Ouaddai', 1),
 (669, 42, 'SA', 'Salamat', 1),
 (670, 42, 'TA', 'Tandjile', 1),
-(671, 43, 'AI', 'Aisen del General Carlos Ibanez', 1),
+(671, 43, 'AI', 'Aisen del General Carlos Ibanez', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (672, 43, 'AN', 'Antofagasta', 1),
 (673, 43, 'AR', 'Araucania', 1),
 (674, 43, 'AT', 'Atacama', 1),
@@ -3190,7 +3331,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (697, 44, 'HU', 'Hubei', 1),
 (698, 44, 'HN', 'Hunan', 1),
 (699, 44, 'IM', 'Inner Mongolia', 1),
-(700, 44, 'JI', 'Jiangsu', 1),
+(700, 44, 'JI', 'Jiangsu', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (701, 44, 'JX', 'Jiangxi', 1),
 (702, 44, 'JL', 'Jilin', 1),
 (703, 44, 'LI', 'Liaoning', 1),
@@ -3220,7 +3362,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (727, 47, 'CAL', 'Caldas', 1),
 (728, 47, 'CAQ', 'Caqueta', 1),
 (729, 47, 'CAS', 'Casanare', 1),
-(730, 47, 'CAU', 'Cauca', 1),
+(730, 47, 'CAU', 'Cauca', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (731, 47, 'CES', 'Cesar', 1),
 (732, 47, 'CHO', 'Choco', 1),
 (733, 47, 'COR', 'Cordoba', 1),
@@ -3249,7 +3392,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (756, 49, 'BO', 'Bouenza', 1),
 (757, 49, 'BR', 'Brazzaville', 1),
 (758, 49, 'CU', 'Cuvette', 1),
-(759, 49, 'CO', 'Cuvette-Ouest', 1),
+(759, 49, 'CO', 'Cuvette-Ouest', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (760, 49, 'KO', 'Kouilou', 1),
 (761, 49, 'LE', 'Lekoumou', 1),
 (762, 49, 'LI', 'Likouala', 1),
@@ -3280,7 +3424,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (787, 51, 'PU', 'Puntarenas', 1),
 (788, 51, 'SJ', 'San Jose', 1),
 (789, 52, 'ABE', 'Abengourou', 1),
-(790, 52, 'ABI', 'Abidjan', 1),
+(790, 52, 'ABI', 'Abidjan', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (791, 52, 'ABO', 'Aboisso', 1),
 (792, 52, 'ADI', 'Adiake', 1),
 (793, 52, 'ADZ', 'Adzope', 1),
@@ -3310,7 +3455,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (817, 52, 'GBA', 'Grand-Bassam', 1),
 (818, 52, 'GLA', 'Grand-Lahou', 1),
 (819, 52, 'GUI', 'Guiglo', 1),
-(820, 52, 'ISS', 'Issia', 1),
+(820, 52, 'ISS', 'Issia', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (821, 52, 'JAC', 'Jacqueville', 1),
 (822, 52, 'KAT', 'Katiola', 1),
 (823, 52, 'KOR', 'Korhogo', 1),
@@ -3339,7 +3485,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (846, 52, 'ZUE', 'Zuenoula', 1),
 (847, 53, 'BB', 'Bjelovar-Bilogora', 1),
 (848, 53, 'CZ', 'City of Zagreb', 1),
-(849, 53, 'DN', 'Dubrovnik-Neretva', 1),
+(849, 53, 'DN', 'Dubrovnik-Neretva', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (850, 53, 'IS', 'Istra', 1),
 (851, 53, 'KA', 'Karlovac', 1),
 (852, 53, 'KK', 'Koprivnica-Krizevci', 1),
@@ -3365,7 +3512,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (872, 54, 'GR', 'Granma', 1),
 (873, 54, 'GU', 'Guantanamo', 1),
 (874, 54, 'HO', 'Holguin', 1),
-(875, 54, 'IJ', 'Isla de la Juventud', 1),
+(875, 54, 'IJ', 'Isla de la Juventud', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (876, 54, 'LH', 'La Habana', 1),
 (877, 54, 'LT', 'Las Tunas', 1),
 (878, 54, 'MA', 'Matanzas', 1),
@@ -3394,7 +3542,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (901, 56, 'J', 'Vysocina', 1),
 (902, 56, 'Z', 'Zlinsky', 1),
 (903, 57, 'AR', 'Arhus', 1),
-(904, 57, 'BH', 'Bornholm', 1),
+(904, 57, 'BH', 'Bornholm', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (905, 57, 'CO', 'Copenhagen', 1),
 (906, 57, 'FO', 'Faroe Islands', 1),
 (907, 57, 'FR', 'Frederiksborg', 1),
@@ -3421,7 +3570,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (928, 59, 'JOS', 'Saint Joseph Parish', 1),
 (929, 59, 'LUK', 'Saint Luke Parish', 1),
 (930, 59, 'MAR', 'Saint Mark Parish', 1),
-(931, 59, 'PAT', 'Saint Patrick Parish', 1),
+(931, 59, 'PAT', 'Saint Patrick Parish', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (932, 59, 'PAU', 'Saint Paul Parish', 1),
 (933, 59, 'PET', 'Saint Peter Parish', 1),
 (934, 60, 'DN', 'Distrito Nacional', 1),
@@ -3448,7 +3598,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (955, 60, 'SL', 'Salcedo', 1),
 (956, 60, 'SM', 'Samana', 1),
 (957, 60, 'SH', 'Sanchez Ramirez', 1),
-(958, 60, 'SC', 'San Cristobal', 1),
+(958, 60, 'SC', 'San Cristobal', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (959, 60, 'JO', 'San Jose de Ocoa', 1),
 (960, 60, 'SJ', 'San Juan', 1),
 (961, 60, 'PM', 'San Pedro de Macoris', 1),
@@ -3477,7 +3628,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (984, 62, 'COT', 'Cotopaxi', 1),
 (985, 62, 'EOR', 'El Oro', 1),
 (986, 62, 'ESM', 'Esmeraldas', 1),
-(987, 62, 'GPS', 'Gal&aacute;pagos', 1),
+(987, 62, 'GPS', 'Gal&aacute;pagos', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (988, 62, 'GUA', 'Guayas', 1),
 (989, 62, 'IMB', 'Imbabura', 1),
 (990, 62, 'LOJ', 'Loja', 1),
@@ -3503,7 +3655,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1010, 63, 'MNY', 'Al Minya', 1),
 (1011, 63, 'QHR', 'Al Qahirah', 1),
 (1012, 63, 'QLY', 'Al Qalyubiyah', 1),
-(1013, 63, 'WJD', 'Al Wadi al Jadid', 1),
+(1013, 63, 'WJD', 'Al Wadi al Jadid', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1014, 63, 'SHQ', 'Ash Sharqiyah', 1),
 (1015, 63, 'SWY', 'As Suways', 1),
 (1016, 63, 'ASW', 'Aswan', 1),
@@ -3531,7 +3684,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1038, 64, 'SA', 'Santa Ana', 1),
 (1039, 64, 'SO', 'Sonsonate', 1),
 (1040, 64, 'US', 'Usulutan', 1),
-(1041, 65, 'AN', 'Provincia Annobon', 1),
+(1041, 65, 'AN', 'Provincia Annobon', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1042, 65, 'BN', 'Provincia Bioko Norte', 1),
 (1043, 65, 'BS', 'Provincia Bioko Sur', 1),
 (1044, 65, 'CS', 'Provincia Centro Sur', 1),
@@ -3552,7 +3706,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1059, 67, 'LV', 'Laane-Virumaa (Rakvere)', 1),
 (1060, 67, 'LA', 'Laanemaa (Haapsalu)', 1),
 (1061, 67, 'PA', 'Parnumaa (Parnu)', 1),
-(1062, 67, 'PO', 'Polvamaa (Polva)', 1),
+(1062, 67, 'PO', 'Polvamaa (Polva)', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1063, 67, 'RA', 'Raplamaa (Rapla)', 1),
 (1064, 67, 'SA', 'Saaremaa (Kuessaare)', 1),
 (1065, 67, 'TA', 'Tartumaa (Tartu)', 1),
@@ -3576,7 +3731,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1083, 71, 'W', 'Western Division', 1),
 (1084, 71, 'R', 'Rotuma', 1),
 (1085, 72, 'AL', 'Ahvenanmaan Laani', 1),
-(1086, 72, 'ES', 'Etela-Suomen Laani', 1),
+(1086, 72, 'ES', 'Etela-Suomen Laani', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1087, 72, 'IS', 'Ita-Suomen Laani', 1),
 (1088, 72, 'LS', 'Lansi-Suomen Laani', 1),
 (1089, 72, 'LA', 'Lapin Lanani', 1),
@@ -3602,7 +3758,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1109, 73, 'PR', 'Provence', 1),
 (1110, 73, 'RH', 'Rhone Alps', 1),
 (1111, 73, 'RI', 'Riviera', 1),
-(1112, 73, 'WE', 'Western Loire Valley', 1),
+(1112, 73, 'WE', 'Western Loire Valley', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1113, 74, 'Et', 'Etranger', 1),
 (1114, 74, '01', 'Ain', 1),
 (1115, 74, '02', 'Aisne', 1),
@@ -3629,7 +3786,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1136, 74, '22', 'C&ocirc;tes d&#039;Armor', 1),
 (1137, 74, '23', 'Creuse', 1),
 (1138, 74, '24', 'Dordogne', 1),
-(1139, 74, '25', 'Doubs', 1),
+(1139, 74, '25', 'Doubs', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1140, 74, '26', 'Dr&ocirc;me', 1),
 (1141, 74, '27', 'Eure', 1),
 (1142, 74, '28', 'Eure et Loir', 1),
@@ -3657,7 +3815,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1164, 74, '50', 'Manche', 1),
 (1165, 74, '51', 'Marne', 1),
 (1166, 74, '52', 'Haute Marne', 1),
-(1167, 74, '53', 'Mayenne', 1),
+(1167, 74, '53', 'Mayenne', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1168, 74, '54', 'Meurthe et Moselle', 1),
 (1169, 74, '55', 'Meuse', 1),
 (1170, 74, '56', 'Morbihan', 1),
@@ -3682,7 +3841,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1189, 74, '75', 'Paris', 1),
 (1190, 74, '76', 'Seine Maritime', 1),
 (1191, 74, '77', 'Seine et Marne', 1),
-(1192, 74, '78', 'Yvelines', 1),
+(1192, 74, '78', 'Yvelines', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1193, 74, '79', 'Deux S&egrave;vres', 1),
 (1194, 74, '80', 'Somme', 1),
 (1195, 74, '81', 'Tarn', 1),
@@ -3708,7 +3868,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1215, 77, 'C', 'Iles Crozet', 1),
 (1216, 77, 'K', 'Iles Kerguelen', 1),
 (1217, 77, 'A', 'Ile Amsterdam', 1),
-(1218, 77, 'P', 'Ile Saint-Paul', 1),
+(1218, 77, 'P', 'Ile Saint-Paul', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1219, 77, 'D', 'Adelie Land', 1),
 (1220, 78, 'ES', 'Estuaire', 1),
 (1221, 78, 'HO', 'Haut-Ogooue', 1),
@@ -3736,7 +3897,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1243, 80, 'AJ', 'Ajaria', 1),
 (1244, 80, 'TB', 'Tbilisi', 1),
 (1245, 80, 'GU', 'Guria', 1),
-(1246, 80, 'IM', 'Imereti', 1),
+(1246, 80, 'IM', 'Imereti', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1247, 80, 'KA', 'Kakheti', 1),
 (1248, 80, 'KK', 'Kvemo Kartli', 1),
 (1249, 80, 'MM', 'Mtskheta-Mtianeti', 1),
@@ -3760,7 +3922,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1267, 81, 'SAC', 'Sachsen-Anhalt', 1),
 (1268, 81, 'SCN', 'Schleswig-Holstein', 1),
 (1269, 81, 'THE', 'Th&uuml;ringen', 1),
-(1270, 82, 'AS', 'Ashanti Region', 1),
+(1270, 82, 'AS', 'Ashanti Region', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1271, 82, 'BA', 'Brong-Ahafo Region', 1),
 (1272, 82, 'CE', 'Central Region', 1),
 (1273, 82, 'EA', 'Eastern Region', 1),
@@ -3786,7 +3949,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1293, 85, 'A', 'Avannaa', 1),
 (1294, 85, 'T', 'Tunu', 1),
 (1295, 85, 'K', 'Kitaa', 1),
-(1296, 86, 'A', 'Saint Andrew', 1),
+(1296, 86, 'A', 'Saint Andrew', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1297, 86, 'D', 'Saint David', 1),
 (1298, 86, 'G', 'Saint George', 1),
 (1299, 86, 'J', 'Saint John', 1),
@@ -3813,7 +3977,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1320, 89, 'SM', 'San Marcos', 1),
 (1321, 89, 'SR', 'Santa Rosa', 1),
 (1322, 89, 'SO', 'Solola', 1),
-(1323, 89, 'SU', 'Suchitepequez', 1),
+(1323, 89, 'SU', 'Suchitepequez', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1324, 89, 'TO', 'Totonicapan', 1),
 (1325, 89, 'ZA', 'Zacapa', 1),
 (1326, 90, 'CNK', 'Conakry', 1),
@@ -3843,7 +4008,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1350, 90, 'MCT', 'Macenta', 1),
 (1351, 90, 'MAL', 'Mali', 1),
 (1352, 90, 'MAM', 'Mamou', 1),
-(1353, 90, 'MAN', 'Mandiana', 1),
+(1353, 90, 'MAN', 'Mandiana', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1354, 90, 'NZR', 'Nzerekore', 1),
 (1355, 90, 'PIT', 'Pita', 1),
 (1356, 90, 'SIG', 'Siguiri', 1),
@@ -3867,7 +4033,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1374, 92, 'MB', 'Mahaica-Berbice', 1),
 (1375, 92, 'PM', 'Pomeroon-Supenaam', 1),
 (1376, 92, 'PI', 'Potaro-Siparuni', 1),
-(1377, 92, 'UD', 'Upper Demerara-Berbice', 1),
+(1377, 92, 'UD', 'Upper Demerara-Berbice', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1378, 92, 'UT', 'Upper Takutu-Upper Essequibo', 1),
 (1379, 93, 'AR', 'Artibonite', 1),
 (1380, 93, 'CE', 'Centre', 1),
@@ -3894,7 +4061,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1401, 95, 'IN', 'Intibuca', 1),
 (1402, 95, 'IB', 'Islas de la Bahia (Bay Islands)', 1),
 (1403, 95, 'PZ', 'La Paz', 1),
-(1404, 95, 'LE', 'Lempira', 1),
+(1404, 95, 'LE', 'Lempira', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1405, 95, 'OC', 'Ocotepeque', 1),
 (1406, 95, 'OL', 'Olancho', 1),
 (1407, 95, 'SB', 'Santa Barbara', 1),
@@ -3915,7 +4083,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1422, 96, 'NSK', 'Sai Kung New Territories', 1),
 (1423, 96, 'NST', 'Sha Tin New Territories', 1),
 (1424, 96, 'NTP', 'Tai Po New Territories', 1),
-(1425, 96, 'NTW', 'Tsuen Wan New Territories', 1),
+(1425, 96, 'NTW', 'Tsuen Wan New Territories', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1426, 96, 'NTM', 'Tuen Mun New Territories', 1),
 (1427, 96, 'NYL', 'Yuen Long New Territories', 1),
 (1428, 97, 'BK', 'Bacs-Kiskun', 1),
@@ -3942,7 +4111,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1449, 97, 'NA', 'Nagykanizsa', 1),
 (1450, 97, 'NO', 'Nograd', 1),
 (1451, 97, 'NY', 'Nyiregyhaza', 1),
-(1452, 97, 'PE', 'Pecs', 1),
+(1452, 97, 'PE', 'Pecs', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1453, 97, 'PS', 'Pest', 1),
 (1454, 97, 'SO', 'Somogy', 1),
 (1455, 97, 'SP', 'Sopron', 1),
@@ -3969,7 +4139,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1476, 99, 'AP', 'Andhra Pradesh', 1),
 (1477, 99, 'AR', 'Arunachal Pradesh', 1),
 (1478, 99, 'AS', 'Assam', 1),
-(1479, 99, 'BI', 'Bihar', 1),
+(1479, 99, 'BI', 'Bihar', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1480, 99, 'CH', 'Chandigarh', 1),
 (1481, 99, 'DA', 'Dadra and Nagar Haveli', 1),
 (1482, 99, 'DM', 'Daman and Diu', 1),
@@ -3997,7 +4168,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1504, 99, 'TR', 'Tripura', 1),
 (1505, 99, 'UP', 'Uttar Pradesh', 1),
 (1506, 99, 'WB', 'West Bengal', 1),
-(1507, 100, 'AC', 'Aceh', 1),
+(1507, 100, 'AC', 'Aceh', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1508, 100, 'BA', 'Bali', 1),
 (1509, 100, 'BT', 'Banten', 1),
 (1510, 100, 'BE', 'Bengkulu', 1),
@@ -4022,12 +4194,12 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1529, 100, 'RI', 'Riau', 1),
 (1530, 100, 'SN', 'Sulawesi Selatan', 1),
 (1531, 100, 'ST', 'Sulawesi Tengah', 1),
-(1532, 100, 'SG', 'Sulawesi Tenggara', 1),
+(1532, 100, 'SG', 'Sulawesi Tenggara', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1533, 100, 'SA', 'Sulawesi Utara', 1),
 (1534, 100, 'SB', 'Sumatera Barat', 1),
 (1535, 100, 'SS', 'Sumatera Selatan', 1),
-(1536, 100, 'SU', 'Sumatera Utara', 1);
-INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
+(1536, 100, 'SU', 'Sumatera Utara', 1),
 (1537, 100, 'YO', 'Yogyakarta', 1),
 (1538, 101, 'TEH', 'Tehran', 1),
 (1539, 101, 'QOM', 'Qom', 1),
@@ -4048,7 +4220,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1554, 101, 'KBA', 'Kohkiluyeh and Buyer Ahmad', 1),
 (1555, 101, 'BSH', 'Bushehr', 1),
 (1556, 101, 'FAR', 'Fars', 1),
-(1557, 101, 'HRM', 'Hormozgan', 1),
+(1557, 101, 'HRM', 'Hormozgan', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1558, 101, 'SBL', 'Sistan and Baluchistan', 1),
 (1559, 101, 'KRB', 'Kerman', 1),
 (1560, 101, 'YZD', 'Yazd', 1),
@@ -4075,7 +4248,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1581, 102, 'NN', 'Ninawa', 1),
 (1582, 102, 'DH', 'Dahuk', 1),
 (1583, 102, 'AL', 'Arbil', 1),
-(1584, 102, 'TM', 'At Ta''mim', 1),
+(1584, 102, 'TM', 'At Ta''mim', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1585, 102, 'SL', 'As Sulaymaniyah', 1),
 (1586, 103, 'CA', 'Carlow', 1),
 (1587, 103, 'CV', 'Cavan', 1),
@@ -4104,7 +4278,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1610, 103, 'WX', 'Wexford', 1),
 (1611, 103, 'WI', 'Wicklow', 1),
 (1612, 104, 'BS', 'Be''er Sheva', 1),
-(1613, 104, 'BH', 'Bika''at Hayarden', 1),
+(1613, 104, 'BH', 'Bika''at Hayarden', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1614, 104, 'EA', 'Eilat and Arava', 1),
 (1615, 104, 'GA', 'Galil', 1),
 (1616, 104, 'HA', 'Haifa', 1),
@@ -4132,7 +4307,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3856, 105, 'BZ', 'Bolzano', 1),
 (3857, 105, 'BS', 'Brescia', 1),
 (3858, 105, 'BR', 'Brindisi', 1),
-(3859, 105, 'CA', 'Cagliari', 1),
+(3859, 105, 'CA', 'Cagliari', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1643, 106, 'CLA', 'Clarendon Parish', 1),
 (1644, 106, 'HAN', 'Hanover Parish', 1),
 (1645, 106, 'KIN', 'Kingston Parish', 1),
@@ -4156,7 +4332,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1663, 107, 'FU', 'Fukuoka', 1),
 (1664, 107, 'FS', 'Fukushima', 1),
 (1665, 107, 'GI', 'Gifu', 1),
-(1666, 107, 'GU', 'Gumma', 1),
+(1666, 107, 'GU', 'Gumma', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1667, 107, 'HI', 'Hiroshima', 1),
 (1668, 107, 'HO', 'Hokkaido', 1),
 (1669, 107, 'HY', 'Hyogo', 1),
@@ -4186,7 +4363,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1693, 107, 'SM', 'Shimane', 1),
 (1694, 107, 'SZ', 'Shizuoka', 1),
 (1695, 107, 'TO', 'Tochigi', 1),
-(1696, 107, 'TS', 'Tokushima', 1),
+(1696, 107, 'TS', 'Tokushima', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1697, 107, 'TK', 'Tokyo', 1),
 (1698, 107, 'TT', 'Tottori', 1),
 (1699, 107, 'TY', 'Toyama', 1),
@@ -4214,7 +4392,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1721, 109, 'AT', 'Atyrau', 1),
 (1722, 109, 'BA', 'Batys Qazaqstan', 1),
 (1723, 109, 'BY', 'Bayqongyr City', 1),
-(1724, 109, 'MA', 'Mangghystau', 1),
+(1724, 109, 'MA', 'Mangghystau', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1725, 109, 'ON', 'Ongtustik Qazaqstan', 1),
 (1726, 109, 'PA', 'Pavlodar', 1),
 (1727, 109, 'QA', 'Qaraghandy', 1),
@@ -4242,7 +4421,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1749, 111, 'KR', 'Kiritimati', 1),
 (1750, 111, 'KU', 'Kuria', 1),
 (1751, 111, 'MI', 'Maiana', 1),
-(1752, 111, 'MN', 'Makin', 1),
+(1752, 111, 'MN', 'Makin', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1753, 111, 'ME', 'Marakei', 1),
 (1754, 111, 'NI', 'Nikunau', 1),
 (1755, 111, 'NO', 'Nonouti', 1),
@@ -4266,7 +4446,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1773, 113, 'CO', 'Ch''ungch''ong-bukto', 1),
 (1774, 113, 'CH', 'Ch''ungch''ong-namdo', 1),
 (1775, 113, 'CD', 'Cheju-do', 1),
-(1776, 113, 'CB', 'Cholla-bukto', 1),
+(1776, 113, 'CB', 'Cholla-bukto', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1777, 113, 'CN', 'Cholla-namdo', 1),
 (1778, 113, 'IG', 'Inch''on-gwangyoksi', 1),
 (1779, 113, 'KA', 'Kangwon-do', 1),
@@ -4292,7 +4473,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1799, 115, 'T', 'Talas', 1),
 (1800, 115, 'Y', 'Ysyk-Kol', 1),
 (1801, 116, 'VT', 'Vientiane', 1),
-(1802, 116, 'AT', 'Attapu', 1),
+(1802, 116, 'AT', 'Attapu', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1803, 116, 'BK', 'Bokeo', 1),
 (1804, 116, 'BL', 'Bolikhamxai', 1),
 (1805, 116, 'CH', 'Champasak', 1),
@@ -4317,7 +4499,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1824, 117, 'DGR', 'Daugavpils Rajons', 1),
 (1825, 117, 'DOB', 'Dobeles Rajons', 1),
 (1826, 117, 'GUL', 'Gulbenes Rajons', 1),
-(1827, 117, 'JEK', 'Jekabpils Rajons', 1),
+(1827, 117, 'JEK', 'Jekabpils Rajons', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1828, 117, 'JGR', 'Jelgavas Rajons', 1),
 (1829, 117, 'KRA', 'Kraslavas Rajons', 1),
 (1830, 117, 'KUL', 'Kuldigas Rajons', 1),
@@ -4342,7 +4525,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1849, 117, 'RZK', 'Rezekne', 1),
 (1850, 117, 'RGA', 'Riga', 1),
 (1851, 117, 'VSL', 'Ventspils', 1),
-(1852, 119, 'BE', 'Berea', 1),
+(1852, 119, 'BE', 'Berea', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1853, 119, 'BB', 'Butha-Buthe', 1),
 (1854, 119, 'LE', 'Leribe', 1),
 (1855, 119, 'MF', 'Mafeteng', 1),
@@ -4369,7 +4553,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1876, 121, 'AZ', 'Al ''Aziziyah', 1),
 (1877, 121, 'FA', 'Al Fatih', 1),
 (1878, 121, 'JA', 'Al Jabal al Akhdar', 1),
-(1879, 121, 'JU', 'Al Jufrah', 1),
+(1879, 121, 'JU', 'Al Jufrah', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1880, 121, 'KH', 'Al Khums', 1),
 (1881, 121, 'KU', 'Al Kufrah', 1),
 (1882, 121, 'NK', 'An Nuqat al Khams', 1),
@@ -4398,7 +4583,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1905, 122, 'M', 'Mauren', 1),
 (1906, 122, 'T', 'Triesenberg', 1),
 (1907, 122, 'R', 'Ruggell', 1),
-(1908, 122, 'G', 'Gamprin', 1),
+(1908, 122, 'G', 'Gamprin', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1909, 122, 'L', 'Schellenberg', 1),
 (1910, 122, 'P', 'Planken', 1),
 (1911, 123, 'AL', 'Alytus', 1),
@@ -4425,7 +4611,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1932, 124, 'LM', 'Mersch', 1),
 (1933, 125, 'OLF', 'Our Lady Fatima Parish', 1),
 (1934, 125, 'ANT', 'St. Anthony Parish', 1),
-(1935, 125, 'LAZ', 'St. Lazarus Parish', 1),
+(1935, 125, 'LAZ', 'St. Lazarus Parish', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1936, 125, 'CAT', 'Cathedral Parish', 1),
 (1937, 125, 'LAW', 'St. Lawrence Parish', 1),
 (1938, 127, 'AN', 'Antananarivo', 1),
@@ -4452,7 +4639,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1959, 128, 'MWZ', 'Mwanza', 1),
 (1960, 128, 'MZM', 'Mzimba', 1),
 (1961, 128, 'NTU', 'Ntcheu', 1),
-(1962, 128, 'NKB', 'Nkhata Bay', 1),
+(1962, 128, 'NKB', 'Nkhata Bay', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1963, 128, 'NKH', 'Nkhotakota', 1),
 (1964, 128, 'NSJ', 'Nsanje', 1),
 (1965, 128, 'NTI', 'Ntchisi', 1),
@@ -4478,7 +4666,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1985, 129, 'WP', 'Wilayah Persekutuan', 1),
 (1986, 130, 'THU', 'Thiladhunmathi Uthuru', 1),
 (1987, 130, 'THD', 'Thiladhunmathi Dhekunu', 1),
-(1988, 130, 'MLU', 'Miladhunmadulu Uthuru', 1),
+(1988, 130, 'MLU', 'Miladhunmadulu Uthuru', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (1989, 130, 'MLD', 'Miladhunmadulu Dhekunu', 1),
 (1990, 130, 'MAU', 'Maalhosmadulu Uthuru', 1),
 (1991, 130, 'MAD', 'Maalhosmadulu Dhekunu', 1),
@@ -4502,7 +4691,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2009, 131, 'KL', 'Koulikoro', 1),
 (2010, 131, 'MP', 'Mopti', 1),
 (2011, 131, 'SG', 'Segou', 1),
-(2012, 131, 'SK', 'Sikasso', 1),
+(2012, 131, 'SK', 'Sikasso', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2013, 131, 'TB', 'Tombouctou', 1),
 (2014, 131, 'CD', 'Bamako Capital District', 1),
 (2015, 132, 'ATT', 'Attard', 1),
@@ -4530,7 +4720,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2037, 132, 'MXL', 'Marsaxlokk', 1),
 (2038, 132, 'MDN', 'Mdina', 1),
 (2039, 132, 'MEL', 'Melliea', 1),
-(2040, 132, 'MGR', 'Mgarr', 1),
+(2040, 132, 'MGR', 'Mgarr', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2041, 132, 'MST', 'Mosta', 1),
 (2042, 132, 'MQA', 'Mqabba', 1),
 (2043, 132, 'MSI', 'Msida', 1),
@@ -4558,7 +4749,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2065, 132, 'ZBR', 'Zabbar', 1),
 (2066, 132, 'ZBG', 'Zebbug', 1),
 (2067, 132, 'ZJT', 'Zejtun', 1),
-(2068, 132, 'ZRQ', 'Zurrieq', 1),
+(2068, 132, 'ZRQ', 'Zurrieq', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2069, 132, 'FNT', 'Fontana', 1),
 (2070, 132, 'GHJ', 'Ghajnsielem', 1),
 (2071, 132, 'GHR', 'Gharb', 1),
@@ -4587,7 +4779,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2094, 133, 'JBT', 'Jabat', 1),
 (2095, 133, 'JLT', 'Jaluit', 1),
 (2096, 133, 'JEM', 'Jemo', 1),
-(2097, 133, 'KIL', 'Kili', 1),
+(2097, 133, 'KIL', 'Kili', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2098, 133, 'KWJ', 'Kwajalein', 1),
 (2099, 133, 'LAE', 'Lae', 1),
 (2100, 133, 'LIB', 'Lib', 1),
@@ -4616,7 +4809,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2123, 135, 'HG', 'Hodh El Gharbi', 1),
 (2124, 135, 'IN', 'Inchiri', 1),
 (2125, 135, 'TA', 'Tagant', 1),
-(2126, 135, 'TZ', 'Tiris Zemmour', 1),
+(2126, 135, 'TZ', 'Tiris Zemmour', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2127, 135, 'TR', 'Trarza', 1),
 (2128, 135, 'NO', 'Nouakchott', 1),
 (2129, 136, 'BR', 'Beau Bassin-Rose Hill', 1),
@@ -4640,7 +4834,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2147, 138, 'BS', 'Baja California Sur', 1),
 (2148, 138, 'CA', 'Campeche', 1),
 (2149, 138, 'CI', 'Chiapas', 1),
-(2150, 138, 'CH', 'Chihuahua', 1),
+(2150, 138, 'CH', 'Chihuahua', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2151, 138, 'CZ', 'Coahuila de Zaragoza', 1),
 (2152, 138, 'CL', 'Colima', 1),
 (2153, 138, 'DF', 'Distrito Federal', 1),
@@ -4667,7 +4862,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2174, 138, 'VE', 'Veracruz-Llave', 1),
 (2175, 138, 'YU', 'Yucatan', 1),
 (2176, 138, 'ZA', 'Zacatecas', 1),
-(2177, 139, 'C', 'Chuuk', 1),
+(2177, 139, 'C', 'Chuuk', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2178, 139, 'K', 'Kosrae', 1),
 (2179, 139, 'P', 'Pohnpei', 1),
 (2180, 139, 'Y', 'Yap', 1),
@@ -4696,7 +4892,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2203, 142, '047', 'Tov', 1),
 (2204, 142, '049', 'Selenge', 1),
 (2205, 142, '051', 'Suhbaatar', 1),
-(2206, 142, '053', 'Omnogovi', 1),
+(2206, 142, '053', 'Omnogovi', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2207, 142, '055', 'Ovorhangay', 1),
 (2208, 142, '057', 'Dzavhan', 1),
 (2209, 142, '059', 'DundgovL', 1),
@@ -4722,7 +4919,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2229, 144, 'EJA', 'El Jadida', 1),
 (2230, 144, 'EKS', 'El Kelaa des Sraghna', 1),
 (2231, 144, 'ERA', 'Er Rachidia', 1),
-(2232, 144, 'ESS', 'Essaouira', 1),
+(2232, 144, 'ESS', 'Essaouira', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2233, 144, 'FES', 'Fes', 1),
 (2234, 144, 'FIG', 'Figuig', 1),
 (2235, 144, 'GLM', 'Guelmim', 1),
@@ -4750,7 +4948,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2257, 144, 'TAZ', 'Taza', 1),
 (2258, 144, 'TET', 'Tetouan', 1),
 (2259, 144, 'TIZ', 'Tiznit', 1),
-(2260, 144, 'ADK', 'Ad Dakhla', 1),
+(2260, 144, 'ADK', 'Ad Dakhla', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2261, 144, 'BJD', 'Boujdour', 1),
 (2262, 144, 'ESM', 'Es Smara', 1),
 (2263, 145, 'CD', 'Cabo Delgado', 1),
@@ -4778,7 +4977,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2285, 146, 'MN', 'Mon State', 1),
 (2286, 146, 'RK', 'Rakhine State', 1),
 (2287, 146, 'SH', 'Shan State', 1),
-(2288, 147, 'CA', 'Caprivi', 1),
+(2288, 147, 'CA', 'Caprivi', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2289, 147, 'ER', 'Erongo', 1),
 (2290, 147, 'HA', 'Hardap', 1),
 (2291, 147, 'KR', 'Karas', 1),
@@ -4808,7 +5008,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2315, 149, 'BA', 'Bagmati', 1),
 (2316, 149, 'BH', 'Bheri', 1),
 (2317, 149, 'DH', 'Dhawalagiri', 1),
-(2318, 149, 'GA', 'Gandaki', 1),
+(2318, 149, 'GA', 'Gandaki', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2319, 149, 'JA', 'Janakpur', 1),
 (2320, 149, 'KA', 'Karnali', 1),
 (2321, 149, 'KO', 'Kosi', 1),
@@ -4836,7 +5037,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2343, 152, 'S', 'Sud', 1),
 (2344, 153, 'AUK', 'Auckland', 1),
 (2345, 153, 'BOP', 'Bay of Plenty', 1),
-(2346, 153, 'CAN', 'Canterbury', 1),
+(2346, 153, 'CAN', 'Canterbury', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2347, 153, 'COR', 'Coromandel', 1),
 (2348, 153, 'GIS', 'Gisborne', 1),
 (2349, 153, 'FIO', 'Fiordland', 1),
@@ -4863,7 +5065,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2370, 154, 'GR', 'Granada', 1),
 (2371, 154, 'JI', 'Jinotega', 1),
 (2372, 154, 'LE', 'Leon', 1),
-(2373, 154, 'MD', 'Madriz', 1),
+(2373, 154, 'MD', 'Madriz', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2374, 154, 'MN', 'Managua', 1),
 (2375, 154, 'MS', 'Masaya', 1),
 (2376, 154, 'MT', 'Matagalpa', 1),
@@ -4892,7 +5095,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2399, 156, 'EB', 'Ebonyi', 1),
 (2400, 156, 'ED', 'Edo', 1),
 (2401, 156, 'EK', 'Ekiti', 1),
-(2402, 156, 'EN', 'Enugu', 1),
+(2402, 156, 'EN', 'Enugu', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2403, 156, 'GO', 'Gombe', 1),
 (2404, 156, 'IM', 'Imo', 1),
 (2405, 156, 'JI', 'Jigawa', 1),
@@ -4922,7 +5126,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2429, 160, 'AK', 'Akershus', 1),
 (2430, 160, 'AA', 'Aust-Agder', 1),
 (2431, 160, 'BU', 'Buskerud', 1),
-(2432, 160, 'FM', 'Finnmark', 1),
+(2432, 160, 'FM', 'Finnmark', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2433, 160, 'HM', 'Hedmark', 1),
 (2434, 160, 'HL', 'Hordaland', 1),
 (2435, 160, 'MR', 'More og Romdal', 1),
@@ -4948,7 +5153,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2455, 161, 'MU', 'Musandam', 1),
 (2456, 161, 'ZU', 'Zufar', 1),
 (2457, 162, 'B', 'Balochistan', 1),
-(2458, 162, 'T', 'Federally Administered Tribal Areas', 1),
+(2458, 162, 'T', 'Federally Administered Tribal Areas', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2459, 162, 'I', 'Islamabad Capital Territory', 1),
 (2460, 162, 'N', 'North-West Frontier', 1),
 (2461, 162, 'P', 'Punjab', 1),
@@ -4976,7 +5182,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2483, 164, 'DA', 'Darien', 1),
 (2484, 164, 'HE', 'Herrera', 1),
 (2485, 164, 'LS', 'Los Santos', 1),
-(2486, 164, 'PA', 'Panama', 1),
+(2486, 164, 'PA', 'Panama', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2487, 164, 'SB', 'San Blas', 1),
 (2488, 164, 'VG', 'Veraguas', 1),
 (2489, 165, 'BV', 'Bougainville', 1),
@@ -5003,7 +5210,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2510, 166, 'AN', 'Alto Parana', 1),
 (2511, 166, 'AM', 'Amambay', 1),
 (2512, 166, 'AS', 'Asuncion', 1),
-(2513, 166, 'BO', 'Boqueron', 1),
+(2513, 166, 'BO', 'Boqueron', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2514, 166, 'CG', 'Caaguazu', 1),
 (2515, 166, 'CZ', 'Caazapa', 1),
 (2516, 166, 'CN', 'Canindeyu', 1),
@@ -5031,7 +5239,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2538, 167, 'JU', 'Junin', 1),
 (2539, 167, 'LD', 'La Libertad', 1),
 (2540, 167, 'LY', 'Lambayeque', 1),
-(2541, 167, 'LI', 'Lima', 1),
+(2541, 167, 'LI', 'Lima', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2542, 167, 'LO', 'Loreto', 1),
 (2543, 167, 'MD', 'Madre de Dios', 1),
 (2544, 167, 'MO', 'Moquegua', 1),
@@ -5059,7 +5268,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2566, 168, 'BOL', 'Bohol', 1),
 (2567, 168, 'BUK', 'Bukidnon', 1),
 (2568, 168, 'BUL', 'Bulacan', 1),
-(2569, 168, 'CAG', 'Cagayan', 1),
+(2569, 168, 'CAG', 'Cagayan', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2570, 168, 'CNO', 'Camarines Norte', 1),
 (2571, 168, 'CSU', 'Camarines Sur', 1),
 (2572, 168, 'CAM', 'Camiguin', 1),
@@ -5085,7 +5295,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2592, 168, 'UNI', 'La Union', 1),
 (2593, 168, 'LEY', 'Leyte', 1),
 (2594, 168, 'MAG', 'Maguindanao', 1),
-(2595, 168, 'MRN', 'Marinduque', 1),
+(2595, 168, 'MRN', 'Marinduque', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2596, 168, 'MSB', 'Masbate', 1),
 (2597, 168, 'MIC', 'Mindoro Occidental', 1),
 (2598, 168, 'MIR', 'Mindoro Oriental', 1),
@@ -5110,7 +5321,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2617, 168, 'SQJ', 'Siquijor', 1),
 (2618, 168, 'SRS', 'Sorsogon', 1),
 (2619, 168, 'SCO', 'South Cotabato', 1),
-(2620, 168, 'SLE', 'Southern Leyte', 1),
+(2620, 168, 'SLE', 'Southern Leyte', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2621, 168, 'SKU', 'Sultan Kudarat', 1),
 (2622, 168, 'SLU', 'Sulu', 1),
 (2623, 168, 'SNO', 'Surigao del Norte', 1),
@@ -5135,7 +5347,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2642, 170, 'SL', 'Slaskie', 1),
 (2643, 170, 'SW', 'Swietokrzyskie', 1),
 (2644, 170, 'WM', 'Warminsko-Mazurskie', 1),
-(2645, 170, 'WP', 'Wielkopolskie', 1),
+(2645, 170, 'WP', 'Wielkopolskie', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2646, 170, 'ZA', 'Zachodniopomorskie', 1),
 (2647, 198, 'P', 'Saint Pierre', 1),
 (2648, 198, 'M', 'Miquelon', 1),
@@ -5162,7 +5375,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2669, 173, 'DW', 'Ad Dawhah', 1),
 (2670, 173, 'GW', 'Al Ghuwayriyah', 1),
 (2671, 173, 'JM', 'Al Jumayliyah', 1),
-(2672, 173, 'KR', 'Al Khawr', 1),
+(2672, 173, 'KR', 'Al Khawr', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2673, 173, 'WK', 'Al Wakrah', 1),
 (2674, 173, 'RN', 'Ar Rayyan', 1),
 (2675, 173, 'JB', 'Jarayan al Batinah', 1),
@@ -5190,7 +5404,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2697, 175, 'GL', 'Galati', 1),
 (2698, 175, 'GR', 'Giurgiu', 1),
 (2699, 175, 'GJ', 'Gorj', 1),
-(2700, 175, 'HR', 'Harghita', 1),
+(2700, 175, 'HR', 'Harghita', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2701, 175, 'HD', 'Hunedoara', 1),
 (2702, 175, 'IL', 'Ialomita', 1),
 (2703, 175, 'IS', 'Iasi', 1),
@@ -5219,7 +5434,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2726, 176, 'BA', 'Barnaul', 1),
 (2727, 176, 'BE', 'Belgorod', 1),
 (2728, 176, 'BI', 'Birobidzhan', 1),
-(2729, 176, 'BL', 'Blagoveshchensk', 1),
+(2729, 176, 'BL', 'Blagoveshchensk', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2730, 176, 'BR', 'Bryansk', 1),
 (2731, 176, 'CH', 'Cheboksary', 1),
 (2732, 176, 'CL', 'Chelyabinsk', 1),
@@ -5247,7 +5463,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2754, 176, 'KG', 'Kurgan', 1),
 (2755, 176, 'KK', 'Kursk', 1),
 (2756, 176, 'KY', 'Kyzyl', 1),
-(2757, 176, 'LI', 'Lipetsk', 1),
+(2757, 176, 'LI', 'Lipetsk', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2758, 176, 'MA', 'Magadan', 1),
 (2759, 176, 'MK', 'Makhachkala', 1),
 (2760, 176, 'MY', 'Maykop', 1),
@@ -5275,7 +5492,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2782, 176, 'SR', 'Saransk', 1),
 (2783, 176, 'SV', 'Saratov', 1),
 (2784, 176, 'SM', 'Smolensk', 1),
-(2785, 176, 'SP', 'St. Petersburg', 1),
+(2785, 176, 'SP', 'St. Petersburg', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2786, 176, 'ST', 'Stavropol', 1),
 (2787, 176, 'SY', 'Syktyvkar', 1),
 (2788, 176, 'TA', 'Tambov', 1),
@@ -5303,7 +5521,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2810, 177, 'BY', 'Byumba', 1),
 (2811, 177, 'CY', 'Cyangugu', 1),
 (2812, 177, 'GK', 'Gikongoro', 1),
-(2813, 177, 'GS', 'Gisenyi', 1),
+(2813, 177, 'GS', 'Gisenyi', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2814, 177, 'GT', 'Gitarama', 1),
 (2815, 177, 'KG', 'Kibungo', 1),
 (2816, 177, 'KY', 'Kibuye', 1),
@@ -5325,7 +5544,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2832, 178, 'STL', 'Saint Thomas Lowland', 1),
 (2833, 178, 'STM', 'Saint Thomas Middle Island', 1),
 (2834, 178, 'TPP', 'Trinity Palmetto Point', 1),
-(2835, 179, 'AR', 'Anse-la-Raye', 1),
+(2835, 179, 'AR', 'Anse-la-Raye', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2836, 179, 'CA', 'Castries', 1),
 (2837, 179, 'CH', 'Choiseul', 1),
 (2838, 179, 'DA', 'Dauphin', 1),
@@ -5352,7 +5572,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2859, 181, 'SA', 'Satupa''itea', 1),
 (2860, 181, 'TU', 'Tuamasaga', 1),
 (2861, 181, 'VF', 'Va''a-o-Fonoti', 1),
-(2862, 181, 'VS', 'Vaisigano', 1),
+(2862, 181, 'VS', 'Vaisigano', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2863, 182, 'AC', 'Acquaviva', 1),
 (2864, 182, 'BM', 'Borgo Maggiore', 1),
 (2865, 182, 'CH', 'Chiesanuova', 1),
@@ -5379,7 +5600,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2886, 184, 'TB', 'Tabuk', 1),
 (2887, 185, 'DA', 'Dakar', 1),
 (2888, 185, 'DI', 'Diourbel', 1),
-(2889, 185, 'FA', 'Fatick', 1),
+(2889, 185, 'FA', 'Fatick', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2890, 185, 'KA', 'Kaolack', 1),
 (2891, 185, 'KO', 'Kolda', 1),
 (2892, 185, 'LO', 'Louga', 1),
@@ -5405,7 +5627,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2912, 186, 'DG', 'La Digue', 1),
 (2913, 186, 'RA', 'La Riviere Anglaise', 1),
 (2914, 186, 'MB', 'Mont Buxton', 1),
-(2915, 186, 'MF', 'Mont Fleuri', 1),
+(2915, 186, 'MF', 'Mont Fleuri', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2916, 186, 'PL', 'Plaisance', 1),
 (2917, 186, 'PR', 'Pointe La Rue', 1),
 (2918, 186, 'PG', 'Port Glaud', 1),
@@ -5432,7 +5655,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2939, 191, 'ML', 'Malaita', 1),
 (2940, 191, 'RB', 'Rennell and Bellona', 1),
 (2941, 191, 'TM', 'Temotu', 1),
-(2942, 191, 'WE', 'Western', 1),
+(2942, 191, 'WE', 'Western', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2943, 192, 'AW', 'Awdal', 1),
 (2944, 192, 'BK', 'Bakool', 1),
 (2945, 192, 'BN', 'Banaadir', 1),
@@ -5459,7 +5683,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2966, 193, 'MP', 'Mpumalanga', 1),
 (2967, 193, 'NW', 'North West', 1),
 (2968, 193, 'NC', 'Northern Cape', 1),
-(2969, 193, 'WC', 'Western Cape', 1),
+(2969, 193, 'WC', 'Western Cape', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2970, 195, 'CA', 'La Coru&ntilde;a', 1),
 (2971, 195, 'AL', '&Aacute;lava', 1),
 (2972, 195, 'AB', 'Albacete', 1),
@@ -5486,7 +5711,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2993, 195, 'HL', 'Huelva', 1),
 (2994, 195, 'HS', 'Huesca', 1),
 (2995, 195, 'JN', 'Ja&eacute;n', 1),
-(2996, 195, 'RJ', 'La Rioja', 1),
+(2996, 195, 'RJ', 'La Rioja', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (2997, 195, 'PM', 'Las Palmas', 1),
 (2998, 195, 'LE', 'Leon', 1),
 (2999, 195, 'LL', 'Lleida', 1),
@@ -5514,7 +5740,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3021, 195, 'ZR', 'Zaragoza', 1),
 (3022, 196, 'CE', 'Central', 1),
 (3023, 196, 'EA', 'Eastern', 1),
-(3024, 196, 'NC', 'North Central', 1),
+(3024, 196, 'NC', 'North Central', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3025, 196, 'NO', 'Northern', 1),
 (3026, 196, 'NW', 'North Western', 1),
 (3027, 196, 'SA', 'Sabaragamuwa', 1),
@@ -5528,8 +5755,7 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3035, 199, 'BAM', 'Al Bahr al Ahmar', 1),
 (3036, 199, 'BRT', 'Al Buhayrat', 1),
 (3037, 199, 'JZR', 'Al Jazirah', 1),
-(3038, 199, 'KRT', 'Al Khartum', 1);
-INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
+(3038, 199, 'KRT', 'Al Khartum', 1),
 (3039, 199, 'QDR', 'Al Qadarif', 1),
 (3040, 199, 'WDH', 'Al Wahdah', 1),
 (3041, 199, 'ANB', 'An Nil al Abyad', 1),
@@ -5540,7 +5766,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3046, 199, 'GBG', 'Gharb Bahr al Ghazal', 1),
 (3047, 199, 'GDA', 'Gharb Darfur', 1),
 (3048, 199, 'GKU', 'Gharb Kurdufan', 1),
-(3049, 199, 'JDA', 'Janub Darfur', 1),
+(3049, 199, 'JDA', 'Janub Darfur', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3050, 199, 'JKU', 'Janub Kurdufan', 1),
 (3051, 199, 'JQL', 'Junqali', 1),
 (3052, 199, 'KSL', 'Kassala', 1),
@@ -5567,7 +5794,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3073, 202, 'S', 'Shishelweni', 1),
 (3074, 203, 'K', 'Blekinge', 1),
 (3075, 203, 'W', 'Dalama', 1),
-(3076, 203, 'X', 'G&auml;vleborg', 1),
+(3076, 203, 'X', 'G&auml;vleborg', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3077, 203, 'I', 'Gotland', 1),
 (3078, 203, 'N', 'Halland', 1),
 (3079, 203, 'Z', 'J&auml;mtland', 1),
@@ -5592,7 +5820,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3098, 204, 'BS', 'Basel-Stadt', 1),
 (3099, 204, 'BL', 'Basel-Landschaft', 1),
 (3100, 204, 'BE', 'Bern', 1),
-(3101, 204, 'FR', 'Fribourg', 1),
+(3101, 204, 'FR', 'Fribourg', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3102, 204, 'GE', 'Gen&egrave;ve', 1),
 (3103, 204, 'GL', 'Glarus', 1),
 (3104, 204, 'GR', 'Graub&uuml;nden', 1),
@@ -5620,7 +5849,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3126, 205, 'DA', 'Dara', 1),
 (3127, 205, 'DZ', 'Dayr az Zawr', 1),
 (3128, 205, 'DI', 'Dimashq', 1),
-(3129, 205, 'HL', 'Halab', 1),
+(3129, 205, 'HL', 'Halab', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3130, 205, 'HM', 'Hamah', 1),
 (3131, 205, 'HI', 'Hims', 1),
 (3132, 205, 'ID', 'Idlib', 1),
@@ -5648,7 +5878,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3154, 206, 'CL', 'Chi-lung', 1),
 (3155, 206, 'HC', 'Hsin-chu', 1),
 (3156, 206, 'TH', 'T''ai-chung', 1),
-(3157, 206, 'TN', 'T''ai-nan', 1),
+(3157, 206, 'TN', 'T''ai-nan', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3158, 206, 'KC', 'Kao-hsiung city', 1),
 (3159, 206, 'TC', 'T''ai-pei city', 1),
 (3160, 207, 'GB', 'Gorno-Badakhstan', 1),
@@ -5676,7 +5907,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3182, 208, 'SH', 'Shinyanga', 1),
 (3183, 208, 'SI', 'Singida', 1),
 (3184, 208, 'TB', 'Tabora', 1),
-(3185, 208, 'TN', 'Tanga', 1),
+(3185, 208, 'TN', 'Tanga', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3186, 208, 'ZC', 'Zanzibar Central/South', 1),
 (3187, 208, 'ZN', 'Zanzibar North', 1),
 (3188, 208, 'ZU', 'Zanzibar Urban/West', 1),
@@ -5698,7 +5930,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3204, 209, 'Kanchanaburi', 'Kanchanaburi', 1),
 (3205, 209, 'Khon Kaen', 'Khon Kaen', 1),
 (3206, 209, 'Krabi', 'Krabi', 1),
-(3207, 209, 'Lampang', 'Lampang', 1),
+(3207, 209, 'Lampang', 'Lampang', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3208, 209, 'Lamphun', 'Lamphun', 1),
 (3209, 209, 'Loei', 'Loei', 1),
 (3210, 209, 'Lop Buri', 'Lop Buri', 1),
@@ -5719,7 +5952,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3225, 209, 'Pathum Thani', 'Pathum Thani', 1),
 (3226, 209, 'Pattani', 'Pattani', 1),
 (3227, 209, 'Phangnga', 'Phangnga', 1),
-(3228, 209, 'Phatthalung', 'Phatthalung', 1),
+(3228, 209, 'Phatthalung', 'Phatthalung', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3229, 209, 'Phayao', 'Phayao', 1),
 (3230, 209, 'Phetchabun', 'Phetchabun', 1),
 (3231, 209, 'Phetchaburi', 'Phetchaburi', 1),
@@ -5741,7 +5975,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3247, 209, 'Sara Buri', 'Sara Buri', 1),
 (3248, 209, 'Satun', 'Satun', 1),
 (3249, 209, 'Sing Buri', 'Sing Buri', 1),
-(3250, 209, 'Sisaket', 'Sisaket', 1),
+(3250, 209, 'Sisaket', 'Sisaket', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3251, 209, 'Songkhla', 'Songkhla', 1),
 (3252, 209, 'Sukhothai', 'Sukhothai', 1),
 (3253, 209, 'Suphan Buri', 'Suphan Buri', 1),
@@ -5767,7 +6002,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3273, 212, 'H', 'Ha''apai', 1),
 (3274, 212, 'T', 'Tongatapu', 1),
 (3275, 212, 'V', 'Vava''u', 1),
-(3276, 213, 'CT', 'Couva/Tabaquite/Talparo', 1),
+(3276, 213, 'CT', 'Couva/Tabaquite/Talparo', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3277, 213, 'DM', 'Diego Martin', 1),
 (3278, 213, 'MR', 'Mayaro/Rio Claro', 1),
 (3279, 213, 'PD', 'Penal/Debe', 1),
@@ -5794,7 +6030,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3300, 214, 'KB', 'Kebili', 1),
 (3301, 214, 'KF', 'Kef', 1),
 (3302, 214, 'MH', 'Mahdia', 1),
-(3303, 214, 'MN', 'Manouba', 1),
+(3303, 214, 'MN', 'Manouba', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3304, 214, 'ME', 'Medenine', 1),
 (3305, 214, 'MO', 'Monastir', 1),
 (3306, 214, 'NA', 'Nabeul', 1),
@@ -5823,7 +6060,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3329, 215, 'BAY', 'Bayburt', 1),
 (3330, 215, 'BIL', 'Bilecik', 1),
 (3331, 215, 'BIN', 'Bingol', 1),
-(3332, 215, 'BIT', 'Bitlis', 1),
+(3332, 215, 'BIT', 'Bitlis', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3333, 215, 'BOL', 'Bolu', 1),
 (3334, 215, 'BRD', 'Burdur', 1),
 (3335, 215, 'BRS', 'Bursa', 1),
@@ -5851,7 +6089,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3357, 215, 'KRB', 'Karabuk', 1),
 (3358, 215, 'KRM', 'Karaman', 1),
 (3359, 215, 'KRS', 'Kars', 1),
-(3360, 215, 'KAS', 'Kastamonu', 1),
+(3360, 215, 'KAS', 'Kastamonu', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3361, 215, 'KAY', 'Kayseri', 1),
 (3362, 215, 'KLS', 'Kilis', 1),
 (3363, 215, 'KRK', 'Kirikkale', 1),
@@ -5880,7 +6119,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3386, 215, 'SIV', 'Sivas', 1),
 (3387, 215, 'TEL', 'Tekirdag', 1),
 (3388, 215, 'TOK', 'Tokat', 1),
-(3389, 215, 'TRA', 'Trabzon', 1),
+(3389, 215, 'TRA', 'Trabzon', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3390, 215, 'TUN', 'Tunceli', 1),
 (3391, 215, 'USK', 'Usak', 1),
 (3392, 215, 'VAN', 'Van', 1),
@@ -5906,7 +6146,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3412, 217, 'NC', 'North Caicos', 1),
 (3413, 217, 'PR', 'Providenciales', 1),
 (3414, 217, 'WC', 'West Caicos', 1),
-(3415, 218, 'NMG', 'Nanumanga', 1),
+(3415, 218, 'NMG', 'Nanumanga', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3416, 218, 'NLK', 'Niulakita', 1),
 (3417, 218, 'NTO', 'Niutao', 1),
 (3418, 218, 'FUN', 'Funafuti', 1),
@@ -5934,7 +6175,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3440, 219, 'JIN', 'Jinja', 1),
 (3441, 219, 'KAB', 'Kaberamaido', 1),
 (3442, 219, 'KML', 'Kamuli', 1),
-(3443, 219, 'KPC', 'Kapchorwa', 1),
+(3443, 219, 'KPC', 'Kapchorwa', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3444, 219, 'KTK', 'Katakwi', 1),
 (3445, 219, 'KUM', 'Kumi', 1),
 (3446, 219, 'MAY', 'Mayuge', 1),
@@ -5963,7 +6205,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3469, 219, 'KAR', 'Kabarole', 1),
 (3470, 219, 'KAM', 'Kamwenge', 1),
 (3471, 219, 'KAN', 'Kanungu', 1),
-(3472, 219, 'KAS', 'Kasese', 1),
+(3472, 219, 'KAS', 'Kasese', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3473, 219, 'KBA', 'Kibaale', 1),
 (3474, 219, 'KIS', 'Kisoro', 1),
 (3475, 219, 'KYE', 'Kyenjojo', 1),
@@ -5991,7 +6234,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3497, 220, 'RI', 'Rivne', 1),
 (3498, 220, 'SE', 'Sevastopol', 1),
 (3499, 220, 'SU', 'Sumy', 1),
-(3500, 220, 'TE', 'Ternopil''', 1),
+(3500, 220, 'TE', 'Ternopil''', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3501, 220, 'VI', 'Vinnytsya', 1),
 (3502, 220, 'VO', 'Volyn''', 1),
 (3503, 220, 'ZK', 'Zakarpattya', 1),
@@ -6017,7 +6261,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3523, 222, 'BUCKS', 'Buckinghamshire', 1),
 (3524, 222, 'CAE', 'Caerphilly', 1),
 (3525, 222, 'CAMBS', 'Cambridgeshire', 1),
-(3526, 222, 'CDF', 'Cardiff', 1),
+(3526, 222, 'CDF', 'Cardiff', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3527, 222, 'CARM', 'Carmarthenshire', 1),
 (3528, 222, 'CDGN', 'Ceredigion', 1),
 (3529, 222, 'CHES', 'Cheshire', 1),
@@ -6042,7 +6287,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3548, 222, 'FALK', 'Falkirk', 1),
 (3549, 222, 'FFE', 'Fife', 1),
 (3550, 222, 'FLINT', 'Flintshire', 1),
-(3551, 222, 'GLAS', 'Glasgow', 1),
+(3551, 222, 'GLAS', 'Glasgow', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3552, 222, 'GLOS', 'Gloucestershire', 1),
 (3553, 222, 'LDN', 'Greater London', 1),
 (3554, 222, 'MCH', 'Greater Manchester', 1),
@@ -6066,7 +6312,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3572, 222, 'NEWPT', 'Newport', 1),
 (3573, 222, 'NOR', 'Norfolk', 1),
 (3574, 222, 'ARYN', 'North Ayrshire', 1),
-(3575, 222, 'LANN', 'North Lanarkshire', 1),
+(3575, 222, 'LANN', 'North Lanarkshire', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3576, 222, 'YSN', 'North Yorkshire', 1),
 (3577, 222, 'NHM', 'Northamptonshire', 1),
 (3578, 222, 'NLD', 'Northumberland', 1),
@@ -6090,7 +6337,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3596, 222, 'STIR', 'Stirling', 1),
 (3597, 222, 'SFK', 'Suffolk', 1),
 (3598, 222, 'SRY', 'Surrey', 1),
-(3599, 222, 'SWAN', 'Swansea', 1),
+(3599, 222, 'SWAN', 'Swansea', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3600, 222, 'TORF', 'Torfaen', 1),
 (3601, 222, 'TWR', 'Tyne and Wear', 1),
 (3602, 222, 'VGLAM', 'Vale of Glamorgan', 1),
@@ -6113,7 +6361,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3619, 223, 'AA', 'Armed Forces Americas', 1),
 (3620, 223, 'AC', 'Armed Forces Canada', 1),
 (3621, 223, 'AE', 'Armed Forces Europe', 1),
-(3622, 223, 'AM', 'Armed Forces Middle East', 1),
+(3622, 223, 'AM', 'Armed Forces Middle East', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3623, 223, 'AP', 'Armed Forces Pacific', 1),
 (3624, 223, 'CA', 'California', 1),
 (3625, 223, 'CO', 'Colorado', 1),
@@ -6140,7 +6389,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3646, 223, 'MN', 'Minnesota', 1),
 (3647, 223, 'MS', 'Mississippi', 1),
 (3648, 223, 'MO', 'Missouri', 1),
-(3649, 223, 'MT', 'Montana', 1),
+(3649, 223, 'MT', 'Montana', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3650, 223, 'NE', 'Nebraska', 1),
 (3651, 223, 'NV', 'Nevada', 1),
 (3652, 223, 'NH', 'New Hampshire', 1),
@@ -6167,7 +6417,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3673, 223, 'VA', 'Virginia', 1),
 (3674, 223, 'WA', 'Washington', 1),
 (3675, 223, 'WV', 'West Virginia', 1),
-(3676, 223, 'WI', 'Wisconsin', 1),
+(3676, 223, 'WI', 'Wisconsin', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3677, 223, 'WY', 'Wyoming', 1),
 (3678, 224, 'BI', 'Baker Island', 1),
 (3679, 224, 'HI', 'Howland Island', 1),
@@ -6194,7 +6445,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3700, 225, 'RO', 'Rocha', 1),
 (3701, 225, 'SL', 'Salto', 1),
 (3702, 225, 'SJ', 'San Jose', 1),
-(3703, 225, 'SO', 'Soriano', 1),
+(3703, 225, 'SO', 'Soriano', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3704, 225, 'TA', 'Tacuarembo', 1),
 (3705, 225, 'TT', 'Treinta y Tres', 1),
 (3706, 226, 'AN', 'Andijon', 1),
@@ -6222,7 +6474,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3728, 229, 'AP', 'Apure', 1),
 (3729, 229, 'AR', 'Aragua', 1),
 (3730, 229, 'BA', 'Barinas', 1),
-(3731, 229, 'BO', 'Bolivar', 1),
+(3731, 229, 'BO', 'Bolivar', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3732, 229, 'CA', 'Carabobo', 1),
 (3733, 229, 'CO', 'Cojedes', 1),
 (3734, 229, 'DA', 'Delta Amacuro', 1),
@@ -6250,7 +6503,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3756, 230, 'BR', 'Ba Ria-Vung Tau', 1),
 (3757, 230, 'BN', 'Ben Tre', 1),
 (3758, 230, 'BH', 'Binh Dinh', 1),
-(3759, 230, 'BU', 'Binh Duong', 1),
+(3759, 230, 'BU', 'Binh Duong', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3760, 230, 'BP', 'Binh Phuoc', 1),
 (3761, 230, 'BT', 'Binh Thuan', 1),
 (3762, 230, 'CM', 'Ca Mau', 1),
@@ -6278,7 +6532,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3784, 232, 'J', 'Saint John', 1),
 (3785, 232, 'T', 'Saint Thomas', 1),
 (3786, 233, 'A', 'Alo', 1),
-(3787, 233, 'S', 'Sigave', 1),
+(3787, 233, 'S', 'Sigave', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3788, 233, 'W', 'Wallis', 1),
 (3789, 235, 'AB', 'Abyan', 1),
 (3790, 235, 'AD', 'Adan', 1),
@@ -6307,7 +6562,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3813, 237, 'BN', 'Bandundu', 1),
 (3814, 237, 'EQ', 'Equateur', 1),
 (3815, 237, 'KA', 'Katanga', 1),
-(3816, 237, 'KE', 'Kasai-Oriental', 1),
+(3816, 237, 'KE', 'Kasai-Oriental', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3817, 237, 'KN', 'Kinshasa', 1),
 (3818, 237, 'KW', 'Kasai-Occidental', 1),
 (3819, 237, 'MA', 'Maniema', 1),
@@ -6333,7 +6589,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3839, 239, 'MN', 'Matabeleland North', 1),
 (3840, 239, 'MS', 'Matabeleland South', 1),
 (3841, 239, 'MD', 'Midlands', 1),
-(3861, 105, 'CB', 'Campobasso', 1),
+(3861, 105, 'CB', 'Campobasso', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3862, 105, 'CI', 'Carbonia-Iglesias', 1),
 (3863, 105, 'CE', 'Caserta', 1),
 (3864, 105, 'CT', 'Catania', 1),
@@ -6362,7 +6619,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3887, 105, 'LC', 'Lecco', 1),
 (3888, 105, 'LI', 'Livorno', 1),
 (3889, 105, 'LO', 'Lodi', 1),
-(3890, 105, 'LU', 'Lucca', 1),
+(3890, 105, 'LU', 'Lucca', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3891, 105, 'MC', 'Macerata', 1),
 (3892, 105, 'MN', 'Mantova', 1),
 (3893, 105, 'MS', 'Massa-Carrara', 1),
@@ -6391,7 +6649,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3916, 105, 'PZ', 'Potenza', 1),
 (3917, 105, 'PO', 'Prato', 1),
 (3918, 105, 'RG', 'Ragusa', 1),
-(3919, 105, 'RA', 'Ravenna', 1),
+(3919, 105, 'RA', 'Ravenna', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3920, 105, 'RC', 'Reggio Calabria', 1),
 (3921, 105, 'RE', 'Reggio Emilia', 1),
 (3922, 105, 'RI', 'Rieti', 1),
@@ -6420,7 +6679,8 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3945, 105, 'VR', 'Verona', 1),
 (3946, 105, 'VV', 'Vibo Valentia', 1),
 (3947, 105, 'VI', 'Vicenza', 1),
-(3948, 105, 'VT', 'Viterbo', 1),
+(3948, 105, 'VT', 'Viterbo', 1);
+INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 (3949, 222, 'ANT', 'County Antrim', 1),
 (3950, 222, 'ARM', 'County Armagh', 1),
 (3951, 222, 'DOW', 'County Down', 1),
@@ -6447,6 +6707,7 @@ INSERT INTO `_zone` (`zone_id`, `country_id`, `code`, `name`, `status`) VALUES
 -- Table structure for table `_zone_to_geo_zone`
 --
 
+DROP TABLE IF EXISTS `_zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `_zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -6464,6 +6725,7 @@ CREATE TABLE IF NOT EXISTS `_zone_to_geo_zone` (
 INSERT INTO `_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 (57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 (65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
