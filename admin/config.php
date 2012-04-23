@@ -22,10 +22,19 @@ define('DIR_LOGS', $_SERVER['DOCUMENT_ROOT'] . '/system/logs/');
 define('DIR_CATALOG', $_SERVER['DOCUMENT_ROOT'] . '/catalog/');
 
 // DB
+/**
 define('DB_DRIVER', 'mysql');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'smsu');
 define('DB_PASSWORD', 'q1fKWwxiF4aP');
 define('DB_DATABASE', 'smsu');
 define('DB_PREFIX', '_');
-?>
+ */
+
+// DB
+define('DB_DRIVER', 'mysql');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'pass');
+define('DB_DATABASE', 'smsu');
+define('DB_PREFIX', '_');

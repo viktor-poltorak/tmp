@@ -1,3 +1,5 @@
 /nbproject/
 /access.log
 /error.log
+/system/cache/
+/system/logs/
