@@ -2187,6 +2187,11 @@ h4{
     background: url(/images/download.gif) no-repeat;
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
 .lme a{
     color: #000000;
     text-decoration: none;
@@ -2306,13 +2311,27 @@ h3 {
     text-decoration: none;
 }
 
-.sitemap li{
+.sitemap li, .product-info-attr li{
     list-style: none;
-    background: url("/images/pimpa.png") no-repeat scroll 2px 50% transparent;
+    background: url("/images/pimpa.png") no-repeat scroll 2px 5px transparent;
     padding-left: 10px;
+}
+
+.product-info-attr img {
+     margin-bottom: 10px;
 }
 
 .sitemap li a {
     color: #000000;
     text-decoration: none;
+}
+
+.product{
+    background-color: #f3f3f3;
+    margin-left: 20px;
+    width: 550px;
+}
+
+.download a{
+    color: #BC211C;
 }
