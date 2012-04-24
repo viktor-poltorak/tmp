@@ -16,6 +16,7 @@ $_['text_smtp']                = 'SMTP';
 $_['entry_name']               = 'Store Name:';
 $_['entry_owner']              = 'Store Owner:';
 $_['entry_address']            = 'Address:';
+$_['entry_address2']            = 'Address2:';
 $_['entry_email']              = 'E-Mail:';
 $_['entry_telephone']          = 'Telephone:';
 $_['entry_fax']                = 'Fax:';

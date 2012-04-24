@@ -43,6 +43,13 @@
                 <?php } ?></td>
             </tr>
             <tr>
+              <td><span class="required">*</span> <?php echo $entry_address2; ?></td>
+              <td><textarea name="config_address2" cols="40" rows="5"><?= isset($config_address2) ? $config_address2 : ''; ?></textarea>
+                <?php if (isset($error_address2)) { ?>
+                <span class="error"><?php echo $error_address2; ?></span>
+                <?php } ?></td>
+            </tr>
+            <tr>
               <td><span class="required">*</span> <?php echo $entry_email; ?></td>
               <td><input type="text" name="config_email" value="<?php echo $config_email; ?>" size="40" />
                 <?php if ($error_email) { ?>
