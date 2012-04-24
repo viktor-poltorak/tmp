@@ -1700,7 +1700,7 @@ a.button:hover span {
     float: left;
     width: 178px;
     height: 86px;
-    margin-left: 5px;
+    margin-left: 20px;
 }
 
 #main_menu, #footer
@@ -1714,24 +1714,23 @@ a.button:hover span {
     border-radius: 5px;
 }
 
-#lang
-{
+#lang {
     float: left;
-    width: 21px;
     height: 21px;
-    margin-top: 8px;
-    margin-left: 30px;
-    background: url(/images/language_button.gif) no-repeat left;
+    margin-top: 11px;
+    margin-left: 20px;
     text-align: center;
-    font-size: 10px;
-    line-height: 21px;
-    text-transform: uppercase;
+}
+
+#lang img{
+    float: left;
+    margin-right: 7px;
+    cursor: pointer;
 }
 
 .menu ul{
     margin: 0; padding: 0;
     float: left;
-    margin-left: 25px;
     font-size: 13px;
     height: 38px;
     text-transform:uppercase;
@@ -1889,9 +1888,14 @@ h3{
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    padding: 8px;
+    padding: 8px 25px 8px 8px;
     font-size: 12px;
     text-transform: uppercase;
+}
+
+#submenu .black {
+    margin-left: 15px;
+    margin-right: 25px;
 }
 
 #submenu span
@@ -1922,7 +1926,7 @@ h3{
 #submenu ul li
 {
     text-align: justify;
-    margin: 8px 5px;
+    margin: 8px 0px;
     display:inline;
 
 }
@@ -2370,7 +2374,7 @@ h3 {
 
 
 .currency tr:first-child {
-    
+
 }
 
 .currency .metal {
@@ -2383,6 +2387,7 @@ h3 {
 
 .currency .rate {
     width: 70px;
+}
 
 .form-label {
     width: 100px;
@@ -2405,4 +2410,12 @@ h3 {
 .search-results {
     clear: both;
     padding-bottom: 10px;
+}
+
+.product-item {
+    border-radius: 8px 8px 8px 8px;
+}
+
+.nivoSlider {
+    margin-top: -2px;
 }
