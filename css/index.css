@@ -2334,10 +2334,15 @@ h3 {
 }
 
 .metal-currency {
-    font-size: 12px;
-    padding: 10px 12px;
     color: #101009;
-    margin-top: 122px;
+    float: right;
+    font-size: 12px;
+    margin-right: 11px;
+    margin-top: -145px;
+    padding: 10px 12px;
+    position: relative;
+    width: 182px;
+    
 }
 
 .metal-currency a {
