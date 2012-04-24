@@ -2347,3 +2347,13 @@ h3 {
     padding-right: 10px;
     padding-top: 7px;
 }
+
+.search-form-field {
+    float: left;
+    padding-right: 10px;
+}
+
+.search-results {
+    clear: both;
+    padding-bottom: 10px;
+}
