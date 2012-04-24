@@ -2357,3 +2357,11 @@ h3 {
     clear: both;
     padding-bottom: 10px;
 }
+
+.product-item {
+    border-radius: 8px 8px 8px 8px;
+}
+
+.nivoSlider {
+    margin-top: -2px;
+}
