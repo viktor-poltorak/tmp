@@ -22,6 +22,7 @@
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
         <link rel="stylesheet" href="/css/index.css" media="screen">
+        <link rel="stylesheet" href="/css/print.css" media="print" />
             <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
             <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
             <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
