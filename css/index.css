@@ -2034,6 +2034,12 @@ h3{
     width: 205px;
 }
 
+.lme {
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 7px #aaa;
+    -moz-box-shadow:    2px 2px 7px #aaa;
+    box-shadow:         2px 2px 7px #aaa;
+}
 
 .lme table tbody tr td div
 {
@@ -2050,13 +2056,7 @@ h3{
     padding: 0px;
     height: 0px;
     height: auto !important;
-    text-align: center !important;
 
-}
-
-.lme table tbody tr td img
-{
-    width: 90% !important;
 }
 
 .lme table tbody tr td + td + td + td + td + td
@@ -2238,13 +2238,6 @@ a.redred:hover {text-decoration: none;}
     display: none;
 }
 
-.lme span
-{
-    font-size: 10px;
-    margin-bottom: -20px;
-    text-align:center;
-}
-
 .mar
 {
     margin: 10px;
@@ -2334,6 +2327,62 @@ h3 {
 .download a{
     color: #BC211C;
 }
+
+.metal-currency {
+    font-size: 12px;
+    padding: 10px 12px;
+    color: #101009;
+    margin-top: 122px;
+}
+
+.metal-currency a {
+    color: #101009;
+}
+
+.metal-currency .title {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.currency {
+    width: 100%;
+}
+
+.currency td {
+    vertical-align: top;
+    text-align: left;
+    border-collapse: collapse;
+    background: url('/images/dot_lme.gif') left top repeat-x;
+}
+
+.currency td img {
+    margin-top: 2px;
+    width: auto!important;
+}
+
+.currency tr:first-child, .currency tr:last-child {
+    display: none;
+}
+.currency tr td:last-child {
+    text-align: right;
+}
+
+
+.currency tr:first-child {
+    
+}
+
+.currency .metal {
+    width: 80px;
+}
+
+.currency .change {
+    width: 20px;
+}
+
+.currency .rate {
+    width: 70px;
+
 .form-label {
     width: 100px;
     float: left;
