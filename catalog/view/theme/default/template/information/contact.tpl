@@ -6,9 +6,21 @@
 </div>
 <? include('_submenu.php'); ?>
 <? include('_left_categories.php'); ?>
-<div class="centered_">
-    <h1><?php echo $heading_title; ?></h1>
+<div class="centered_ contact">
+    <div class="redred">
+        <p>Обращаем Ваше внимание, что все предложения и техническая информация
+предоставляются только по получению подробной информации.</p>
+    </div>
     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="contact">
+        <div class="left">
+            <div class="contact-item">
+                <div class="item-title">Юридический адрес:</div>
+                <div class="item-content"><?=$address ?></div>
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
         <h2><?php echo $text_location; ?></h2>
         <div class="contact-info">
             <div class="content">
@@ -64,11 +76,8 @@
         </div>
     </form>
 </div>
+<div class="right_info">
 
-
-
-<? include('_left.php') ?>
+</div>
 <div class="clearfloat"></div>
-
-
 <?php echo $footer; ?>
