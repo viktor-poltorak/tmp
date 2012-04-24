@@ -25,6 +25,7 @@
             </td>
         </tr>
     </table>
+<?php if (!isset($_REQUEST['print'])): ?>
 <?php
 $content = file_get_contents('http://metal4u.ru/lme_utf8.js');
 $content = preg_replace(array(
@@ -59,5 +60,5 @@ $content = preg_replace(array(
         <span class="title">Курс продаж цветных металлов</span>
         <?= $content ?>
     </div>
-
+<?php endif; ?>
 </div>
