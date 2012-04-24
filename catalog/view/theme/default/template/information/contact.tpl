@@ -14,8 +14,7 @@
         <div class="left">
             <b class="redred"><?= $text_address ?>:</b>
             <div>
-            <?=$address ?><br />
-            address line #2
+            <?=$address ?>
             </div>
             <br />
             
