@@ -2335,3 +2335,15 @@ h3 {
 .download a{
     color: #BC211C;
 }
+.form-label {
+    width: 100px;
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+
+.form-captcha {
+    float: left;
+    padding-right: 10px;
+    padding-top: 7px;
+}
