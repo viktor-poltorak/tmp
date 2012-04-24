@@ -13,7 +13,7 @@
 
 <div class="centered_">
     <h1><?php echo $heading_title; ?></h1>
-    <div class="content">
+    <!--<div class="content">
         <div class="search-form">
             <div class="search-form-field">
                 <?php if ($filter_name) { ?>
@@ -37,7 +37,7 @@
         <?php } else { ?>
             <input type="hidden" name="filter_description" value="1" id="description" />
         <?php } ?>
-    </div>
+    </div>-->
     <?php if ($products) { ?>
         <div class="product-list">
             <?php foreach ($products as $product) { ?>
@@ -62,7 +62,6 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="pagination"><?php echo $pagination; ?></div>
     <?php } else { ?>
         <div class="content"><?php echo $text_empty; ?></div>
     <?php } ?>
