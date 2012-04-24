@@ -1,6 +1,6 @@
 <div class="clearfloat"></div>
 <div id="footer">
-    <?= include '_currency.php' ?>
+    <?php include '_currency.php' ?>
     <div class="footernav">
         <ul>
             <li class="contacts">
