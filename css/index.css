@@ -1700,7 +1700,7 @@ a.button:hover span {
     float: left;
     width: 178px;
     height: 86px;
-    margin-left: 5px;
+    margin-left: 20px;
 }
 
 #main_menu, #footer
@@ -1718,7 +1718,7 @@ a.button:hover span {
     float: left;
     height: 21px;
     margin-top: 11px;
-    margin-left: 30px;
+    margin-left: 20px;
     text-align: center;
 }
 
@@ -1888,9 +1888,14 @@ h3{
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    padding: 8px;
+    padding: 8px 25px 8px 8px;
     font-size: 12px;
     text-transform: uppercase;
+}
+
+#submenu .black {
+    margin-left: 15px;
+    margin-right: 25px;
 }
 
 #submenu span
@@ -1921,7 +1926,7 @@ h3{
 #submenu ul li
 {
     text-align: justify;
-    margin: 8px 5px;
+    margin: 8px 0px;
     display:inline;
 
 }
@@ -2369,7 +2374,7 @@ h3 {
 
 
 .currency tr:first-child {
-    
+
 }
 
 .currency .metal {
