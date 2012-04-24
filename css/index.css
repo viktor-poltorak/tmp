@@ -2387,6 +2387,11 @@ h3 {
     width: 80px;
 }
 
+.currency .metal a {
+    color: #101009!important;
+    text-decoration: none!important;
+}
+
 .currency .change {
     width: 20px;
 }
