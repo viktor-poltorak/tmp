@@ -2334,7 +2334,7 @@ h3 {
 }
 
 .metal-currency {
-    color: #101009;
+    color: #101009!important;
     float: right;
     font-size: 12px;
     margin-right: 11px;
@@ -2383,6 +2383,7 @@ h3 {
 }
 
 .currency .metal {
+    color: #101009!important;
     width: 80px;
 }
 
