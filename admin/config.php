@@ -35,6 +35,6 @@ define('DB_PREFIX', '_');
 define('DB_DRIVER', 'mysql');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '111111');
-define('DB_DATABASE', 'sms');
+define('DB_PASSWORD', 'pass');
+define('DB_DATABASE', 'smsu');
 define('DB_PREFIX', '_');
