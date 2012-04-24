@@ -2200,7 +2200,7 @@ a.mailed{
     color: #000000;
     background: url(/images/mail.gif) no-repeat right;
 }
-a.mailed:hover, .lme a:hover, .categories .cat-item a:hover {
+a.mailed:hover, .lme a:hover, .categories .cat-item a:hover, .sitemap li a:hover{
     color: #BC211C;
     text-decoration: underline;
 }
@@ -2302,6 +2302,17 @@ h3 {
 }
 
 .categories .cat-item a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.sitemap li{
+    list-style: none;
+    background: url("/images/pimpa.png") no-repeat scroll 2px 50% transparent;
+    padding-left: 10px;
+}
+
+.sitemap li a {
     color: #000000;
     text-decoration: none;
 }
