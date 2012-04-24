@@ -58,7 +58,9 @@
             <?php } ?>
         </div>
         <div class="buttons">
-            <div class="right"><a onclick="$('#contact').submit();" class="button"><span><?php echo $button_continue; ?></span></a></div>
+            <div class="right">
+                <a onclick="$('#contact').submit();" class="button"><span><?php echo $button_continue; ?></span></a>
+            </div>
         </div>
     </form>
 </div>
