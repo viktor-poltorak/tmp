@@ -90,7 +90,7 @@ class ControllerInformationContact extends Controller {
     
 		$this->data['action'] = $this->url->link('information/contact');
 		$this->data['store'] = $this->config->get('config_name');
-		$this->data['skype'] = $this->config->get('config_skype');        
+		$this->data['skype'] = $this->config->get('config_skype');
 		$this->data['email'] = $this->config->get('config_email');
     	$this->data['address'] = nl2br($this->config->get('config_address'));
     	$this->data['address2'] = nl2br($this->config->get('config_address2'));
@@ -101,7 +101,13 @@ class ControllerInformationContact extends Controller {
 			$this->data['name'] = $this->request->post['name'];
 		} else {
 			$this->data['name'] = $this->customer->getFirstName();
-		}		
+		}
+
+		if (isset($this->request->post['email'])) {
+			$this->data['email'] = $this->request->post['email'];
+		} else {
+			$this->data['email'] = $this->customer->getEmail();
+		}
 		
 		if (isset($this->request->post['enquiry'])) {
 			$this->data['enquiry'] = $this->request->post['enquiry'];
