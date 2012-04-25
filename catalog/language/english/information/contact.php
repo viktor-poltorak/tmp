@@ -22,6 +22,8 @@ $_['entry_email']    = 'E-Mail Address:';
 $_['entry_enquiry']  = 'Enquiry:';
 $_['entry_captcha']  = 'Enter the code in the box below:';
 
+$_['text_sklad_address']  = 'Warehouse address:';
+
 // Email
 $_['email_subject']  = 'Enquiry %s';
 
