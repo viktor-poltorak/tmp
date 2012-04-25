@@ -80,7 +80,11 @@
                                                 <div id="main_content">
                                                     <div class="logo">
                                                         <a href="<?php echo $home; ?>">
+                                                            <? if($_SESSION['language'] == 'en') { ?>
+                                                            <img src="/images/logo-en.jpg" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                                            <? } else { ?>
                                                             <img src="/images/logo.gif" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                                            <? } ?>
                                                         </a>
                                                     </div>
                                                     <div class="clearfloat"></div>
