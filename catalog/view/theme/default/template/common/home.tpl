@@ -20,7 +20,7 @@
 
 <div id="info_and_news">
     <div id="info">
-				<?= $about['description']?>
+				<?= htmlspecialchars_decode($about['description'])?>
     </div>
 
     <div id="news">
