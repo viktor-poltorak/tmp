@@ -50,7 +50,7 @@
             <div><?= $skype ?></div>
             <br />
             <b class="redred">e-mail:</b>
-            <div><?= $email ?></div>
+            <div><?= $info_email ?></div>
             <br />
         </div>
     </div>
