@@ -1,7 +1,7 @@
 <div class="right_info">
     <table width="190" colspan="2" rowspan="2" style="text-align: justify;">
         <tr>
-            <td width="36%" align="left"><b>Тел.:</b></td>
+            <td width="30%" align="left"><b>Тел.:</b></td>
             <td class="redred" align="right"><?= $this->config->get('config_telephone'); ?></td>
         </tr>
         <tr>
@@ -13,7 +13,8 @@
             <td class="redred" align="right"><?= $this->config->get('config_skype'); ?></td>
         </tr>
         <tr>
-            <td colspan="2" align="left">
+            <td align="left"><b>E-mail:</b></td>
+            <td align="right">
                 <a  class="redred" href="mailto:<?= $this->config->get('config_email'); ?>">
                     <?= $this->config->get('config_email'); ?>
                 </a>

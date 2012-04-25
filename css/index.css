@@ -2034,7 +2034,6 @@ h3{
 .right_info
 {
     float: left;
-    padding-top: 10px;
     padding-left: 10px;
     font-size: 13px;
     width: 205px;
@@ -2339,7 +2338,7 @@ h3 {
     float: right;
     font-size: 12px;
     margin-right: 23px;
-    margin-top: -160px;
+    margin-top: -172px;
     padding: 10px 12px;
     position: relative;
     width: 182px;
