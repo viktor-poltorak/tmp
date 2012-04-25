@@ -13,7 +13,7 @@
 <script type="text/javascript">
 
     $('.button-search').click(function () {        
-        $('#button-search').attr('src', '/images/button-search-2.png');
+        $('#button-search').attr('src', '/images/button-search-1.png');
     })
 
     $('.button-search').mouseover(function() {
