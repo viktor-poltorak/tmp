@@ -2342,7 +2342,7 @@ h3 {
     padding: 10px 12px;
     position: relative;
     width: 182px;
-    
+
 }
 
 .metal-currency a {
@@ -2423,4 +2423,8 @@ h3 {
 
 .nivoSlider {
     margin-top: -2px;
+}
+
+.slideshow .nivoSlider a.nivo-imageLink {
+    z-index: 5
 }
