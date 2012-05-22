@@ -8,61 +8,79 @@
 <? include('_left_categories.php'); ?>
 <div class="centered_ contact">
     <div class="redred">
-        <p>Обращаем Ваше внимание, что все предложения и техническая информация
-предоставляются только по получению подробной информации.</p>
+        <p><?= $text_infobox ?></p>
     </div>
-    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="contact">
+    <div class="clearfix">
         <div class="left">
-            <div class="contact-item">
-                <div class="item-title">Юридический адрес:</div>
-                <div class="item-content"><?=$address ?></div>
+            <b class="redred"><?= $text_address ?>:</b>
+            <div>
+            <?=$address ?>
             </div>
+            <br />
+            
+            <img src="/images/map.png" />
+            <br />
+            <br />
+            <br />
+            <?php if ($telephone) { ?>
+            <b class="redred"><?php echo $text_telephone; ?>:</b>
+            <div>
+                <?php echo $telephone; ?><br />
+            </div>
+            <?php } ?>
+            <br />
+            
+            <?php if ($fax) { ?>
+                <b class="redred"><?php echo $text_fax; ?></b>
+                <div><?php echo $fax; ?></div>
+            <?php } ?>
         </div>
         <div class="right">
-
-        </div>
-        <h2><?php echo $text_location; ?></h2>
-        <div class="contact-info">
-            <div class="content">
-                <div class="left">
-                    <b><?php echo $text_address; ?></b> <?php echo $address; ?>
-                </div>
-                <div class="right">
-                    <?php if ($telephone) { ?>
-                        <b><?php echo $text_telephone; ?></b>
-                        <?php echo $telephone; ?><br />
-                    <?php } ?>
-                    <?php if ($fax) { ?>
-                        <b><?php echo $text_fax; ?></b>
-                        <?php echo $fax; ?>
-                    <?php } ?>
-                </div>
+            <b class="redred"><?= $text_sklad_address ?>:</b>
+            <div>
+            <?= $address2 ?>
             </div>
+            <br />
+            
+            <img src="/images/map.png" />
+            <br />
+            <br />
+            <br />
+            <b class="redred">Skype:</b>
+            <div><?= $skype ?></div>
+            <br />
+            <b class="redred">e-mail:</b>
+            <div><?= $info_email ?></div>
+            <br />
         </div>
-        <h2><?php echo $text_contact; ?></h2>
+    </div>
+</div>
+<div class="right_info">
+    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="contact">
+        <b class="redred"><?= $text_quick_contact ?>:</b>
         <div class="content">
-            <div class="form-label"><?php echo $entry_name; ?></div>
+            <div><?= $text_fio ?></div>
             <input type="text" name="name" value="<?php echo $name; ?>" />
             <br />
             <?php if ($error_name) { ?>
                 <span class="error"><?php echo $error_name; ?></span>
             <?php } ?>
             <br />
-            <div class="form-label"><?php echo $entry_email; ?></div>
+            <div><?= $text_email_and_telephone ?></div>
             <input type="text" name="email" value="<?php echo $email; ?>" />
             <br />
             <?php if ($error_email) { ?>
                 <span class="error"><?php echo $error_email; ?></span>
             <?php } ?>
             <br />
-            <b><?php echo $entry_enquiry; ?></b><br />
+            <?= $text_textmessage ?><br />
             <textarea name="enquiry" cols="40" rows="10" style="width: 99%; height: 100px"><?php echo $enquiry; ?></textarea>
             <br />
             <?php if ($error_enquiry) { ?>
                 <span class="error"><?php echo $error_enquiry; ?></span>
             <?php } ?>
             <br />
-            <b><?php echo $entry_captcha; ?></b><br />
+            <?php echo $entry_captcha; ?><br />
             <div class="form-captcha"><input type="text" name="captcha" value="<?php echo $captcha; ?>" /></div>
             <img src="index.php?route=information/contact/captcha" alt="" />
             <?php if ($error_captcha) { ?>
@@ -71,13 +89,10 @@
         </div>
         <div class="buttons">
             <div class="right">
-                <a onclick="$('#contact').submit();" class="button"><span><?php echo $button_continue; ?></span></a>
+                <a id="submit-contacts" onclick="$('#contact').submit();" class="button"><?php echo $button_send; ?></a>
             </div>
         </div>
     </form>
-</div>
-<div class="right_info">
-
 </div>
 <div class="clearfloat"></div>
 <?php echo $footer; ?>

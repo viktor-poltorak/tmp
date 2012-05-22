@@ -8,14 +8,22 @@ $_['text_contact']   = 'Contact Form';
 $_['text_address']   = 'Address:';
 $_['text_email']     = 'E-Mail:';
 $_['text_telephone'] = 'Telephone:';
+$_['text_email_and_telephone'] = 'Telephone:';
+$_['text_textmessage'] = 'Message:';
+$_['text_fio'] = 'First / Last name';
+$_['text_infobox']   = '';
 $_['text_fax']       = 'Fax:';
 $_['text_message']   = '<p>Your enquiry has been successfully sent to the store owner!</p>';
 
 // Entry Fields
+$_['button_send']  = 'Send';
 $_['entry_name']     = 'First Name:';
 $_['entry_email']    = 'E-Mail Address:';
 $_['entry_enquiry']  = 'Enquiry:';
 $_['entry_captcha']  = 'Enter the code in the box below:';
+
+$_['text_sklad_address']  = 'Warehouse address:';
+$_['text_quick_contact']  = 'Quick contact';
 
 // Email
 $_['email_subject']  = 'Enquiry %s';

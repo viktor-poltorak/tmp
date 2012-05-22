@@ -22,7 +22,7 @@
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
         <link rel="stylesheet" href="/css/index.css" media="screen">
-        <link rel="stylesheet" href="/css/print.css" media="print" />
+            <link rel="stylesheet" href="/css/print.css" media="print" />
             <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
             <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
             <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
@@ -53,14 +53,15 @@
 
         <!--
         <?php if (count($languages) > 1) { ?>
-                  <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-                    <div id="language"><?php echo $text_language; ?><br />
+
+                      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                        <div id="language"><?php echo $text_language; ?><br />
             <?php foreach ($languages as $language) { ?>
-                              &nbsp;<img src="image/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
+                                      &nbsp;<img src="image/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
             <?php } ?>
 
-                    </div>
-                  </form>
+                        </div>
+                      </form>
         <?php } ?>
         -->
 
@@ -79,23 +80,28 @@
                                                 <div id="main_content">
                                                     <div class="logo">
                                                         <a href="<?php echo $home; ?>">
+                                                            <? if($_SESSION['language'] == 'en') { ?>
+                                                            <img src="/images/logo-en.jpg" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                                            <? } else { ?>
                                                             <img src="/images/logo.gif" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                                            <? } ?>
                                                         </a>
                                                     </div>
                                                     <div class="clearfloat"></div>
                                                     <div id="main_menu">
                                                         <?php if (count($languages) > 1) { ?>
+                                                        <?php $languages = array_reverse($languages); ?>
                                                             <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                                                                 <input type="hidden" name="language_code" value="" />
                                                                 <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
                                                                 <div id="lang">
                                                                     <?php foreach ($languages as $language) { ?>
-                                                                    &nbsp;<img width="18" height="12" src="images/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
+                                                                        &nbsp;<img width="18" height="12" src="images/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
                                                                     <?php } ?>
                                                                 </div>
                                                             </form>
                                                         <?php } ?>
-                                                    <!--<div id="lang"><?= $_SESSION['language'] ?></div>-->
+                                                <!--<div id="lang"><?= $_SESSION['language'] ?></div>-->
                                                         <div class="menu">
                                                             <ul>
                                                                 <li><a href="index.php?route=common/home" <? if (preg_match("/home/", @getenv('REQUEST_URI')) || (@getenv('REQUEST_URI') == "/index.php") || (@getenv('REQUEST_URI') == "/")): ?>class="current"<? endif ?>>главная</a></li>

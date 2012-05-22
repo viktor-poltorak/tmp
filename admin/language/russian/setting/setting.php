@@ -15,7 +15,8 @@ $_['text_smtp']                 = 'SMTP';
 // Entry
 $_['entry_name']              = 'Название магазина:';
 $_['entry_owner']             = 'Владелец магазина:';
-$_['entry_address']           = 'Адрес магазина:';
+$_['entry_address']           = 'Юридический адрес:';
+$_['entry_address2']           = 'Адрес склада:';
 $_['entry_email']               = 'E-Mail:';
 $_['entry_telephone']         = 'Телефон:';
 $_['entry_fax']               = 'Факс:';

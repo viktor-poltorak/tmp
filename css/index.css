@@ -1782,6 +1782,7 @@ a.button:hover span {
     float: left;
     padding: 0;
     margin: 0;
+    cursor: pointer;
 }
 
 
@@ -2033,7 +2034,6 @@ h3{
 .right_info
 {
     float: left;
-    padding-top: 10px;
     padding-left: 10px;
     font-size: 13px;
     width: 205px;
@@ -2334,11 +2334,11 @@ h3 {
 }
 
 .metal-currency {
-    color: #101009;
+    color: #101009!important;
     float: right;
     font-size: 12px;
-    margin-right: 11px;
-    margin-top: -145px;
+    margin-right: 23px;
+    margin-top: -172px;
     padding: 10px 12px;
     position: relative;
     width: 182px;
@@ -2383,7 +2383,13 @@ h3 {
 }
 
 .currency .metal {
+    color: #101009!important;
     width: 80px;
+}
+
+.currency a {
+    color: #101009!important;
+    text-decoration: none!important;
 }
 
 .currency .change {
@@ -2402,8 +2408,6 @@ h3 {
 }
 
 .form-captcha {
-    float: left;
-    padding-right: 10px;
     padding-top: 7px;
 }
 
@@ -2423,6 +2427,39 @@ h3 {
 
 .nivoSlider {
     margin-top: -2px;
+}
+
+#contact {
+
+}
+
+#contact input[type=text], #contact textarea {
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.clearfix {
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix .left {
+    width: 47%;
+    float: left;
+}
+
+.clearfix .right {
+    width: 47%;
+    float: right;
+}
+
+#submit-contacts {
+    background:  none;
+    color: #E2001A;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .slideshow .nivoSlider a.nivo-imageLink {

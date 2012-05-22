@@ -40,6 +40,7 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_owner'] = $this->language->get('entry_owner');
 		$this->data['entry_address'] = $this->language->get('entry_address');
+		$this->data['entry_address2'] = $this->language->get('entry_address2');
 		$this->data['entry_email'] = $this->language->get('entry_email');
 		$this->data['entry_telephone'] = $this->language->get('entry_telephone');
 		$this->data['entry_fax'] = $this->language->get('entry_fax');		
@@ -146,6 +147,12 @@ class ControllerSettingSetting extends Controller {
 			$this->data['error_address'] = $this->error['address'];
 		} else {
 			$this->data['error_address'] = '';
+		}
+        
+ 		if (isset($this->error['address2'])) {
+			$this->data['error_address2'] = $this->error['address2'];
+		} else {
+			$this->data['error_address2'] = '';
 		}
 		
  		if (isset($this->error['email'])) {
@@ -280,6 +287,12 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_address'] = $this->request->post['config_address'];
 		} else {
 			$this->data['config_address'] = $this->config->get('config_address');
+		}
+        
+		if (isset($this->request->post['config_address2'])) {
+			$this->data['config_address2'] = $this->request->post['config_address2'];
+		} else {
+			$this->data['config_address2'] = $this->config->get('config_address2');
 		}
 		
 		if (isset($this->request->post['config_email'])) {
@@ -862,6 +875,11 @@ class ControllerSettingSetting extends Controller {
 
 		if ((utf8_strlen($this->request->post['config_address']) < 3) || (utf8_strlen($this->request->post['config_address']) > 256)) {
 			$this->error['address'] = $this->language->get('error_address');
+		}
+        
+
+		if ((utf8_strlen($this->request->post['config_address2']) < 3) || (utf8_strlen($this->request->post['config_address2']) > 256)) {
+			$this->error['address2'] = $this->language->get('error_address2');
 		}
 		
     	if ((utf8_strlen($this->request->post['config_email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['config_email'])) {

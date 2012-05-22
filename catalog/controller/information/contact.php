@@ -39,7 +39,7 @@ class ControllerInformationContact extends Controller {
 			'href'      => $this->url->link('information/contact'),
         	'separator' => $this->language->get('text_separator')
       	);	
-			
+        
     	$this->data['heading_title'] = $this->language->get('heading_title');
 
     	$this->data['text_location'] = $this->language->get('text_location');
@@ -52,6 +52,15 @@ class ControllerInformationContact extends Controller {
     	$this->data['entry_email'] = $this->language->get('entry_email');
     	$this->data['entry_enquiry'] = $this->language->get('entry_enquiry');
 		$this->data['entry_captcha'] = $this->language->get('entry_captcha');
+        
+		$this->data['text_infobox'] = $this->language->get('text_infobox');
+		$this->data['text_email_and_telephone'] = $this->language->get('text_email_and_telephone');
+		$this->data['text_textmessage'] = $this->language->get('text_textmessage');
+		$this->data['text_fio'] = $this->language->get('text_fio');
+		$this->data['text_infobox'] = $this->language->get('text_infobox');
+		$this->data['text_sklad_address'] = $this->language->get('text_sklad_address');
+		$this->data['text_quick_contact'] = $this->language->get('text_quick_contact');
+		$this->data['button_send'] = $this->language->get('button_send');
 
 		if (isset($this->error['name'])) {
     		$this->data['error_name'] = $this->error['name'];
@@ -81,7 +90,10 @@ class ControllerInformationContact extends Controller {
     
 		$this->data['action'] = $this->url->link('information/contact');
 		$this->data['store'] = $this->config->get('config_name');
+		$this->data['skype'] = $this->config->get('config_skype');
+		$this->data['info_email'] = $this->config->get('config_email');
     	$this->data['address'] = nl2br($this->config->get('config_address'));
+    	$this->data['address2'] = nl2br($this->config->get('config_address2'));
     	$this->data['telephone'] = $this->config->get('config_telephone');
     	$this->data['fax'] = $this->config->get('config_fax');
     	
