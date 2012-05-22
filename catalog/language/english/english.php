@@ -60,3 +60,8 @@ $_['error_upload_999']      = 'Warning: No error code available!';
 
 //Custom
 $_['Send_quick_query'] = 'Send quick query';
+$_['You_are_here'] = 'You are here';
+$_['about_us'] = 'About us';
+$_['copyright'] = 'Copyright (C) "Special Materials"';
+$_['Materials_for_Industry'] = 'Materials for Industry';
+$_['Course_of_sales_of_non_ferrous_metals'] = 'Course of sales of non-ferrous metals';

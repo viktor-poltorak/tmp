@@ -20,18 +20,20 @@ $content = preg_replace(array(
     '/<img src=http:\/\/metal4u.ru\/files\/dot_lme.gif width=175 height=1>/',
     '/\'\)/',
 ), array (
-    '', 
-    '<table class="currency">', 
-    '<tr>', 
-    'class="metal"', 
-    'class="change"', 
-    'class="rate"', 
-    'class="diff"', 
+    '',
+    '<table class="currency">',
+    '<tr>',
+    'class="metal"',
+    'class="change"',
+    'class="rate"',
+    'class="diff"',
     '', '', '', '', '<img src="/images/down.png" />', '<img src="/images/up.png" />', '', ''
 ), $content);
 
 ?>
     <div class="lme metal-currency" align="center">
-        <span class="title">Курс продаж цветных металлов</span>
+        <span class="title">
+            <?=_t('Course_of_sales_of_non_ferrous_metals') ?>
+        </span>
         <?= $content ?>
     </div>

@@ -54,14 +54,14 @@
         <!--
         <?php if (count($languages) > 1) { ?>
 
-                      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-                        <div id="language"><?php echo $text_language; ?><br />
+                              <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                                <div id="language"><?php echo $text_language; ?><br />
             <?php foreach ($languages as $language) { ?>
-                                      &nbsp;<img src="image/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
+                                                      &nbsp;<img src="image/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
             <?php } ?>
 
-                        </div>
-                      </form>
+                                </div>
+                              </form>
         <?php } ?>
         -->
 
@@ -80,41 +80,65 @@
                                                 <div id="main_content">
                                                     <div class="logo">
                                                         <a href="<?php echo $home; ?>">
-                                                            <? if($_SESSION['language'] == 'en') { ?>
-                                                            <img src="/images/logo-en.jpg" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
-                                                            <? } else { ?>
-                                                            <img src="/images/logo.gif" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
-                                                            <? } ?>
-                                                        </a>
-                                                    </div>
-                                                    <div class="clearfloat"></div>
-                                                    <div id="main_menu">
-                                                        <?php if (count($languages) > 1) { ?>
-                                                        <?php $languages = array_reverse($languages); ?>
-                                                            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-                                                                <input type="hidden" name="language_code" value="" />
-                                                                <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
-                                                                <div id="lang">
-                                                                    <?php foreach ($languages as $language) { ?>
-                                                                        &nbsp;<img width="18" height="12" src="images/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
-                                                                    <?php } ?>
-                                                                </div>
-                                                            </form>
-                                                        <?php } ?>
-                                                <!--<div id="lang"><?= $_SESSION['language'] ?></div>-->
-                                                        <div class="menu">
-                                                            <ul>
-                                                                <li><a href="index.php?route=common/home" <? if (preg_match("/home/", @getenv('REQUEST_URI')) || (@getenv('REQUEST_URI') == "/index.php") || (@getenv('REQUEST_URI') == "/")): ?>class="current"<? endif ?>>главная</a></li>
-                                                                <li><a href="<?php echo $about; ?>"  <? if (preg_match("/information_id\=4/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>о компании</a></li>
-                                                                <li><a href="/index.php?route=product/categories" <? if (preg_match("/categories/", @getenv('REQUEST_URI')) || preg_match("/product/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>каталог</a></li>
-                                                                <li><a href="<?php echo $offers; ?>" <? if (preg_match("/information_id\=5/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>услуги</a></li>
-                                                                <li><a href="index.php?route=information/news" <? if (preg_match("/news/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>новости</a></li>
-                                                                <li><a href="<?php echo $contact; ?>" <? if (preg_match("/contact/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>контакты</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="search">
-                                                            <?php include('_search.tpl'); ?>
-                                                        </div>
-                                                        <div class="clearfloat"></div>
-                                                    </div>
-                                                    <div id="centered">
+                                                            <? if ($_SESSION['language'] == 'en') { ?>
+                                                                <img src="/images/logo-en.jpg" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                                                <? } else { ?>
+                                                                    <img src="/images/logo.gif" width="178" height="86" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                                                                    <? } ?>
+                                                                    </a>
+                                                                    </div>
+                                                                    <div class="clearfloat"></div>
+                                                                    <div id="main_menu">
+                                                                        <?php if (count($languages) > 1) { ?>
+                                                                            <?php $languages = array_reverse($languages); ?>
+                                                                            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                                                                                <input type="hidden" name="language_code" value="" />
+                                                                                <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+                                                                                <div id="lang">
+                                                                                    <?php foreach ($languages as $language) { ?>
+                                                                                        &nbsp;<img width="18" height="12" src="images/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" onclick="$('input[name=\'language_code\']').attr('value', '<?php echo $language['code']; ?>').submit(); $(this).parent().parent().submit();" />
+                                                                                    <?php } ?>
+                                                                                </div>
+                                                                            </form>
+                                                                        <?php } ?>
+                                                                        <!--<div id="lang"><?= $_SESSION['language'] ?></div>-->
+                                                                        <div class="menu">
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <a href="index.php?route=common/home" <? if (preg_match("/home/", @getenv('REQUEST_URI')) || (@getenv('REQUEST_URI') == "/index.php") || (@getenv('REQUEST_URI') == "/")): ?>class="current"<? endif ?>>
+                                                                                       <?=_t('Home') ?>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="<?php echo $about; ?>"  <? if (preg_match("/information_id\=4/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>
+                                                                                        <?=_t('about_us') ?>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="/index.php?route=product/categories" <? if (preg_match("/categories/", @getenv('REQUEST_URI')) || preg_match("/product/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>
+                                                                                        <?=_t('Catalog') ?>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="<?php echo $offers; ?>" <? if (preg_match("/information_id\=5/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>
+                                                                                        <?=_t('Services') ?>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="index.php?route=information/news" <? if (preg_match("/news/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>
+                                                                                        <?=_t('News') ?>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="<?php echo $contact; ?>" <? if (preg_match("/contact/", @getenv('REQUEST_URI'))): ?>class="current"<? endif ?>>
+                                                                                        <?=_t('Contacts') ?>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="search">
+                                                                            <?php include('_search.tpl'); ?>
+                                                                        </div>
+                                                                        <div class="clearfloat"></div>
+                                                                    </div>
+                                                                    <div id="centered">
