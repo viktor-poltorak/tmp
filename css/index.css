@@ -1744,7 +1744,7 @@ a.button:hover span {
 .menu ul li a{
     float: left; text-decoration: none;
     color: white;
-    padding: 9px 15px;
+    padding: 11px 15px 7px;
     height: 20px;
 
 }
@@ -1793,7 +1793,7 @@ a.button:hover span {
     width: 173px;
     height: 24px;
     padding-left: 25px;
-    color: #A8A8A8;
+    color: black;
     float: left;
 }
 
@@ -1897,6 +1897,7 @@ h3{
 #submenu .black {
     margin-left: 15px;
     margin-right: 25px;
+    font-weight: normal;
 }
 
 #submenu span
@@ -2230,12 +2231,14 @@ a.redred:hover {text-decoration: none;}
     padding: 8px 0px;
     background-color: #FFFFFF;
     display:inline;
+    font-weight: bold;
 }
 
 .sitemhover{
     padding: 8px 0px;
     background-color: #e2001a;
     display:inline;
+    font-weight: bold;
 }
 
 .at15t_compact
