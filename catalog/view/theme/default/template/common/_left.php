@@ -1,11 +1,11 @@
 <div class="right_info">
     <table width="190" colspan="2" rowspan="2" style="text-align: justify;">
         <tr>
-            <td width="30%" align="left"><b>Тел.:</b></td>
+            <td width="30%" align="left"><b><?=_t('Tel.') ?>:</b></td>
             <td class="redred" align="right"><?= $this->config->get('config_telephone'); ?></td>
         </tr>
         <tr>
-            <td align="left"><b>Факс:</b></td>
+            <td align="left"><b><?=_t('Fax') ?>:</b></td>
             <td class="redred" align="right"><?= $this->config->get('config_fax'); ?></td>
         </tr>
         <tr>
@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td colspan="2" align="left">
-                <a class="mailed" href="/index.php?route=information/contact">Отправить быстрый запрос</a>
+                <a class="mailed" href="/index.php?route=information/contact"><?=_t('Send_quick_query') ?></a>
             </td>
         </tr>
     </table>

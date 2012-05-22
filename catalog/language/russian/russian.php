@@ -1,22 +1,23 @@
 <?php
+
 // Locale
-$_['code']                  = 'ru';
-$_['direction']             = 'ltr';
-$_['date_format_short']     = 'd.m.Y';
-$_['date_format_long']      = 'l d F Y';
-$_['time_format']           = 'H:i:s';
-$_['decimal_point']         = '.';
-$_['thousand_point']        = '';
+$_['code']              = 'ru';
+$_['direction']         = 'ltr';
+$_['date_format_short'] = 'd.m.Y';
+$_['date_format_long']  = 'l d F Y';
+$_['time_format']       = 'H:i:s';
+$_['decimal_point']     = '.';
+$_['thousand_point']    = '';
 
 // Text
-$_['text_home']             = 'Главная';
-$_['text_yes']              = 'Да';
-$_['text_no']               = 'Нет';
-$_['text_none']             = ' --- Не выбрано --- ';
-$_['text_select']           = ' --- Выберите --- ';
-$_['text_all_zones']        = 'Все зоны';
-$_['text_pagination']       = 'Показано с {start} по {end} из {total} (всего {pages} страниц)';
-$_['text_separator']        = '<span style="color: #A8A7A7;"> / </span>';
+$_['text_home']       = 'Главная';
+$_['text_yes']        = 'Да';
+$_['text_no']         = 'Нет';
+$_['text_none']       = ' --- Не выбрано --- ';
+$_['text_select']     = ' --- Выберите --- ';
+$_['text_all_zones']  = 'Все зоны';
+$_['text_pagination'] = 'Показано с {start} по {end} из {total} (всего {pages} страниц)';
+$_['text_separator']  = '<span style="color: #A8A7A7;"> / </span>';
 
 // Buttons
 $_['button_add_address']    = 'Добавить адрес';
@@ -57,4 +58,8 @@ $_['error_upload_6']        = 'Отсутсвует временная папк�
 $_['error_upload_7']        = 'Не удалось записать файл на диск!';
 $_['error_upload_8']        = 'Загружаемый на сервер файл не подходит по расширению!';
 $_['error_upload_999']      = 'Неизвестная ошибка!';
-?>
+
+//Custom
+$_['Tel.']             = 'Тел.';
+$_['Fax']              = 'Факс';
+$_['Send_quick_query'] = 'Отправить быстрый запрос';
