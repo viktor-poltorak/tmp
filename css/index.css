@@ -2219,7 +2219,8 @@ a.redred:hover {text-decoration: none;}
 .sright, .sleft, .sname, .sitem {    display: inline; }
 
 #sleft{
-    background: url(/images/sleft.png) no-repeat left;
+    /* background: url(/images/sleft.png) no-repeat left; */
+    background-color: #E2001A;
     height: 31px;
     padding: 8px 0px;
 }
