@@ -86,6 +86,11 @@ $(document).ready(function() {
             $('#slideshow0').data('nivo:vars').stop = true;
             $('#slideshow0').css('background-image', "url(" + $(this).attr('rel')  + ")").hide();
             $('#slideshow0').css('background-image', "url(" + $(this).attr('rel')  + ")").fadeIn('slow');
+            var linkId = $(this).attr('id').split('_');
+            if(typeof linkId[1] != 'undefined') {
+                $('img', '#slideshow0').parent().hide();
+                $('img[id=' + linkId[1] + ']', '#slideshow0').parent().show();
+            }
             $('.nivo-slice').css('display', "none");
         }, function(){
             $('#slideshow0').data('nivo:vars').stop = false;
