@@ -2036,9 +2036,18 @@ h3{
 .right_info
 {
     float: left;
-    padding-left: 10px;
+    padding: 10px 12px;
     font-size: 13px;
-    width: 205px;
+    width: 189px;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 7px #aaa;
+    -moz-box-shadow:    2px 2px 7px #aaa;
+    box-shadow:         2px 2px 7px #aaa;
+    margin-left: 15px;
+}
+
+.right_info a.mailed {
+    margin: 0;
 }
 
 .lme {
@@ -2342,11 +2351,10 @@ h3 {
     color: #101009!important;
     float: right;
     font-size: 12px;
-    margin-right: 23px;
     margin-top: -172px;
     padding: 10px 12px;
     position: relative;
-    width: 182px;
+    width: 189px;
 
 }
 
