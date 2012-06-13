@@ -25,6 +25,9 @@ class ModelToolImage extends Model {
 			}
 
 			$image = new Image(DIR_IMAGE . $old_image);
+            if (DIR_IMAGE . $old_image) {
+                chmod(DIR_IMAGE . $old_image, 0777);
+            }
 			$image->resize($width, $height);
 			$image->save(DIR_IMAGE . $new_image);
             if (DIR_IMAGE . $new_image) {
