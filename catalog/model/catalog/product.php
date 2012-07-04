@@ -72,6 +72,10 @@ class ModelCatalogProduct extends Model {
 					$words = explode(' ', $data['filter_name']);
 
 					foreach ($words as $word) {
+                        if(strlen($word) < 5) {
+                            continue;
+                        }
+
 						if (!empty($data['filter_description'])) {
 							$implode[] = "LCASE(pd.name) LIKE '%" . $this->db->escape(utf8_strtolower($word)) . "%' OR LCASE(pd.description) LIKE '%" . $this->db->escape(utf8_strtolower($word)) . "%'";
 						} else {
@@ -81,7 +85,10 @@ class ModelCatalogProduct extends Model {
 
 					if ($implode) {
 						$sql .= " " . implode(" OR ", $implode) . "";
-					}
+					} else {
+                        $data['filter_name'] = '';
+                        $data['filter_description'] = '';
+                    }
 				}
 
 				if (!empty($data['filter_name']) && !empty($data['filter_tag'])) {
