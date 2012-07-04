@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <td align="left"><b>Skype:</b></td>
-            <td align="right"><a style="text-decoration: none;" class="redred" href="callto://<?= $this->config->get('config_skype'); ?>"><?= $this->config->get('config_skype'); ?></a</td>
+            <td align="right"><a style="text-decoration: none;" class="redred" href="callto://<?= $this->config->get('config_skype'); ?>"><?= $this->config->get('config_skype'); ?></a></td>
         </tr>
         <tr>
             <td align="left"><b>E-mail:</b></td>
