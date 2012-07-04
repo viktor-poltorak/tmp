@@ -2044,6 +2044,7 @@ h3{
     -moz-box-shadow:    2px 2px 7px #aaa;
     box-shadow:         2px 2px 7px #aaa;
     margin-left: 15px;
+    background-color: #F3F3F3;
 }
 
 .right_info a.mailed {
@@ -2355,7 +2356,7 @@ h3 {
     padding: 10px 12px;
     position: relative;
     width: 189px;
-
+    background-color: #F3F3F3;
 }
 
 .metal-currency a {
